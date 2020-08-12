@@ -5,13 +5,13 @@
 - Leia atentamente todo o descritivo desse documento antes de qualquer coisa;
 - Trabalhar em um FORK deste repositório em seu usuário;
 - O aplicativo deve utilizar React Native superior a versão 0.50;
-- O projeto back-end deverá ser desenvolvido em NodeJs;
+- O projeto back-end deverá ser desenvolvido em Java + Spring;
 - O Front-End deve utilizar [Native Base](https://github.com/GeekyAnts/NativeBase) ou [UI Kitten](https://github.com/akveo/react-native-ui-kitten);
 - Os produtos disponíveis no projeto da aplicação devem ser recuperados através da Rest WebAPI desenvolvida em Java + Spring;
 - Utilize sempre boas práticas nas implementações. OOP, SOLID, DDD, Clean Code, Injeção de Dependência são sempre bem-vindos e fazem toda diferença!!!
 
 
-## API / Back-End Node.js
+## API / Back-End Java + Spring
  
 ###  Base de Dados
  
