@@ -25,7 +25,7 @@
         
 - Criar uma API REST usando Java com os seguintes endpoints:
     
-        `GET /`: Retornar um Status: 200 e uma Mensagem "RN Challenge 20200807 Running"
+        `GET /`: Retornar um Status: 200 e uma Mensagem "RN Challenge 20200810 Running"
         `PUT /products/:productId`: Será responsável por receber atualizações realizadas no Projeto Web
         `DELETE /products/:productId`: Remover o produto da base
         `GET /products/:productId`: Obter a informação somente de um produto da base de dados
@@ -47,11 +47,8 @@ Escrever a documentação da API utlizando conceito [OpenAPI Specification](http
 
 ### Extras
 
-**Diferencial 1** - Escrever Unit Test para o endpoint `POST /products`
-
-**Diferencial 2** - Usar o MySQL no Docker
-
-**Diferencial 3** - Executar todo o projeto no Docker mais o MySQL como um Serviço
+- **Diferencial 1 -** Executar o projeto usando Docker
+- **Diferencial 2 -** Escrever o esquema de segurança aplicado nos endpoints 
 
 ## Aplicação React Native
  
