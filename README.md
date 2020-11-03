@@ -102,7 +102,7 @@ Utilizar o [Expo](https://expo.io/) para disponibilizar a aplicação nas duas v
  
 ## Finalização 
 
-Avisar sobre a finalização e enviar para correção em: [https://bit.ly/3e7MjcK](https://bit.ly/3e7MjcK) 
+Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://bit.ly/3e7MjcK) 
 
 Após essa etapa será marcado a apresentação/correção do projeto.
 
