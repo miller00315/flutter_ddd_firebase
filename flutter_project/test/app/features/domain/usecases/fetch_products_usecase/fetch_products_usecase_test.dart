@@ -33,7 +33,7 @@ main() {
       expect(res.isRight(), true);
 
       res.fold(
-        (l) => {},
+        (l) => expect(l, null),
         (r) => expect(r, ProductFakeData.products),
       );
     });
@@ -51,7 +51,7 @@ main() {
 
       res.fold(
         (l) => expect(l, ServerFailure()),
-        (r) => {},
+        (r) => expect(r, null),
       );
     });
   });

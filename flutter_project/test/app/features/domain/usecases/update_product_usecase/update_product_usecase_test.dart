@@ -1,28 +1,31 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_project/app/core/error/failures.dart';
 import 'package:flutter_project/app/features/domain/repositories/i_product_repository.dart';
-import 'package:flutter_project/app/features/domain/usecases/delete_product_usecase.dart';
+import 'package:flutter_project/app/features/domain/usecases/update_product_usecase.dart';
+import 'package:flutter_project/mock/fake_data/products_fake_data.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
-import 'delete_product_usecase_test.mocks.dart';
+import 'update_product_usecase_test.mocks.dart';
 
 @GenerateMocks([IProductRepository])
 main() {
   final repositoryMock = MockIProductRepository();
 
-  final deleteProductUsecase = DeleteProductUsecaseImpl(repositoryMock);
+  final updateProductUsecase = UpdateProductUsecaseImpl(repositoryMock);
 
-  group('DeleteProductUsecase group =>', () {
+  final product = ProductFakeData.products.first;
+
+  group('UpdateProductUsecase group =>', () {
     test('should be right when delete product success', () async {
-      when(repositoryMock.deleteProduct(1)).thenAnswer(
+      when(repositoryMock.updateProduct(product)).thenAnswer(
         (_) => Future.value(
           const Right(null),
         ),
       );
 
-      final res = await deleteProductUsecase(const DeleteProductParams(1));
+      final res = await updateProductUsecase(UpdateProductParams(product));
 
       expect(res.isRight(), true);
 
@@ -32,15 +35,15 @@ main() {
       );
     });
 
-    test('should be left and return a ServerFailure when delete product fail',
+    test('should be left and return a ServerFailure when update product fail',
         () async {
-      when(repositoryMock.deleteProduct(1)).thenAnswer(
+      when(repositoryMock.updateProduct(product)).thenAnswer(
         (_) => Future.value(
           Left(ServerFailure()),
         ),
       );
 
-      final res = await deleteProductUsecase(const DeleteProductParams(1));
+      final res = await updateProductUsecase(UpdateProductParams(product));
 
       expect(res.isLeft(), true);
 
