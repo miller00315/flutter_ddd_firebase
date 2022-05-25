@@ -11,7 +11,7 @@ import 'package:dartz/dartz.dart' as dartz;
 class EditProductPage extends StatefulWidget {
   static const routeName = '/edit_Product';
 
-  final ProductEntity product;
+  final Product product;
 
   const EditProductPage({Key? key, required this.product}) : super(key: key);
 
@@ -41,8 +41,6 @@ class _EditProductPageState extends State<EditProductPage> {
     bloc.close();
     super.dispose();
   }
-
-  double _formatNumber(String s) => double.parse(s);
 
   @override
   Widget build(BuildContext context) {

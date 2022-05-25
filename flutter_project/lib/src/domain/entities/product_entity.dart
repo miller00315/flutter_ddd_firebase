@@ -8,8 +8,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'product_entity.freezed.dart';
 
 @freezed
-class ProductEntity with _$ProductEntity implements IEntity {
-  const factory ProductEntity({
+class Product with _$Product implements IEntity {
+  const factory Product({
     required UniqueId id,
     required ProductTitle title,
     required ProductType type,
@@ -23,7 +23,7 @@ class ProductEntity with _$ProductEntity implements IEntity {
   }) = _Note;
 }
 
-extension FailureVerifies on ProductEntity {
+extension FailureVerifies on Product {
   Option<ValueFailure<dynamic>> get failureOption {
     return title.failureOrUnit
         .andThen(type.failureOrUnit)

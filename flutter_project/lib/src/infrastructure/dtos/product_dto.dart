@@ -22,7 +22,7 @@ class ProductDto with _$ProductDto {
     @JsonKey(ignore: true) DateTime? created,
   }) = _ProductDto;
 
-  factory ProductDto.fromDomain(ProductEntity product) {
+  factory ProductDto.fromDomain(Product product) {
     return ProductDto(
       id: product.id.getOrCrash(),
       description: product.description,
@@ -52,8 +52,8 @@ class ProductDto with _$ProductDto {
 }
 
 extension ProductDtoConverters on ProductDto {
-  ProductEntity toDomain() {
-    return ProductEntity(
+  Product toDomain() {
+    return Product(
       id: UniqueId.fromUniqueString(id!),
       title: ProductTitle(title),
       type: ProductType(type),

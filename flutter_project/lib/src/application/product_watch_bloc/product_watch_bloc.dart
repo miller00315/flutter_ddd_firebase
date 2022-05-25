@@ -11,10 +11,11 @@ part 'product_watch_event.dart';
 part 'product_watch_state.dart';
 part 'product_watch_bloc.freezed.dart';
 
-class ProductWatchBloc extends Bloc<ProductWatchEvent, ProductWatchState> {
+class ProductWatcherBloc
+    extends Bloc<ProductWatcherEvent, ProductWatcherState> {
   final IProductRepository _productRepository;
 
-  StreamSubscription<Either<ProductFailure, List<ProductEntity>>>?
+  StreamSubscription<Either<ProductFailure, List<Product>>>?
       _productsStreamSubscription;
 
   @override
@@ -23,24 +24,24 @@ class ProductWatchBloc extends Bloc<ProductWatchEvent, ProductWatchState> {
     super.close();
   }
 
-  ProductWatchBloc(this._productRepository) : super(const _Initial()) {
-    on<ProductWatchEvent>((event, emit) {
+  ProductWatcherBloc(this._productRepository) : super(const _Initial()) {
+    on<ProductWatcherEvent>((event, emit) {
       event.map(
         startedWatchProducts: (e) async {
           await _productsStreamSubscription?.cancel();
 
           _productsStreamSubscription = _productRepository.watchAll().listen(
                 (event) => add(
-                  ProductWatchEvent.productsReceived(event),
+                  ProductWatcherEvent.productsReceived(event),
                 ),
               );
         },
         productsReceived: (e) async {
-          emit(const ProductWatchState.loadInProgress());
+          emit(const ProductWatcherState.loadInProgress());
 
           e.failureOrProducts.fold(
-            (failure) => emit(ProductWatchState.loadFailure(failure)),
-            (products) => emit(ProductWatchState.loadSuccess(products)),
+            (failure) => emit(ProductWatcherState.loadFailure(failure)),
+            (products) => emit(ProductWatcherState.loadSuccess(products)),
           );
         },
       );

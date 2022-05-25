@@ -18,7 +18,7 @@ import 'produt_watch_bloc_test.mocks.dart';
 main() {
   final productRepositoryMock = MockIProductRepository();
 
-  final ProductEntity product = ProductEntity(
+  final Product product = Product(
     id: UniqueId.fromUniqueString(const Uuid().v1().toString()),
     title: ProductTitle('test'),
     type: ProductType('test'),
@@ -34,7 +34,7 @@ main() {
   group('ProductsBloc group =>', () {
     test('should start listen and receive the firsts data', () async {
       final controller =
-          StreamController<Either<ProductFailure, List<ProductEntity>>>();
+          StreamController<Either<ProductFailure, List<Product>>>();
 
       controller.add(right([product]));
 
@@ -42,12 +42,12 @@ main() {
         (_) => controller.stream,
       );
 
-      final ProductWatchBloc = ProductWatchBloc(productRepositoryMock);
+      final ProductWatcherBloc = ProductWatcherBloc(productRepositoryMock);
 
-      ProductWatchBloc.add(const ProductEvent.startedWatchProducts());
+      ProductWatcherBloc.add(const ProductEvent.startedWatchProducts());
 
       await expectLater(
-        ProductWatchBloc.stream,
+        ProductWatcherBloc.stream,
         emitsInOrder(
           <ProductState>[
             const ProductState.loadInProgress(),
@@ -56,16 +56,16 @@ main() {
         ),
       );
 
-      expect(ProductWatchBloc.state, ProductState.loadSuccess([product]));
+      expect(ProductWatcherBloc.state, ProductState.loadSuccess([product]));
 
-      ProductWatchBloc.close();
+      ProductWatcherBloc.close();
 
       controller.close();
     });
 
     test('should start listen and when receive error should ', () async {
       final controller =
-          StreamController<Either<ProductFailure, List<ProductEntity>>>();
+          StreamController<Either<ProductFailure, List<Product>>>();
 
       controller.add(left(const ProductFailure.insufficientPermissions()));
 
@@ -73,12 +73,12 @@ main() {
         (_) => controller.stream,
       );
 
-      final ProductWatchBloc = ProductWatchBloc(productRepositoryMock);
+      final ProductWatcherBloc = ProductWatcherBloc(productRepositoryMock);
 
-      ProductWatchBloc.add(const ProductEvent.startedWatchProducts());
+      ProductWatcherBloc.add(const ProductEvent.startedWatchProducts());
 
       await expectLater(
-        ProductWatchBloc.stream,
+        ProductWatcherBloc.stream,
         emitsInOrder(
           <ProductState>[
             const ProductState.loadInProgress(),
@@ -90,13 +90,13 @@ main() {
       );
 
       expect(
-        ProductWatchBloc.state,
+        ProductWatcherBloc.state,
         const ProductState.loadFailure(
           ProductFailure.insufficientPermissions(),
         ),
       );
 
-      ProductWatchBloc.close();
+      ProductWatcherBloc.close();
 
       controller.close();
     });

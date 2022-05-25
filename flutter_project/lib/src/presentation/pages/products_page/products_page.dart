@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_project/injector/main.dart';
-import 'package:flutter_project/src/application/product_delete_bloc/product_delete_bloc.dart';
+import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watch_bloc/product_watch_bloc.dart';
 
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/products_page_body.dart';
@@ -21,17 +21,17 @@ class ProductsPage extends HookWidget {
       ),
       body: MultiBlocProvider(
         providers: [
-          BlocProvider<ProductWatchBloc>(
-            create: (context) => injector<ProductWatchBloc>()
-              ..add(const ProductWatchEvent.startedWatchProducts()),
+          BlocProvider<ProductWatcherBloc>(
+            create: (context) => injector<ProductWatcherBloc>()
+              ..add(const ProductWatcherEvent.startedWatchProducts()),
           ),
-          BlocProvider<ProductDeleteBloc>(
-            create: (context) => injector<ProductDeleteBloc>(),
+          BlocProvider<ProductActorBloc>(
+            create: (context) => injector<ProductActorBloc>(),
           ),
         ],
         child: MultiBlocListener(
           listeners: [
-            BlocListener<ProductWatchBloc, ProductWatchState>(
+            BlocListener<ProductWatcherBloc, ProductWatcherState>(
               listener: (context, state) {
                 state.map(
                   initial: (_) => {},
@@ -47,7 +47,7 @@ class ProductsPage extends HookWidget {
                 );
               },
             ),
-            BlocListener<ProductDeleteBloc, ProductDeleteState>(
+            BlocListener<ProductActorBloc, ProductActorState>(
               listener: (context, state) {
                 state.map(
                   initial: (_) => {},

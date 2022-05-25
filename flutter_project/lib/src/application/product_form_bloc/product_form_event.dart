@@ -2,8 +2,8 @@ part of 'product_form_bloc.dart';
 
 @freezed
 class ProductFormEvent with _$ProductFormEvent {
-  const factory ProductFormEvent.initialize(
-      Option<ProductEntity> initialProduct) = _Initialize;
+  const factory ProductFormEvent.initialize(Option<Product> initialProduct) =
+      _Initialize;
   const factory ProductFormEvent.titleChanged(String title) = _TitleChanged;
   const factory ProductFormEvent.descriptionChanged(String description) =
       _DescriptionChanged;

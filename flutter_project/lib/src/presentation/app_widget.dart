@@ -14,7 +14,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData.light(),
       onGenerateRoute: (settings) {
         if (settings.name == EditProductPage.routeName) {
-          final product = settings.arguments as ProductEntity;
+          final product = settings.arguments as Product;
           return MaterialPageRoute(
             builder: (context) => EditProductPage(
               product: product,

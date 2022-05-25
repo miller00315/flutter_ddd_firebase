@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/injector/main.dart';
-import 'package:flutter_project/src/application/product_delete_bloc/product_delete_bloc.dart';
+import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watch_bloc/product_watch_bloc.dart';
 
 import 'package:flutter_project/src/domain/entities/product_entity.dart';
@@ -12,13 +12,11 @@ import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 class ProductPageBody extends StatelessWidget {
   const ProductPageBody({Key? key}) : super(key: key);
 
-  void _handleDeleteProduct(ProductEntity product, context) async =>
-      await showDialog(
+  void _handleDeleteProduct(Product product, context) async => await showDialog(
         context: context,
         builder: (context) => CustomAlert(
           handleConfirmationButtonPress: () {
-            injector<ProductDeleteBloc>()
-                .add(ProductDeleteEvent.delete(product));
+            injector<ProductActorBloc>().add(ProductActorEvent.delete(product));
 
             Navigator.of(context).pop(false);
           },
@@ -28,7 +26,7 @@ class ProductPageBody extends StatelessWidget {
         ),
       );
 
-  void _handleEditProduct(ProductEntity product, context) =>
+  void _handleEditProduct(Product product, context) =>
       Navigator.of(context).pushNamed(
         EditProductPage.routeName,
         arguments: product,
@@ -36,7 +34,7 @@ class ProductPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ProductWatchBloc, ProductWatchState>(
+    return BlocBuilder<ProductWatcherBloc, ProductWatcherState>(
       builder: (context, state) {
         return state.map(
           initial: (_) => Container(),

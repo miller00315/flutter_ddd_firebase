@@ -1,11 +1,11 @@
 part of 'product_watch_bloc.dart';
 
 @freezed
-class ProductWatchState with _$ProductWatchState {
-  const factory ProductWatchState.initial() = _Initial;
-  const factory ProductWatchState.loadInProgress() = _DataTransferInProgress;
-  const factory ProductWatchState.loadSuccess(List<ProductEntity> products) =
+class ProductWatcherState with _$ProductWatcherState {
+  const factory ProductWatcherState.initial() = _Initial;
+  const factory ProductWatcherState.loadInProgress() = _DataTransferInProgress;
+  const factory ProductWatcherState.loadSuccess(List<Product> products) =
       _LoadSuccess;
-  const factory ProductWatchState.loadFailure(ProductFailure productFailure) =
+  const factory ProductWatcherState.loadFailure(ProductFailure productFailure) =
       _LoadFailure;
 }

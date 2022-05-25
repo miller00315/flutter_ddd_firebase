@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'product_delete_bloc.dart';
+part of 'product_actor_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,21 +15,21 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProductDeleteEvent {
-  ProductEntity get product => throw _privateConstructorUsedError;
+mixin _$ProductActorEvent {
+  Product get product => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ProductEntity product) delete,
+    required TResult Function(Product product) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ProductEntity product)? delete,
+    TResult Function(Product product)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ProductEntity product)? delete,
+    TResult Function(Product product)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,28 +51,28 @@ mixin _$ProductDeleteEvent {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProductDeleteEventCopyWith<ProductDeleteEvent> get copyWith =>
+  $ProductActorEventCopyWith<ProductActorEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductDeleteEventCopyWith<$Res> {
-  factory $ProductDeleteEventCopyWith(
-          ProductDeleteEvent value, $Res Function(ProductDeleteEvent) then) =
-      _$ProductDeleteEventCopyWithImpl<$Res>;
-  $Res call({ProductEntity product});
+abstract class $ProductActorEventCopyWith<$Res> {
+  factory $ProductActorEventCopyWith(
+          ProductActorEvent value, $Res Function(ProductActorEvent) then) =
+      _$ProductActorEventCopyWithImpl<$Res>;
+  $Res call({Product product});
 
-  $ProductEntityCopyWith<$Res> get product;
+  $ProductCopyWith<$Res> get product;
 }
 
 /// @nodoc
-class _$ProductDeleteEventCopyWithImpl<$Res>
-    implements $ProductDeleteEventCopyWith<$Res> {
-  _$ProductDeleteEventCopyWithImpl(this._value, this._then);
+class _$ProductActorEventCopyWithImpl<$Res>
+    implements $ProductActorEventCopyWith<$Res> {
+  _$ProductActorEventCopyWithImpl(this._value, this._then);
 
-  final ProductDeleteEvent _value;
+  final ProductActorEvent _value;
   // ignore: unused_field
-  final $Res Function(ProductDeleteEvent) _then;
+  final $Res Function(ProductActorEvent) _then;
 
   @override
   $Res call({
@@ -82,13 +82,13 @@ class _$ProductDeleteEventCopyWithImpl<$Res>
       product: product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as ProductEntity,
+              as Product,
     ));
   }
 
   @override
-  $ProductEntityCopyWith<$Res> get product {
-    return $ProductEntityCopyWith<$Res>(_value.product, (value) {
+  $ProductCopyWith<$Res> get product {
+    return $ProductCopyWith<$Res>(_value.product, (value) {
       return _then(_value.copyWith(product: value));
     });
   }
@@ -96,19 +96,19 @@ class _$ProductDeleteEventCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$$_DeleteCopyWith<$Res>
-    implements $ProductDeleteEventCopyWith<$Res> {
+    implements $ProductActorEventCopyWith<$Res> {
   factory _$$_DeleteCopyWith(_$_Delete value, $Res Function(_$_Delete) then) =
       __$$_DeleteCopyWithImpl<$Res>;
   @override
-  $Res call({ProductEntity product});
+  $Res call({Product product});
 
   @override
-  $ProductEntityCopyWith<$Res> get product;
+  $ProductCopyWith<$Res> get product;
 }
 
 /// @nodoc
 class __$$_DeleteCopyWithImpl<$Res>
-    extends _$ProductDeleteEventCopyWithImpl<$Res>
+    extends _$ProductActorEventCopyWithImpl<$Res>
     implements _$$_DeleteCopyWith<$Res> {
   __$$_DeleteCopyWithImpl(_$_Delete _value, $Res Function(_$_Delete) _then)
       : super(_value, (v) => _then(v as _$_Delete));
@@ -124,7 +124,7 @@ class __$$_DeleteCopyWithImpl<$Res>
       product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as ProductEntity,
+              as Product,
     ));
   }
 }
@@ -135,11 +135,11 @@ class _$_Delete implements _Delete {
   const _$_Delete(this.product);
 
   @override
-  final ProductEntity product;
+  final Product product;
 
   @override
   String toString() {
-    return 'ProductDeleteEvent.delete(product: $product)';
+    return 'ProductActorEvent.delete(product: $product)';
   }
 
   @override
@@ -162,7 +162,7 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(ProductEntity product) delete,
+    required TResult Function(Product product) delete,
   }) {
     return delete(product);
   }
@@ -170,7 +170,7 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(ProductEntity product)? delete,
+    TResult Function(Product product)? delete,
   }) {
     return delete?.call(product);
   }
@@ -178,7 +178,7 @@ class _$_Delete implements _Delete {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(ProductEntity product)? delete,
+    TResult Function(Product product)? delete,
     required TResult orElse(),
   }) {
     if (delete != null) {
@@ -216,11 +216,11 @@ class _$_Delete implements _Delete {
   }
 }
 
-abstract class _Delete implements ProductDeleteEvent {
-  const factory _Delete(final ProductEntity product) = _$_Delete;
+abstract class _Delete implements ProductActorEvent {
+  const factory _Delete(final Product product) = _$_Delete;
 
   @override
-  ProductEntity get product => throw _privateConstructorUsedError;
+  Product get product => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_DeleteCopyWith<_$_Delete> get copyWith =>
@@ -228,7 +228,7 @@ abstract class _Delete implements ProductDeleteEvent {
 }
 
 /// @nodoc
-mixin _$ProductDeleteState {
+mixin _$ProductActorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -282,20 +282,20 @@ mixin _$ProductDeleteState {
 }
 
 /// @nodoc
-abstract class $ProductDeleteStateCopyWith<$Res> {
-  factory $ProductDeleteStateCopyWith(
-          ProductDeleteState value, $Res Function(ProductDeleteState) then) =
-      _$ProductDeleteStateCopyWithImpl<$Res>;
+abstract class $ProductActorStateCopyWith<$Res> {
+  factory $ProductActorStateCopyWith(
+          ProductActorState value, $Res Function(ProductActorState) then) =
+      _$ProductActorStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProductDeleteStateCopyWithImpl<$Res>
-    implements $ProductDeleteStateCopyWith<$Res> {
-  _$ProductDeleteStateCopyWithImpl(this._value, this._then);
+class _$ProductActorStateCopyWithImpl<$Res>
+    implements $ProductActorStateCopyWith<$Res> {
+  _$ProductActorStateCopyWithImpl(this._value, this._then);
 
-  final ProductDeleteState _value;
+  final ProductActorState _value;
   // ignore: unused_field
-  final $Res Function(ProductDeleteState) _then;
+  final $Res Function(ProductActorState) _then;
 }
 
 /// @nodoc
@@ -307,7 +307,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$ProductDeleteStateCopyWithImpl<$Res>
+    extends _$ProductActorStateCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, (v) => _then(v as _$_Initial));
@@ -323,7 +323,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ProductDeleteState.initial()';
+    return 'ProductActorState.initial()';
   }
 
   @override
@@ -410,7 +410,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ProductDeleteState {
+abstract class _Initial implements ProductActorState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -423,7 +423,7 @@ abstract class _$$_DataDeleteInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DataDeleteInProgressCopyWithImpl<$Res>
-    extends _$ProductDeleteStateCopyWithImpl<$Res>
+    extends _$ProductActorStateCopyWithImpl<$Res>
     implements _$$_DataDeleteInProgressCopyWith<$Res> {
   __$$_DataDeleteInProgressCopyWithImpl(_$_DataDeleteInProgress _value,
       $Res Function(_$_DataDeleteInProgress) _then)
@@ -440,7 +440,7 @@ class _$_DataDeleteInProgress implements _DataDeleteInProgress {
 
   @override
   String toString() {
-    return 'ProductDeleteState.deleteInProgress()';
+    return 'ProductActorState.deleteInProgress()';
   }
 
   @override
@@ -527,7 +527,7 @@ class _$_DataDeleteInProgress implements _DataDeleteInProgress {
   }
 }
 
-abstract class _DataDeleteInProgress implements ProductDeleteState {
+abstract class _DataDeleteInProgress implements ProductActorState {
   const factory _DataDeleteInProgress() = _$_DataDeleteInProgress;
 }
 
@@ -540,7 +540,7 @@ abstract class _$$_DeleteSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DeleteSuccessCopyWithImpl<$Res>
-    extends _$ProductDeleteStateCopyWithImpl<$Res>
+    extends _$ProductActorStateCopyWithImpl<$Res>
     implements _$$_DeleteSuccessCopyWith<$Res> {
   __$$_DeleteSuccessCopyWithImpl(
       _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
@@ -557,7 +557,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 
   @override
   String toString() {
-    return 'ProductDeleteState.deleteSuccess()';
+    return 'ProductActorState.deleteSuccess()';
   }
 
   @override
@@ -644,7 +644,7 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   }
 }
 
-abstract class _DeleteSuccess implements ProductDeleteState {
+abstract class _DeleteSuccess implements ProductActorState {
   const factory _DeleteSuccess() = _$_DeleteSuccess;
 }
 
@@ -660,7 +660,7 @@ abstract class _$$_DeleteFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DeleteFailureCopyWithImpl<$Res>
-    extends _$ProductDeleteStateCopyWithImpl<$Res>
+    extends _$ProductActorStateCopyWithImpl<$Res>
     implements _$$_DeleteFailureCopyWith<$Res> {
   __$$_DeleteFailureCopyWithImpl(
       _$_DeleteFailure _value, $Res Function(_$_DeleteFailure) _then)
@@ -699,7 +699,7 @@ class _$_DeleteFailure implements _DeleteFailure {
 
   @override
   String toString() {
-    return 'ProductDeleteState.deleteFailure(productFailure: $productFailure)';
+    return 'ProductActorState.deleteFailure(productFailure: $productFailure)';
   }
 
   @override
@@ -795,7 +795,7 @@ class _$_DeleteFailure implements _DeleteFailure {
   }
 }
 
-abstract class _DeleteFailure implements ProductDeleteState {
+abstract class _DeleteFailure implements ProductActorState {
   const factory _DeleteFailure(final ProductFailure productFailure) =
       _$_DeleteFailure;
 

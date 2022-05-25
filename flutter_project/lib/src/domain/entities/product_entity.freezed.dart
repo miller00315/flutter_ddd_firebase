@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProductEntity {
+mixin _$Product {
   UniqueId get id => throw _privateConstructorUsedError;
   ProductTitle get title => throw _privateConstructorUsedError;
   ProductType get type => throw _privateConstructorUsedError;
@@ -28,15 +28,13 @@ mixin _$ProductEntity {
   DateTime get created => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProductEntityCopyWith<ProductEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductEntityCopyWith<$Res> {
-  factory $ProductEntityCopyWith(
-          ProductEntity value, $Res Function(ProductEntity) then) =
-      _$ProductEntityCopyWithImpl<$Res>;
+abstract class $ProductCopyWith<$Res> {
+  factory $ProductCopyWith(Product value, $Res Function(Product) then) =
+      _$ProductCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
       ProductTitle title,
@@ -51,13 +49,12 @@ abstract class $ProductEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProductEntityCopyWithImpl<$Res>
-    implements $ProductEntityCopyWith<$Res> {
-  _$ProductEntityCopyWithImpl(this._value, this._then);
+class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
+  _$ProductCopyWithImpl(this._value, this._then);
 
-  final ProductEntity _value;
+  final Product _value;
   // ignore: unused_field
-  final $Res Function(ProductEntity) _then;
+  final $Res Function(Product) _then;
 
   @override
   $Res call({
@@ -118,7 +115,7 @@ class _$ProductEntityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_NoteCopyWith<$Res> implements $ProductEntityCopyWith<$Res> {
+abstract class _$$_NoteCopyWith<$Res> implements $ProductCopyWith<$Res> {
   factory _$$_NoteCopyWith(_$_Note value, $Res Function(_$_Note) then) =
       __$$_NoteCopyWithImpl<$Res>;
   @override
@@ -136,7 +133,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $ProductEntityCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_NoteCopyWithImpl<$Res> extends _$ProductEntityCopyWithImpl<$Res>
+class __$$_NoteCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     implements _$$_NoteCopyWith<$Res> {
   __$$_NoteCopyWithImpl(_$_Note _value, $Res Function(_$_Note) _then)
       : super(_value, (v) => _then(v as _$_Note));
@@ -240,7 +237,7 @@ class _$_Note implements _Note {
 
   @override
   String toString() {
-    return 'ProductEntity(id: $id, title: $title, type: $type, description: $description, filename: $filename, height: $height, width: $width, price: $price, rating: $rating, created: $created)';
+    return 'Product(id: $id, title: $title, type: $type, description: $description, filename: $filename, height: $height, width: $width, price: $price, rating: $rating, created: $created)';
   }
 
   @override
@@ -281,7 +278,7 @@ class _$_Note implements _Note {
       __$$_NoteCopyWithImpl<_$_Note>(this, _$identity);
 }
 
-abstract class _Note implements ProductEntity {
+abstract class _Note implements Product {
   const factory _Note(
       {required final UniqueId id,
       required final ProductTitle title,

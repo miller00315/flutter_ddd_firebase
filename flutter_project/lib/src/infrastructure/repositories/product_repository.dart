@@ -13,7 +13,7 @@ class ProductRepository implements IProductRepository {
   ProductRepository(this.productDataSource);
 
   @override
-  Future<Either<ProductFailure, Unit>> delete(ProductEntity product) async {
+  Future<Either<ProductFailure, Unit>> delete(Product product) async {
     try {
       await productDataSource.delete(product.id.getOrCrash());
 
@@ -30,7 +30,7 @@ class ProductRepository implements IProductRepository {
   }
 
   @override
-  Future<Either<ProductFailure, Unit>> update(ProductEntity product) async {
+  Future<Either<ProductFailure, Unit>> update(Product product) async {
     try {
       await productDataSource.update(ProductDto.fromDomain(product));
 
@@ -47,11 +47,11 @@ class ProductRepository implements IProductRepository {
   }
 
   @override
-  Stream<Either<ProductFailure, List<ProductEntity>>> watchAll() async* {
+  Stream<Either<ProductFailure, List<Product>>> watchAll() async* {
     yield* productDataSource
         .watchAll()
         .map(
-          (snapshot) => right<ProductFailure, List<ProductEntity>>(
+          (snapshot) => right<ProductFailure, List<Product>>(
             snapshot.map((e) => e.toDomain()).toList(),
           ),
         )

@@ -15,28 +15,26 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProductWatchEvent {
+mixin _$ProductWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() startedWatchProducts,
     required TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)
+            Either<ProductFailure, List<Product>> failureOrProducts)
         productsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? startedWatchProducts,
-    TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)?
+    TResult Function(Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? startedWatchProducts,
-    TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)?
+    TResult Function(Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
     required TResult orElse(),
   }) =>
@@ -63,20 +61,20 @@ mixin _$ProductWatchEvent {
 }
 
 /// @nodoc
-abstract class $ProductWatchEventCopyWith<$Res> {
-  factory $ProductWatchEventCopyWith(
-          ProductWatchEvent value, $Res Function(ProductWatchEvent) then) =
-      _$ProductWatchEventCopyWithImpl<$Res>;
+abstract class $ProductWatcherEventCopyWith<$Res> {
+  factory $ProductWatcherEventCopyWith(
+          ProductWatcherEvent value, $Res Function(ProductWatcherEvent) then) =
+      _$ProductWatcherEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProductWatchEventCopyWithImpl<$Res>
-    implements $ProductWatchEventCopyWith<$Res> {
-  _$ProductWatchEventCopyWithImpl(this._value, this._then);
+class _$ProductWatcherEventCopyWithImpl<$Res>
+    implements $ProductWatcherEventCopyWith<$Res> {
+  _$ProductWatcherEventCopyWithImpl(this._value, this._then);
 
-  final ProductWatchEvent _value;
+  final ProductWatcherEvent _value;
   // ignore: unused_field
-  final $Res Function(ProductWatchEvent) _then;
+  final $Res Function(ProductWatcherEvent) _then;
 }
 
 /// @nodoc
@@ -88,7 +86,7 @@ abstract class _$$_StartWatchProductsCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StartWatchProductsCopyWithImpl<$Res>
-    extends _$ProductWatchEventCopyWithImpl<$Res>
+    extends _$ProductWatcherEventCopyWithImpl<$Res>
     implements _$$_StartWatchProductsCopyWith<$Res> {
   __$$_StartWatchProductsCopyWithImpl(
       _$_StartWatchProducts _value, $Res Function(_$_StartWatchProducts) _then)
@@ -105,7 +103,7 @@ class _$_StartWatchProducts implements _StartWatchProducts {
 
   @override
   String toString() {
-    return 'ProductWatchEvent.startedWatchProducts()';
+    return 'ProductWatcherEvent.startedWatchProducts()';
   }
 
   @override
@@ -122,7 +120,7 @@ class _$_StartWatchProducts implements _StartWatchProducts {
   TResult when<TResult extends Object?>({
     required TResult Function() startedWatchProducts,
     required TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)
+            Either<ProductFailure, List<Product>> failureOrProducts)
         productsReceived,
   }) {
     return startedWatchProducts();
@@ -132,8 +130,7 @@ class _$_StartWatchProducts implements _StartWatchProducts {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? startedWatchProducts,
-    TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)?
+    TResult Function(Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
   }) {
     return startedWatchProducts?.call();
@@ -143,8 +140,7 @@ class _$_StartWatchProducts implements _StartWatchProducts {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? startedWatchProducts,
-    TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)?
+    TResult Function(Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
     required TResult orElse(),
   }) {
@@ -186,7 +182,7 @@ class _$_StartWatchProducts implements _StartWatchProducts {
   }
 }
 
-abstract class _StartWatchProducts implements ProductWatchEvent {
+abstract class _StartWatchProducts implements ProductWatcherEvent {
   const factory _StartWatchProducts() = _$_StartWatchProducts;
 }
 
@@ -195,12 +191,12 @@ abstract class _$$_ProductsReceivedCopyWith<$Res> {
   factory _$$_ProductsReceivedCopyWith(
           _$_ProductsReceived value, $Res Function(_$_ProductsReceived) then) =
       __$$_ProductsReceivedCopyWithImpl<$Res>;
-  $Res call({Either<ProductFailure, List<ProductEntity>> failureOrProducts});
+  $Res call({Either<ProductFailure, List<Product>> failureOrProducts});
 }
 
 /// @nodoc
 class __$$_ProductsReceivedCopyWithImpl<$Res>
-    extends _$ProductWatchEventCopyWithImpl<$Res>
+    extends _$ProductWatcherEventCopyWithImpl<$Res>
     implements _$$_ProductsReceivedCopyWith<$Res> {
   __$$_ProductsReceivedCopyWithImpl(
       _$_ProductsReceived _value, $Res Function(_$_ProductsReceived) _then)
@@ -217,7 +213,7 @@ class __$$_ProductsReceivedCopyWithImpl<$Res>
       failureOrProducts == freezed
           ? _value.failureOrProducts
           : failureOrProducts // ignore: cast_nullable_to_non_nullable
-              as Either<ProductFailure, List<ProductEntity>>,
+              as Either<ProductFailure, List<Product>>,
     ));
   }
 }
@@ -228,11 +224,11 @@ class _$_ProductsReceived implements _ProductsReceived {
   const _$_ProductsReceived(this.failureOrProducts);
 
   @override
-  final Either<ProductFailure, List<ProductEntity>> failureOrProducts;
+  final Either<ProductFailure, List<Product>> failureOrProducts;
 
   @override
   String toString() {
-    return 'ProductWatchEvent.productsReceived(failureOrProducts: $failureOrProducts)';
+    return 'ProductWatcherEvent.productsReceived(failureOrProducts: $failureOrProducts)';
   }
 
   @override
@@ -258,7 +254,7 @@ class _$_ProductsReceived implements _ProductsReceived {
   TResult when<TResult extends Object?>({
     required TResult Function() startedWatchProducts,
     required TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)
+            Either<ProductFailure, List<Product>> failureOrProducts)
         productsReceived,
   }) {
     return productsReceived(failureOrProducts);
@@ -268,8 +264,7 @@ class _$_ProductsReceived implements _ProductsReceived {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? startedWatchProducts,
-    TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)?
+    TResult Function(Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
   }) {
     return productsReceived?.call(failureOrProducts);
@@ -279,8 +274,7 @@ class _$_ProductsReceived implements _ProductsReceived {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? startedWatchProducts,
-    TResult Function(
-            Either<ProductFailure, List<ProductEntity>> failureOrProducts)?
+    TResult Function(Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
     required TResult orElse(),
   }) {
@@ -322,12 +316,12 @@ class _$_ProductsReceived implements _ProductsReceived {
   }
 }
 
-abstract class _ProductsReceived implements ProductWatchEvent {
+abstract class _ProductsReceived implements ProductWatcherEvent {
   const factory _ProductsReceived(
-          final Either<ProductFailure, List<ProductEntity>> failureOrProducts) =
+          final Either<ProductFailure, List<Product>> failureOrProducts) =
       _$_ProductsReceived;
 
-  Either<ProductFailure, List<ProductEntity>> get failureOrProducts =>
+  Either<ProductFailure, List<Product>> get failureOrProducts =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_ProductsReceivedCopyWith<_$_ProductsReceived> get copyWith =>
@@ -335,12 +329,12 @@ abstract class _ProductsReceived implements ProductWatchEvent {
 }
 
 /// @nodoc
-mixin _$ProductWatchState {
+mixin _$ProductWatcherState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<ProductEntity> products) loadSuccess,
+    required TResult Function(List<Product> products) loadSuccess,
     required TResult Function(ProductFailure productFailure) loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -348,7 +342,7 @@ mixin _$ProductWatchState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
@@ -356,7 +350,7 @@ mixin _$ProductWatchState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
     required TResult orElse(),
   }) =>
@@ -389,20 +383,20 @@ mixin _$ProductWatchState {
 }
 
 /// @nodoc
-abstract class $ProductWatchStateCopyWith<$Res> {
-  factory $ProductWatchStateCopyWith(
-          ProductWatchState value, $Res Function(ProductWatchState) then) =
-      _$ProductWatchStateCopyWithImpl<$Res>;
+abstract class $ProductWatcherStateCopyWith<$Res> {
+  factory $ProductWatcherStateCopyWith(
+          ProductWatcherState value, $Res Function(ProductWatcherState) then) =
+      _$ProductWatcherStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProductWatchStateCopyWithImpl<$Res>
-    implements $ProductWatchStateCopyWith<$Res> {
-  _$ProductWatchStateCopyWithImpl(this._value, this._then);
+class _$ProductWatcherStateCopyWithImpl<$Res>
+    implements $ProductWatcherStateCopyWith<$Res> {
+  _$ProductWatcherStateCopyWithImpl(this._value, this._then);
 
-  final ProductWatchState _value;
+  final ProductWatcherState _value;
   // ignore: unused_field
-  final $Res Function(ProductWatchState) _then;
+  final $Res Function(ProductWatcherState) _then;
 }
 
 /// @nodoc
@@ -414,7 +408,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$ProductWatchStateCopyWithImpl<$Res>
+    extends _$ProductWatcherStateCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, (v) => _then(v as _$_Initial));
@@ -430,7 +424,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ProductWatchState.initial()';
+    return 'ProductWatcherState.initial()';
   }
 
   @override
@@ -447,7 +441,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<ProductEntity> products) loadSuccess,
+    required TResult Function(List<Product> products) loadSuccess,
     required TResult Function(ProductFailure productFailure) loadFailure,
   }) {
     return initial();
@@ -458,7 +452,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
   }) {
     return initial?.call();
@@ -469,7 +463,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -517,7 +511,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ProductWatchState {
+abstract class _Initial implements ProductWatcherState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -530,7 +524,7 @@ abstract class _$$_DataTransferInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DataTransferInProgressCopyWithImpl<$Res>
-    extends _$ProductWatchStateCopyWithImpl<$Res>
+    extends _$ProductWatcherStateCopyWithImpl<$Res>
     implements _$$_DataTransferInProgressCopyWith<$Res> {
   __$$_DataTransferInProgressCopyWithImpl(_$_DataTransferInProgress _value,
       $Res Function(_$_DataTransferInProgress) _then)
@@ -548,7 +542,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
 
   @override
   String toString() {
-    return 'ProductWatchState.loadInProgress()';
+    return 'ProductWatcherState.loadInProgress()';
   }
 
   @override
@@ -566,7 +560,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<ProductEntity> products) loadSuccess,
+    required TResult Function(List<Product> products) loadSuccess,
     required TResult Function(ProductFailure productFailure) loadFailure,
   }) {
     return loadInProgress();
@@ -577,7 +571,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
   }) {
     return loadInProgress?.call();
@@ -588,7 +582,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -636,7 +630,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
   }
 }
 
-abstract class _DataTransferInProgress implements ProductWatchState {
+abstract class _DataTransferInProgress implements ProductWatcherState {
   const factory _DataTransferInProgress() = _$_DataTransferInProgress;
 }
 
@@ -645,12 +639,12 @@ abstract class _$$_LoadSuccessCopyWith<$Res> {
   factory _$$_LoadSuccessCopyWith(
           _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
       __$$_LoadSuccessCopyWithImpl<$Res>;
-  $Res call({List<ProductEntity> products});
+  $Res call({List<Product> products});
 }
 
 /// @nodoc
 class __$$_LoadSuccessCopyWithImpl<$Res>
-    extends _$ProductWatchStateCopyWithImpl<$Res>
+    extends _$ProductWatcherStateCopyWithImpl<$Res>
     implements _$$_LoadSuccessCopyWith<$Res> {
   __$$_LoadSuccessCopyWithImpl(
       _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
@@ -667,7 +661,7 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
       products == freezed
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<ProductEntity>,
+              as List<Product>,
     ));
   }
 }
@@ -675,19 +669,18 @@ class __$$_LoadSuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(final List<ProductEntity> products)
-      : _products = products;
+  const _$_LoadSuccess(final List<Product> products) : _products = products;
 
-  final List<ProductEntity> _products;
+  final List<Product> _products;
   @override
-  List<ProductEntity> get products {
+  List<Product> get products {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
   }
 
   @override
   String toString() {
-    return 'ProductWatchState.loadSuccess(products: $products)';
+    return 'ProductWatcherState.loadSuccess(products: $products)';
   }
 
   @override
@@ -712,7 +705,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<ProductEntity> products) loadSuccess,
+    required TResult Function(List<Product> products) loadSuccess,
     required TResult Function(ProductFailure productFailure) loadFailure,
   }) {
     return loadSuccess(products);
@@ -723,7 +716,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
   }) {
     return loadSuccess?.call(products);
@@ -734,7 +727,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -782,11 +775,10 @@ class _$_LoadSuccess implements _LoadSuccess {
   }
 }
 
-abstract class _LoadSuccess implements ProductWatchState {
-  const factory _LoadSuccess(final List<ProductEntity> products) =
-      _$_LoadSuccess;
+abstract class _LoadSuccess implements ProductWatcherState {
+  const factory _LoadSuccess(final List<Product> products) = _$_LoadSuccess;
 
-  List<ProductEntity> get products => throw _privateConstructorUsedError;
+  List<Product> get products => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -804,7 +796,7 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadFailureCopyWithImpl<$Res>
-    extends _$ProductWatchStateCopyWithImpl<$Res>
+    extends _$ProductWatcherStateCopyWithImpl<$Res>
     implements _$$_LoadFailureCopyWith<$Res> {
   __$$_LoadFailureCopyWithImpl(
       _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
@@ -843,7 +835,7 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   String toString() {
-    return 'ProductWatchState.loadFailure(productFailure: $productFailure)';
+    return 'ProductWatcherState.loadFailure(productFailure: $productFailure)';
   }
 
   @override
@@ -869,7 +861,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<ProductEntity> products) loadSuccess,
+    required TResult Function(List<Product> products) loadSuccess,
     required TResult Function(ProductFailure productFailure) loadFailure,
   }) {
     return loadFailure(productFailure);
@@ -880,7 +872,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
   }) {
     return loadFailure?.call(productFailure);
@@ -891,7 +883,7 @@ class _$_LoadFailure implements _LoadFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<ProductEntity> products)? loadSuccess,
+    TResult Function(List<Product> products)? loadSuccess,
     TResult Function(ProductFailure productFailure)? loadFailure,
     required TResult orElse(),
   }) {
@@ -939,7 +931,7 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements ProductWatchState {
+abstract class _LoadFailure implements ProductWatcherState {
   const factory _LoadFailure(final ProductFailure productFailure) =
       _$_LoadFailure;
 

@@ -22,7 +22,7 @@ main() {
 
   final productRepository = ProductRepository(productDataSourceMock);
 
-  final ProductEntity product = ProductEntity(
+  final Product product = Product(
     id: UniqueId.fromUniqueString(const Uuid().v1().toString()),
     title: ProductTitle('test'),
     type: ProductType('test'),
@@ -194,8 +194,7 @@ main() {
       );
     });
 
-    test(
-        'should listen a stream of ProductoDto and map to a stream of ProductEntity',
+    test('should listen a stream of ProductoDto and map to a stream of Product',
         () {
       final controller = StreamController<List<ProductDto>>();
 

@@ -1,10 +1,11 @@
 part of 'product_watch_bloc.dart';
 
 @freezed
-class ProductWatchEvent with _$ProductWatchEvent {
-  const factory ProductWatchEvent.startedWatchProducts() = _StartWatchProducts;
+class ProductWatcherEvent with _$ProductWatcherEvent {
+  const factory ProductWatcherEvent.startedWatchProducts() =
+      _StartWatchProducts;
 
-  const factory ProductWatchEvent.productsReceived(
-          Either<ProductFailure, List<ProductEntity>> failureOrProducts) =
+  const factory ProductWatcherEvent.productsReceived(
+          Either<ProductFailure, List<Product>> failureOrProducts) =
       _ProductsReceived;
 }

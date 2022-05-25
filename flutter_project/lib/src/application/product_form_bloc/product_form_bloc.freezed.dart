@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -29,7 +29,7 @@ mixin _$ProductFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -40,7 +40,7 @@ mixin _$ProductFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -108,7 +108,7 @@ abstract class _$$_InitializeCopyWith<$Res> {
   factory _$$_InitializeCopyWith(
           _$_Initialize value, $Res Function(_$_Initialize) then) =
       __$$_InitializeCopyWithImpl<$Res>;
-  $Res call({Option<ProductEntity> initialProduct});
+  $Res call({Option<Product> initialProduct});
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ class __$$_InitializeCopyWithImpl<$Res>
       initialProduct == freezed
           ? _value.initialProduct
           : initialProduct // ignore: cast_nullable_to_non_nullable
-              as Option<ProductEntity>,
+              as Option<Product>,
     ));
   }
 }
@@ -141,7 +141,7 @@ class _$_Initialize implements _Initialize {
   const _$_Initialize(this.initialProduct);
 
   @override
-  final Option<ProductEntity> initialProduct;
+  final Option<Product> initialProduct;
 
   @override
   String toString() {
@@ -169,7 +169,7 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -183,7 +183,7 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -197,7 +197,7 @@ class _$_Initialize implements _Initialize {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -260,11 +260,10 @@ class _$_Initialize implements _Initialize {
 }
 
 abstract class _Initialize implements ProductFormEvent {
-  const factory _Initialize(final Option<ProductEntity> initialProduct) =
+  const factory _Initialize(final Option<Product> initialProduct) =
       _$_Initialize;
 
-  Option<ProductEntity> get initialProduct =>
-      throw _privateConstructorUsedError;
+  Option<Product> get initialProduct => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_InitializeCopyWith<_$_Initialize> get copyWith =>
       throw _privateConstructorUsedError;
@@ -335,7 +334,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -349,7 +348,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -363,7 +362,7 @@ class _$_TitleChanged implements _TitleChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -501,7 +500,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -515,7 +514,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -529,7 +528,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -666,7 +665,7 @@ class _$_TypeChanged implements _TypeChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -680,7 +679,7 @@ class _$_TypeChanged implements _TypeChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -694,7 +693,7 @@ class _$_TypeChanged implements _TypeChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -830,7 +829,7 @@ class _$_PriceChanged implements _PriceChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -844,7 +843,7 @@ class _$_PriceChanged implements _PriceChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -858,7 +857,7 @@ class _$_PriceChanged implements _PriceChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -994,7 +993,7 @@ class _$_RatingChanged implements _RatingChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -1008,7 +1007,7 @@ class _$_RatingChanged implements _RatingChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -1022,7 +1021,7 @@ class _$_RatingChanged implements _RatingChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -1131,7 +1130,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<ProductEntity> initialProduct) initialize,
+    required TResult Function(Option<Product> initialProduct) initialize,
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
@@ -1145,7 +1144,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -1159,7 +1158,7 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<ProductEntity> initialProduct)? initialize,
+    TResult Function(Option<Product> initialProduct)? initialize,
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
@@ -1227,7 +1226,7 @@ abstract class _Saved implements ProductFormEvent {
 
 /// @nodoc
 mixin _$ProductFormState {
-  ProductEntity? get product => throw _privateConstructorUsedError;
+  Product? get product => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   Option<Either<ProductFailure, Unit>> get saveFailureOrSuccessOption =>
@@ -1244,12 +1243,12 @@ abstract class $ProductFormStateCopyWith<$Res> {
           ProductFormState value, $Res Function(ProductFormState) then) =
       _$ProductFormStateCopyWithImpl<$Res>;
   $Res call(
-      {ProductEntity? product,
+      {Product? product,
       bool showErrorMessages,
       bool isSaving,
       Option<Either<ProductFailure, Unit>> saveFailureOrSuccessOption});
 
-  $ProductEntityCopyWith<$Res>? get product;
+  $ProductCopyWith<$Res>? get product;
 }
 
 /// @nodoc
@@ -1272,7 +1271,7 @@ class _$ProductFormStateCopyWithImpl<$Res>
       product: product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as ProductEntity?,
+              as Product?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1289,12 +1288,12 @@ class _$ProductFormStateCopyWithImpl<$Res>
   }
 
   @override
-  $ProductEntityCopyWith<$Res>? get product {
+  $ProductCopyWith<$Res>? get product {
     if (_value.product == null) {
       return null;
     }
 
-    return $ProductEntityCopyWith<$Res>(_value.product!, (value) {
+    return $ProductCopyWith<$Res>(_value.product!, (value) {
       return _then(_value.copyWith(product: value));
     });
   }
@@ -1308,13 +1307,13 @@ abstract class _$$_NoteFormStateCopyWith<$Res>
       __$$_NoteFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {ProductEntity? product,
+      {Product? product,
       bool showErrorMessages,
       bool isSaving,
       Option<Either<ProductFailure, Unit>> saveFailureOrSuccessOption});
 
   @override
-  $ProductEntityCopyWith<$Res>? get product;
+  $ProductCopyWith<$Res>? get product;
 }
 
 /// @nodoc
@@ -1339,7 +1338,7 @@ class __$$_NoteFormStateCopyWithImpl<$Res>
       product: product == freezed
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as ProductEntity?,
+              as Product?,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1366,7 +1365,7 @@ class _$_NoteFormState implements _NoteFormState {
       required this.saveFailureOrSuccessOption});
 
   @override
-  final ProductEntity? product;
+  final Product? product;
   @override
   final bool showErrorMessages;
   @override
@@ -1408,14 +1407,14 @@ class _$_NoteFormState implements _NoteFormState {
 
 abstract class _NoteFormState implements ProductFormState {
   const factory _NoteFormState(
-      {final ProductEntity? product,
+      {final Product? product,
       required final bool showErrorMessages,
       required final bool isSaving,
       required final Option<Either<ProductFailure, Unit>>
           saveFailureOrSuccessOption}) = _$_NoteFormState;
 
   @override
-  ProductEntity? get product => throw _privateConstructorUsedError;
+  Product? get product => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override

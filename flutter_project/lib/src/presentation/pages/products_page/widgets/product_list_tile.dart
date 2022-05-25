@@ -4,9 +4,9 @@ import 'package:intl/intl.dart';
 import 'package:flutter_project/src/domain/entities/product_entity.dart';
 
 class ProductListTile extends StatelessWidget {
-  final ProductEntity product;
-  final void Function(ProductEntity) handleEditButtonTap;
-  final void Function(ProductEntity) handleDeleteButtonTap;
+  final Product product;
+  final void Function(Product) handleEditButtonTap;
+  final void Function(Product) handleDeleteButtonTap;
 
   const ProductListTile({
     Key? key,
