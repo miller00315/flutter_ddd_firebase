@@ -1,6 +1,6 @@
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
-import 'package:flutter_project/src/domain/entities/product_entity.dart';
+import 'package:flutter_project/src/domain/entities/product.dart';
 import 'package:flutter_project/src/domain/entities/value_objects.dart';
 import 'package:flutter_project/src/infrastructure/dtos/product_dto.dart';
 import 'package:flutter_test/flutter_test.dart';

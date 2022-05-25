@@ -5,7 +5,7 @@ import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'product_entity.freezed.dart';
+part 'product.freezed.dart';
 
 @freezed
 class Product with _$Product implements IEntity {

@@ -1,12 +1,12 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_form_bloc/product_form_bloc.dart';
-import 'package:flutter_project/src/domain/core/failures.dart';
-import 'package:flutter_project/src/domain/entities/product_entity.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_project/src/domain/entities/product.dart';
 import 'package:dartz/dartz.dart' as dartz;
+import 'package:intl/intl.dart';
 
 class EditProductPage extends StatefulWidget {
   static const routeName = '/edit_Product';
@@ -102,7 +102,14 @@ class _EditProductPageState extends State<EditProductPage> {
                           keyboardType: TextInputType.number,
                           inputFormatters: [_formatter],
                           initialValue: _formatter.format(
-                            state.product!.price.getOrElse(0).toString(),
+                            state.product!.price
+                                        .getOrElse(0)
+                                        .toString()
+                                        .length ==
+                                    4
+                                ? state.product!.price.getOrElse(0).toString() +
+                                    '0' //TODO: verificar este valor ao iniciar
+                                : state.product!.price.getOrElse(0).toString(),
                           ),
                           onChanged: (value) => bloc.add(
                             ProductFormEvent.priceChanged(
@@ -118,6 +125,21 @@ class _EditProductPageState extends State<EditProductPage> {
                             ),
                             (_) => null,
                           ),
+                        ),
+                        TextFormField(
+                          keyboardType: TextInputType.number,
+                          initialValue: state.product!.rating.toString(),
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp("[0-9]")),
+                            FilteringTextInputFormatter.deny(RegExp(r'^0+'))
+                          ],
+                          onChanged: (value) {
+                            final int rating = value.isEmpty
+                                ? 0
+                                : int.parse(value.replaceAll(',', ''));
+
+                            bloc.add(ProductFormEvent.ratingChanged(rating));
+                          },
                         ),
                       ],
                     ),

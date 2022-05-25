@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/src/domain/entities/product_entity.dart';
+import 'package:flutter_project/src/domain/entities/product.dart';
 import 'package:flutter_project/src/domain/entities/product_failures.dart';
 
 abstract class IProductRepository {

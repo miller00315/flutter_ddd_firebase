@@ -1,5 +1,5 @@
 import 'package:flutter_project/src/domain/core/value_objects.dart';
-import 'package:flutter_project/src/domain/entities/product_entity.dart';
+import 'package:flutter_project/src/domain/entities/product.dart';
 import 'package:flutter_project/src/domain/entities/value_objects.dart';
 import 'package:flutter_project/src/infrastructure/data_sources/products_data_source.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

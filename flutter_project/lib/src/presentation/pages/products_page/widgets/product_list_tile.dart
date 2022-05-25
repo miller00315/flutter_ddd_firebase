@@ -1,7 +1,7 @@
 import 'package:firebase_image/firebase_image.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_project/src/domain/entities/product_entity.dart';
+import 'package:flutter_project/src/domain/entities/product.dart';
 
 class ProductListTile extends StatelessWidget {
   final Product product;
