@@ -16,43 +16,42 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ProductEditEvent {
+  ProductEntity get product => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(ProductEntity product) update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(ProductEntity product)? update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(ProductEntity product)? update,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_Update value) update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_Update value)? update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_Update value)? update,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ProductEditEventCopyWith<ProductEditEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -61,6 +60,9 @@ abstract class $ProductEditEventCopyWith<$Res> {
   factory $ProductEditEventCopyWith(
           ProductEditEvent value, $Res Function(ProductEditEvent) then) =
       _$ProductEditEventCopyWithImpl<$Res>;
+  $Res call({ProductEntity product});
+
+  $ProductEntityCopyWith<$Res> get product;
 }
 
 /// @nodoc
@@ -71,118 +73,36 @@ class _$ProductEditEventCopyWithImpl<$Res>
   final ProductEditEvent _value;
   // ignore: unused_field
   final $Res Function(ProductEditEvent) _then;
+
+  @override
+  $Res call({
+    Object? product = freezed,
+  }) {
+    return _then(_value.copyWith(
+      product: product == freezed
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as ProductEntity,
+    ));
+  }
+
+  @override
+  $ProductEntityCopyWith<$Res> get product {
+    return $ProductEntityCopyWith<$Res>(_value.product, (value) {
+      return _then(_value.copyWith(product: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$ProductEditEventCopyWithImpl<$Res>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, (v) => _then(v as _$_Started));
-
-  @override
-  _$_Started get _value => super._value as _$_Started;
-}
-
-/// @nodoc
-
-class _$_Started implements _Started {
-  const _$_Started();
-
-  @override
-  String toString() {
-    return 'ProductEditEvent.started()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(ProductEntity product) update,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(ProductEntity product)? update,
-  }) {
-    return started?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(ProductEntity product)? update,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_Update value) update,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Update value)? update,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_Update value)? update,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements ProductEditEvent {
-  const factory _Started() = _$_Started;
-}
-
-/// @nodoc
-abstract class _$$_UpdateCopyWith<$Res> {
+abstract class _$$_UpdateCopyWith<$Res>
+    implements $ProductEditEventCopyWith<$Res> {
   factory _$$_UpdateCopyWith(_$_Update value, $Res Function(_$_Update) then) =
       __$$_UpdateCopyWithImpl<$Res>;
+  @override
   $Res call({ProductEntity product});
 
+  @override
   $ProductEntityCopyWith<$Res> get product;
 }
 
@@ -205,13 +125,6 @@ class __$$_UpdateCopyWithImpl<$Res> extends _$ProductEditEventCopyWithImpl<$Res>
           : product // ignore: cast_nullable_to_non_nullable
               as ProductEntity,
     ));
-  }
-
-  @override
-  $ProductEntityCopyWith<$Res> get product {
-    return $ProductEntityCopyWith<$Res>(_value.product, (value) {
-      return _then(_value.copyWith(product: value));
-    });
   }
 }
 
@@ -248,7 +161,6 @@ class _$_Update implements _Update {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(ProductEntity product) update,
   }) {
     return update(product);
@@ -257,7 +169,6 @@ class _$_Update implements _Update {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(ProductEntity product)? update,
   }) {
     return update?.call(product);
@@ -266,7 +177,6 @@ class _$_Update implements _Update {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(ProductEntity product)? update,
     required TResult orElse(),
   }) {
@@ -279,7 +189,6 @@ class _$_Update implements _Update {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_Update value) update,
   }) {
     return update(this);
@@ -288,7 +197,6 @@ class _$_Update implements _Update {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_Update value)? update,
   }) {
     return update?.call(this);
@@ -297,7 +205,6 @@ class _$_Update implements _Update {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_Update value)? update,
     required TResult orElse(),
   }) {
@@ -311,7 +218,9 @@ class _$_Update implements _Update {
 abstract class _Update implements ProductEditEvent {
   const factory _Update(final ProductEntity product) = _$_Update;
 
+  @override
   ProductEntity get product => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$$_UpdateCopyWith<_$_Update> get copyWith =>
       throw _privateConstructorUsedError;
@@ -324,7 +233,7 @@ mixin _$ProductEditState {
     required TResult Function() initial,
     required TResult Function() updateInProgress,
     required TResult Function() updateSuccess,
-    required TResult Function() updateFailure,
+    required TResult Function(ProductFailure productFailure) updateFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -332,7 +241,7 @@ mixin _$ProductEditState {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -340,7 +249,7 @@ mixin _$ProductEditState {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -431,7 +340,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() updateInProgress,
     required TResult Function() updateSuccess,
-    required TResult Function() updateFailure,
+    required TResult Function(ProductFailure productFailure) updateFailure,
   }) {
     return initial();
   }
@@ -442,7 +351,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
   }) {
     return initial?.call();
   }
@@ -453,7 +362,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -550,7 +459,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
     required TResult Function() initial,
     required TResult Function() updateInProgress,
     required TResult Function() updateSuccess,
-    required TResult Function() updateFailure,
+    required TResult Function(ProductFailure productFailure) updateFailure,
   }) {
     return updateInProgress();
   }
@@ -561,7 +470,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
   }) {
     return updateInProgress?.call();
   }
@@ -572,7 +481,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
     required TResult orElse(),
   }) {
     if (updateInProgress != null) {
@@ -667,7 +576,7 @@ class _$_UpdateSuccess implements _UpdateSuccess {
     required TResult Function() initial,
     required TResult Function() updateInProgress,
     required TResult Function() updateSuccess,
-    required TResult Function() updateFailure,
+    required TResult Function(ProductFailure productFailure) updateFailure,
   }) {
     return updateSuccess();
   }
@@ -678,7 +587,7 @@ class _$_UpdateSuccess implements _UpdateSuccess {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
   }) {
     return updateSuccess?.call();
   }
@@ -689,7 +598,7 @@ class _$_UpdateSuccess implements _UpdateSuccess {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
     required TResult orElse(),
   }) {
     if (updateSuccess != null) {
@@ -745,6 +654,9 @@ abstract class _$$_UpdateFailureCopyWith<$Res> {
   factory _$$_UpdateFailureCopyWith(
           _$_UpdateFailure value, $Res Function(_$_UpdateFailure) then) =
       __$$_UpdateFailureCopyWithImpl<$Res>;
+  $Res call({ProductFailure productFailure});
+
+  $ProductFailureCopyWith<$Res> get productFailure;
 }
 
 /// @nodoc
@@ -757,26 +669,57 @@ class __$$_UpdateFailureCopyWithImpl<$Res>
 
   @override
   _$_UpdateFailure get _value => super._value as _$_UpdateFailure;
+
+  @override
+  $Res call({
+    Object? productFailure = freezed,
+  }) {
+    return _then(_$_UpdateFailure(
+      productFailure == freezed
+          ? _value.productFailure
+          : productFailure // ignore: cast_nullable_to_non_nullable
+              as ProductFailure,
+    ));
+  }
+
+  @override
+  $ProductFailureCopyWith<$Res> get productFailure {
+    return $ProductFailureCopyWith<$Res>(_value.productFailure, (value) {
+      return _then(_value.copyWith(productFailure: value));
+    });
+  }
 }
 
 /// @nodoc
 
 class _$_UpdateFailure implements _UpdateFailure {
-  const _$_UpdateFailure();
+  const _$_UpdateFailure(this.productFailure);
+
+  @override
+  final ProductFailure productFailure;
 
   @override
   String toString() {
-    return 'ProductEditState.updateFailure()';
+    return 'ProductEditState.updateFailure(productFailure: $productFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UpdateFailure);
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateFailure &&
+            const DeepCollectionEquality()
+                .equals(other.productFailure, productFailure));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(productFailure));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UpdateFailureCopyWith<_$_UpdateFailure> get copyWith =>
+      __$$_UpdateFailureCopyWithImpl<_$_UpdateFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -784,9 +727,9 @@ class _$_UpdateFailure implements _UpdateFailure {
     required TResult Function() initial,
     required TResult Function() updateInProgress,
     required TResult Function() updateSuccess,
-    required TResult Function() updateFailure,
+    required TResult Function(ProductFailure productFailure) updateFailure,
   }) {
-    return updateFailure();
+    return updateFailure(productFailure);
   }
 
   @override
@@ -795,9 +738,9 @@ class _$_UpdateFailure implements _UpdateFailure {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
   }) {
-    return updateFailure?.call();
+    return updateFailure?.call(productFailure);
   }
 
   @override
@@ -806,11 +749,11 @@ class _$_UpdateFailure implements _UpdateFailure {
     TResult Function()? initial,
     TResult Function()? updateInProgress,
     TResult Function()? updateSuccess,
-    TResult Function()? updateFailure,
+    TResult Function(ProductFailure productFailure)? updateFailure,
     required TResult orElse(),
   }) {
     if (updateFailure != null) {
-      return updateFailure();
+      return updateFailure(productFailure);
     }
     return orElse();
   }
@@ -854,5 +797,11 @@ class _$_UpdateFailure implements _UpdateFailure {
 }
 
 abstract class _UpdateFailure implements ProductEditState {
-  const factory _UpdateFailure() = _$_UpdateFailure;
+  const factory _UpdateFailure(final ProductFailure productFailure) =
+      _$_UpdateFailure;
+
+  ProductFailure get productFailure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_UpdateFailureCopyWith<_$_UpdateFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }

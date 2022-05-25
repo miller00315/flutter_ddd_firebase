@@ -201,7 +201,7 @@ main() {
         (_) => controller.stream,
       );
 
-      productRepository.watchAll().listen((event) {
+      final listener = productRepository.watchAll().listen((event) {
         expect(event.isRight(), true);
 
         event.fold(
@@ -211,6 +211,8 @@ main() {
       });
 
       controller.sink.add([productDto]);
+
+      listener.cancel();
 
       controller.close();
     });
@@ -224,7 +226,7 @@ main() {
         (_) => controller.stream,
       );
 
-      productRepository.watchAll().listen((event) {
+      final listener = productRepository.watchAll().listen((event) {
         expect(event.isLeft(), true);
 
         event.fold(
@@ -238,6 +240,8 @@ main() {
         message: 'PERMISSION_DENIED',
       ));
 
+      listener.cancel();
+
       controller.close();
     });
 
@@ -250,7 +254,7 @@ main() {
         (_) => controller.stream,
       );
 
-      productRepository.watchAll().listen((event) {
+      final listener = productRepository.watchAll().listen((event) {
         expect(event.isLeft(), true);
 
         event.fold(
@@ -263,6 +267,8 @@ main() {
         code: '500',
         message: 'UNKNOWN',
       ));
+
+      listener.cancel();
 
       controller.close();
     });
