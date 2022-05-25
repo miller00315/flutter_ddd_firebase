@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
@@ -23,9 +24,16 @@ void main() {
 
   final productsDataSource = ProductsDataSource(instance);
 
+  StreamSubscription? listener;
+
+  //TODO: Verificar melhor maneir de realizar estes testes
   group('ProductDataSource =>', () {
     setUpAll(() async {
       await instance.collection('products').add(json);
+    });
+
+    tearDown(() {
+      listener?.cancel();
     });
 
     test('should listen firebase database', () async {
@@ -33,12 +41,10 @@ void main() {
 
       final productDto = ProductDto.fromFirestore(snapshot.docs.first);
 
-      final listener = productsDataSource.watchAll().listen((event) {
+      listener = productsDataSource.watchAll().listen((event) {
         expect(event.length, 1);
         expect(event.first, productDto);
       });
-
-      listener.cancel();
     });
 
     test('should update firestore value when call update', () async {
@@ -100,15 +106,14 @@ void main() {
     });
 
     test('should listen when new data is added to database', () async {
-      final listener = productsDataSource.watchAll().listen((event) {
+      listener = productsDataSource.watchAll().listen((event) {
         expect(event.length, 1);
       });
 
       await instance.collection('products').add(json);
 
-      await Future.delayed(const Duration(seconds: 2));
-
-      listener.cancel();
+      //TODO: Verificar esta parte do teste apra que espere o test terminar
+      await Future.delayed(const Duration(seconds: 1));
     });
   });
 }
