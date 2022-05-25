@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'product_bloc.dart';
+part of 'product_watch_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProductEvent {
+mixin _$ProductWatchEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() startedWatchProducts,
@@ -63,19 +63,20 @@ mixin _$ProductEvent {
 }
 
 /// @nodoc
-abstract class $ProductEventCopyWith<$Res> {
-  factory $ProductEventCopyWith(
-          ProductEvent value, $Res Function(ProductEvent) then) =
-      _$ProductEventCopyWithImpl<$Res>;
+abstract class $ProductWatchEventCopyWith<$Res> {
+  factory $ProductWatchEventCopyWith(
+          ProductWatchEvent value, $Res Function(ProductWatchEvent) then) =
+      _$ProductWatchEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProductEventCopyWithImpl<$Res> implements $ProductEventCopyWith<$Res> {
-  _$ProductEventCopyWithImpl(this._value, this._then);
+class _$ProductWatchEventCopyWithImpl<$Res>
+    implements $ProductWatchEventCopyWith<$Res> {
+  _$ProductWatchEventCopyWithImpl(this._value, this._then);
 
-  final ProductEvent _value;
+  final ProductWatchEvent _value;
   // ignore: unused_field
-  final $Res Function(ProductEvent) _then;
+  final $Res Function(ProductWatchEvent) _then;
 }
 
 /// @nodoc
@@ -87,7 +88,7 @@ abstract class _$$_StartWatchProductsCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StartWatchProductsCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res>
+    extends _$ProductWatchEventCopyWithImpl<$Res>
     implements _$$_StartWatchProductsCopyWith<$Res> {
   __$$_StartWatchProductsCopyWithImpl(
       _$_StartWatchProducts _value, $Res Function(_$_StartWatchProducts) _then)
@@ -104,7 +105,7 @@ class _$_StartWatchProducts implements _StartWatchProducts {
 
   @override
   String toString() {
-    return 'ProductEvent.startedWatchProducts()';
+    return 'ProductWatchEvent.startedWatchProducts()';
   }
 
   @override
@@ -185,7 +186,7 @@ class _$_StartWatchProducts implements _StartWatchProducts {
   }
 }
 
-abstract class _StartWatchProducts implements ProductEvent {
+abstract class _StartWatchProducts implements ProductWatchEvent {
   const factory _StartWatchProducts() = _$_StartWatchProducts;
 }
 
@@ -199,7 +200,7 @@ abstract class _$$_ProductsReceivedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ProductsReceivedCopyWithImpl<$Res>
-    extends _$ProductEventCopyWithImpl<$Res>
+    extends _$ProductWatchEventCopyWithImpl<$Res>
     implements _$$_ProductsReceivedCopyWith<$Res> {
   __$$_ProductsReceivedCopyWithImpl(
       _$_ProductsReceived _value, $Res Function(_$_ProductsReceived) _then)
@@ -231,7 +232,7 @@ class _$_ProductsReceived implements _ProductsReceived {
 
   @override
   String toString() {
-    return 'ProductEvent.productsReceived(failureOrProducts: $failureOrProducts)';
+    return 'ProductWatchEvent.productsReceived(failureOrProducts: $failureOrProducts)';
   }
 
   @override
@@ -321,7 +322,7 @@ class _$_ProductsReceived implements _ProductsReceived {
   }
 }
 
-abstract class _ProductsReceived implements ProductEvent {
+abstract class _ProductsReceived implements ProductWatchEvent {
   const factory _ProductsReceived(
           final Either<ProductFailure, List<ProductEntity>> failureOrProducts) =
       _$_ProductsReceived;
@@ -334,7 +335,7 @@ abstract class _ProductsReceived implements ProductEvent {
 }
 
 /// @nodoc
-mixin _$ProductState {
+mixin _$ProductWatchState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -388,19 +389,20 @@ mixin _$ProductState {
 }
 
 /// @nodoc
-abstract class $ProductStateCopyWith<$Res> {
-  factory $ProductStateCopyWith(
-          ProductState value, $Res Function(ProductState) then) =
-      _$ProductStateCopyWithImpl<$Res>;
+abstract class $ProductWatchStateCopyWith<$Res> {
+  factory $ProductWatchStateCopyWith(
+          ProductWatchState value, $Res Function(ProductWatchState) then) =
+      _$ProductWatchStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProductStateCopyWithImpl<$Res> implements $ProductStateCopyWith<$Res> {
-  _$ProductStateCopyWithImpl(this._value, this._then);
+class _$ProductWatchStateCopyWithImpl<$Res>
+    implements $ProductWatchStateCopyWith<$Res> {
+  _$ProductWatchStateCopyWithImpl(this._value, this._then);
 
-  final ProductState _value;
+  final ProductWatchState _value;
   // ignore: unused_field
-  final $Res Function(ProductState) _then;
+  final $Res Function(ProductWatchState) _then;
 }
 
 /// @nodoc
@@ -411,7 +413,8 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$ProductWatchStateCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, (v) => _then(v as _$_Initial));
@@ -427,7 +430,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'ProductState.initial()';
+    return 'ProductWatchState.initial()';
   }
 
   @override
@@ -514,7 +517,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements ProductState {
+abstract class _Initial implements ProductWatchState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -527,7 +530,7 @@ abstract class _$$_DataTransferInProgressCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DataTransferInProgressCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res>
+    extends _$ProductWatchStateCopyWithImpl<$Res>
     implements _$$_DataTransferInProgressCopyWith<$Res> {
   __$$_DataTransferInProgressCopyWithImpl(_$_DataTransferInProgress _value,
       $Res Function(_$_DataTransferInProgress) _then)
@@ -545,7 +548,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
 
   @override
   String toString() {
-    return 'ProductState.loadInProgress()';
+    return 'ProductWatchState.loadInProgress()';
   }
 
   @override
@@ -633,7 +636,7 @@ class _$_DataTransferInProgress implements _DataTransferInProgress {
   }
 }
 
-abstract class _DataTransferInProgress implements ProductState {
+abstract class _DataTransferInProgress implements ProductWatchState {
   const factory _DataTransferInProgress() = _$_DataTransferInProgress;
 }
 
@@ -647,7 +650,7 @@ abstract class _$$_LoadSuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadSuccessCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res>
+    extends _$ProductWatchStateCopyWithImpl<$Res>
     implements _$$_LoadSuccessCopyWith<$Res> {
   __$$_LoadSuccessCopyWithImpl(
       _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
@@ -684,7 +687,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   String toString() {
-    return 'ProductState.loadSuccess(products: $products)';
+    return 'ProductWatchState.loadSuccess(products: $products)';
   }
 
   @override
@@ -779,7 +782,7 @@ class _$_LoadSuccess implements _LoadSuccess {
   }
 }
 
-abstract class _LoadSuccess implements ProductState {
+abstract class _LoadSuccess implements ProductWatchState {
   const factory _LoadSuccess(final List<ProductEntity> products) =
       _$_LoadSuccess;
 
@@ -801,7 +804,7 @@ abstract class _$$_LoadFailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LoadFailureCopyWithImpl<$Res>
-    extends _$ProductStateCopyWithImpl<$Res>
+    extends _$ProductWatchStateCopyWithImpl<$Res>
     implements _$$_LoadFailureCopyWith<$Res> {
   __$$_LoadFailureCopyWithImpl(
       _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
@@ -840,7 +843,7 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   String toString() {
-    return 'ProductState.loadFailure(productFailure: $productFailure)';
+    return 'ProductWatchState.loadFailure(productFailure: $productFailure)';
   }
 
   @override
@@ -936,7 +939,7 @@ class _$_LoadFailure implements _LoadFailure {
   }
 }
 
-abstract class _LoadFailure implements ProductState {
+abstract class _LoadFailure implements ProductWatchState {
   const factory _LoadFailure(final ProductFailure productFailure) =
       _$_LoadFailure;
 

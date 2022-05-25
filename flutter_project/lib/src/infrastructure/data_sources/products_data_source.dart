@@ -11,30 +11,11 @@ class ProductsDataSource implements IProductDataSource {
 
   @override
   Future delete(String id) async {
-    final exists = await _firestore.collection('products').doc(id).get();
-
-    if (exists.data() == null) {
-      throw PlatformException(
-        code: '404',
-        message: 'NOT_FOUND',
-      );
-    }
-
     await _firestore.collection('products').doc(id).delete();
   }
 
   @override
   Future update(ProductDto product) async {
-    final exists =
-        await _firestore.collection('products').doc(product.id).get();
-
-    if (exists.data() == null) {
-      throw PlatformException(
-        code: '404',
-        message: 'NOT_FOUND',
-      );
-    }
-
     await _firestore
         .collection('products')
         .doc(product.id)

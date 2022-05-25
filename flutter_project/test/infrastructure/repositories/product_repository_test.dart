@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/product_entity.dart';
 import 'package:flutter_project/src/domain/entities/product_failures.dart';
+import 'package:flutter_project/src/domain/entities/value_objects.dart';
 import 'package:flutter_project/src/infrastructure/data_sources/i_products_data_source.dart';
 import 'package:flutter_project/src/infrastructure/dtos/product_dto.dart';
 import 'package:flutter_project/src/infrastructure/repositories/product_repository.dart';
@@ -23,14 +24,15 @@ main() {
 
   final ProductEntity product = ProductEntity(
     id: UniqueId.fromUniqueString(const Uuid().v1().toString()),
-    title: 'test',
-    type: 'test',
+    title: ProductTitle('test'),
+    type: ProductType('test'),
     description: 'teste',
     filename: '0',
     height: 2,
     width: 2,
-    price: 2,
+    price: ProductPrice(2),
     rating: 2,
+    created: DateTime.now(),
   );
 
   final productDto = ProductDto.fromDomain(product);

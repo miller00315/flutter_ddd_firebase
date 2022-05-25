@@ -1,5 +1,6 @@
 import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/product_entity.dart';
+import 'package:flutter_project/src/domain/entities/value_objects.dart';
 import 'package:flutter_project/src/infrastructure/data_sources/products_data_source.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -18,6 +19,7 @@ class ProductDto with _$ProductDto {
     required int width,
     required double price,
     required int rating,
+    @JsonKey(ignore: true) DateTime? created,
   }) = _ProductDto;
 
   factory ProductDto.fromDomain(ProductEntity product) {
@@ -26,10 +28,10 @@ class ProductDto with _$ProductDto {
       description: product.description,
       filename: product.filename,
       height: product.height,
-      price: product.price,
+      price: product.price.getOrCrash(),
       rating: product.rating,
-      title: product.title,
-      type: product.type,
+      title: product.title.getOrCrash(),
+      type: product.type.getOrCrash(),
       width: product.width,
     );
   }
@@ -38,8 +40,14 @@ class ProductDto with _$ProductDto {
       _$ProductDtoFromJson(json);
 
   factory ProductDto.fromFirestore(QueryDocumentSnapshot doc) {
-    return ProductDto.fromJson(doc.data() as Map<String, dynamic>)
-        .copyWith(id: doc.id);
+    final docMap = doc.data() as Map<String, dynamic>;
+
+    Timestamp timestamp = docMap['created'];
+
+    return ProductDto.fromJson(docMap).copyWith(
+      id: doc.id,
+      created: timestamp.toDate(),
+    );
   }
 }
 
@@ -47,14 +55,15 @@ extension ProductDtoConverters on ProductDto {
   ProductEntity toDomain() {
     return ProductEntity(
       id: UniqueId.fromUniqueString(id!),
-      title: title,
-      type: type,
+      title: ProductTitle(title),
+      type: ProductType(type),
       description: description,
       filename: filename,
       height: height,
       width: width,
-      price: price,
+      price: ProductPrice(price),
       rating: rating,
+      created: created!,
     );
   }
 }

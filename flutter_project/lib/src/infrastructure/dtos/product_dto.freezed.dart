@@ -30,6 +30,8 @@ mixin _$ProductDto {
   int get width => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   int get rating => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  DateTime? get created => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51,7 +53,8 @@ abstract class $ProductDtoCopyWith<$Res> {
       int height,
       int width,
       double price,
-      int rating});
+      int rating,
+      @JsonKey(ignore: true) DateTime? created});
 }
 
 /// @nodoc
@@ -73,6 +76,7 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
     Object? width = freezed,
     Object? price = freezed,
     Object? rating = freezed,
+    Object? created = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -111,6 +115,10 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as int,
+      created: created == freezed
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -131,7 +139,8 @@ abstract class _$$_ProductDtoCopyWith<$Res>
       int height,
       int width,
       double price,
-      int rating});
+      int rating,
+      @JsonKey(ignore: true) DateTime? created});
 }
 
 /// @nodoc
@@ -155,6 +164,7 @@ class __$$_ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
     Object? width = freezed,
     Object? price = freezed,
     Object? rating = freezed,
+    Object? created = freezed,
   }) {
     return _then(_$_ProductDto(
       id: id == freezed
@@ -193,6 +203,10 @@ class __$$_ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as int,
+      created: created == freezed
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -209,7 +223,8 @@ class _$_ProductDto implements _ProductDto {
       required this.height,
       required this.width,
       required this.price,
-      required this.rating});
+      required this.rating,
+      @JsonKey(ignore: true) this.created});
 
   factory _$_ProductDto.fromJson(Map<String, dynamic> json) =>
       _$$_ProductDtoFromJson(json);
@@ -233,10 +248,13 @@ class _$_ProductDto implements _ProductDto {
   final double price;
   @override
   final int rating;
+  @override
+  @JsonKey(ignore: true)
+  final DateTime? created;
 
   @override
   String toString() {
-    return 'ProductDto(id: $id, title: $title, type: $type, description: $description, filename: $filename, height: $height, width: $width, price: $price, rating: $rating)';
+    return 'ProductDto(id: $id, title: $title, type: $type, description: $description, filename: $filename, height: $height, width: $width, price: $price, rating: $rating, created: $created)';
   }
 
   @override
@@ -253,7 +271,8 @@ class _$_ProductDto implements _ProductDto {
             const DeepCollectionEquality().equals(other.height, height) &&
             const DeepCollectionEquality().equals(other.width, width) &&
             const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            const DeepCollectionEquality().equals(other.rating, rating) &&
+            const DeepCollectionEquality().equals(other.created, created));
   }
 
   @JsonKey(ignore: true)
@@ -268,7 +287,8 @@ class _$_ProductDto implements _ProductDto {
       const DeepCollectionEquality().hash(height),
       const DeepCollectionEquality().hash(width),
       const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(rating));
+      const DeepCollectionEquality().hash(rating),
+      const DeepCollectionEquality().hash(created));
 
   @JsonKey(ignore: true)
   @override
@@ -291,7 +311,8 @@ abstract class _ProductDto implements ProductDto {
       required final int height,
       required final int width,
       required final double price,
-      required final int rating}) = _$_ProductDto;
+      required final int rating,
+      @JsonKey(ignore: true) final DateTime? created}) = _$_ProductDto;
 
   factory _ProductDto.fromJson(Map<String, dynamic> json) =
       _$_ProductDto.fromJson;
@@ -315,6 +336,9 @@ abstract class _ProductDto implements ProductDto {
   double get price => throw _privateConstructorUsedError;
   @override
   int get rating => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  DateTime? get created => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductDtoCopyWith<_$_ProductDto> get copyWith =>

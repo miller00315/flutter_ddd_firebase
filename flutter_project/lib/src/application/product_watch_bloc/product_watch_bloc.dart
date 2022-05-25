@@ -7,11 +7,11 @@ import 'package:flutter_project/src/domain/entities/product_failures.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'product_event.dart';
-part 'product_state.dart';
-part 'product_bloc.freezed.dart';
+part 'product_watch_event.dart';
+part 'product_watch_state.dart';
+part 'product_watch_bloc.freezed.dart';
 
-class ProductBloc extends Bloc<ProductEvent, ProductState> {
+class ProductWatchBloc extends Bloc<ProductWatchEvent, ProductWatchState> {
   final IProductRepository _productRepository;
 
   StreamSubscription<Either<ProductFailure, List<ProductEntity>>>?
@@ -23,24 +23,24 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
     super.close();
   }
 
-  ProductBloc(this._productRepository) : super(const _Initial()) {
-    on<ProductEvent>((event, emit) {
+  ProductWatchBloc(this._productRepository) : super(const _Initial()) {
+    on<ProductWatchEvent>((event, emit) {
       event.map(
         startedWatchProducts: (e) async {
           await _productsStreamSubscription?.cancel();
 
           _productsStreamSubscription = _productRepository.watchAll().listen(
                 (event) => add(
-                  ProductEvent.productsReceived(event),
+                  ProductWatchEvent.productsReceived(event),
                 ),
               );
         },
         productsReceived: (e) async {
-          emit(const ProductState.loadInProgress());
+          emit(const ProductWatchState.loadInProgress());
 
           e.failureOrProducts.fold(
-            (failure) => emit(ProductState.loadFailure(failure)),
-            (products) => emit(ProductState.loadSuccess(products)),
+            (failure) => emit(ProductWatchState.loadFailure(failure)),
+            (products) => emit(ProductWatchState.loadSuccess(products)),
           );
         },
       );

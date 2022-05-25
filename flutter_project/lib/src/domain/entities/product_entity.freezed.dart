@@ -17,14 +17,15 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ProductEntity {
   UniqueId get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  ProductTitle get title => throw _privateConstructorUsedError;
+  ProductType get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get filename => throw _privateConstructorUsedError;
   int get height => throw _privateConstructorUsedError;
   int get width => throw _privateConstructorUsedError;
-  double get price => throw _privateConstructorUsedError;
+  ProductPrice get price => throw _privateConstructorUsedError;
   int get rating => throw _privateConstructorUsedError;
+  DateTime get created => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductEntityCopyWith<ProductEntity> get copyWith =>
@@ -38,14 +39,15 @@ abstract class $ProductEntityCopyWith<$Res> {
       _$ProductEntityCopyWithImpl<$Res>;
   $Res call(
       {UniqueId id,
-      String title,
-      String type,
+      ProductTitle title,
+      ProductType type,
       String description,
       String filename,
       int height,
       int width,
-      double price,
-      int rating});
+      ProductPrice price,
+      int rating,
+      DateTime created});
 }
 
 /// @nodoc
@@ -68,6 +70,7 @@ class _$ProductEntityCopyWithImpl<$Res>
     Object? width = freezed,
     Object? price = freezed,
     Object? rating = freezed,
+    Object? created = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -77,11 +80,11 @@ class _$ProductEntityCopyWithImpl<$Res>
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ProductTitle,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ProductType,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -101,11 +104,15 @@ class _$ProductEntityCopyWithImpl<$Res>
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double,
+              as ProductPrice,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as int,
+      created: created == freezed
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -117,14 +124,15 @@ abstract class _$$_NoteCopyWith<$Res> implements $ProductEntityCopyWith<$Res> {
   @override
   $Res call(
       {UniqueId id,
-      String title,
-      String type,
+      ProductTitle title,
+      ProductType type,
       String description,
       String filename,
       int height,
       int width,
-      double price,
-      int rating});
+      ProductPrice price,
+      int rating,
+      DateTime created});
 }
 
 /// @nodoc
@@ -147,6 +155,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$ProductEntityCopyWithImpl<$Res>
     Object? width = freezed,
     Object? price = freezed,
     Object? rating = freezed,
+    Object? created = freezed,
   }) {
     return _then(_$_Note(
       id: id == freezed
@@ -156,11 +165,11 @@ class __$$_NoteCopyWithImpl<$Res> extends _$ProductEntityCopyWithImpl<$Res>
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ProductTitle,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ProductType,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -180,11 +189,15 @@ class __$$_NoteCopyWithImpl<$Res> extends _$ProductEntityCopyWithImpl<$Res>
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double,
+              as ProductPrice,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as int,
+      created: created == freezed
+          ? _value.created
+          : created // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -201,14 +214,15 @@ class _$_Note implements _Note {
       required this.height,
       required this.width,
       required this.price,
-      required this.rating});
+      required this.rating,
+      required this.created});
 
   @override
   final UniqueId id;
   @override
-  final String title;
+  final ProductTitle title;
   @override
-  final String type;
+  final ProductType type;
   @override
   final String description;
   @override
@@ -218,13 +232,15 @@ class _$_Note implements _Note {
   @override
   final int width;
   @override
-  final double price;
+  final ProductPrice price;
   @override
   final int rating;
+  @override
+  final DateTime created;
 
   @override
   String toString() {
-    return 'ProductEntity(id: $id, title: $title, type: $type, description: $description, filename: $filename, height: $height, width: $width, price: $price, rating: $rating)';
+    return 'ProductEntity(id: $id, title: $title, type: $type, description: $description, filename: $filename, height: $height, width: $width, price: $price, rating: $rating, created: $created)';
   }
 
   @override
@@ -241,7 +257,8 @@ class _$_Note implements _Note {
             const DeepCollectionEquality().equals(other.height, height) &&
             const DeepCollectionEquality().equals(other.width, width) &&
             const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality().equals(other.rating, rating));
+            const DeepCollectionEquality().equals(other.rating, rating) &&
+            const DeepCollectionEquality().equals(other.created, created));
   }
 
   @override
@@ -255,7 +272,8 @@ class _$_Note implements _Note {
       const DeepCollectionEquality().hash(height),
       const DeepCollectionEquality().hash(width),
       const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(rating));
+      const DeepCollectionEquality().hash(rating),
+      const DeepCollectionEquality().hash(created));
 
   @JsonKey(ignore: true)
   @override
@@ -266,21 +284,22 @@ class _$_Note implements _Note {
 abstract class _Note implements ProductEntity {
   const factory _Note(
       {required final UniqueId id,
-      required final String title,
-      required final String type,
+      required final ProductTitle title,
+      required final ProductType type,
       required final String description,
       required final String filename,
       required final int height,
       required final int width,
-      required final double price,
-      required final int rating}) = _$_Note;
+      required final ProductPrice price,
+      required final int rating,
+      required final DateTime created}) = _$_Note;
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
   @override
-  String get title => throw _privateConstructorUsedError;
+  ProductTitle get title => throw _privateConstructorUsedError;
   @override
-  String get type => throw _privateConstructorUsedError;
+  ProductType get type => throw _privateConstructorUsedError;
   @override
   String get description => throw _privateConstructorUsedError;
   @override
@@ -290,9 +309,11 @@ abstract class _Note implements ProductEntity {
   @override
   int get width => throw _privateConstructorUsedError;
   @override
-  double get price => throw _privateConstructorUsedError;
+  ProductPrice get price => throw _privateConstructorUsedError;
   @override
   int get rating => throw _privateConstructorUsedError;
+  @override
+  DateTime get created => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;

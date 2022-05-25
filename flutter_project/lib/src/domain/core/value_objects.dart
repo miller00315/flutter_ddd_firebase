@@ -12,7 +12,6 @@ abstract class ValueObject<T> implements IValidatable {
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {
-    // id = identity - same as writing (right) => right
     return value.fold((f) => throw UnexpectedValueError(f), id);
   }
 
@@ -49,14 +48,13 @@ class UniqueId extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  // We cannot let a simple String be passed in. This would allow for possible non-unique IDs.
   factory UniqueId() {
     return UniqueId._(
       right(const Uuid().v1()),
     );
   }
 
-  /// Used with strings we trust are unique, such as database IDs.
+  /// Deve ser utilizado apaenas para string que acreditamos ser unicas, como os ids do banco dados
   factory UniqueId.fromUniqueString(String uniqueIdStr) {
     return UniqueId._(
       right(uniqueIdStr),

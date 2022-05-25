@@ -39,11 +39,15 @@ dependencies:
 
   cloud_firestore: ^3.1.16
 
+  currency_text_input_formatter: ^2.1.5
+
   # Functional programming in Dart
   dartz: ^0.10.1
 
   # Being able to compare objects in Dart often involves having to override the == operator as well as hashCode.
   equatable: ^2.0.0
+
+  firebase_image: ^1.1.1
 
   flutter_bloc: ^8.0.1
 
@@ -56,6 +60,8 @@ dependencies:
 
   # This is a simple Service Locator for Dart and Flutter projects
   get_it: ^7.2.0
+
+  intl: ^0.17.0
 
   json_annotation: ^4.5.0
 
