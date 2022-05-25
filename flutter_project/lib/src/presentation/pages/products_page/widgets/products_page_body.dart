@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
-import 'package:flutter_project/src/application/product_watch_bloc/product_watch_bloc.dart';
+import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 
 import 'package:flutter_project/src/domain/entities/product_entity.dart';
 import 'package:flutter_project/src/presentation/pages/edit_product_page/edit_product_page.dart';

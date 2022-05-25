@@ -1,4 +1,4 @@
-part of 'product_watch_bloc.dart';
+part of 'product_watcher_bloc.dart';
 
 @freezed
 class ProductWatcherState with _$ProductWatcherState {

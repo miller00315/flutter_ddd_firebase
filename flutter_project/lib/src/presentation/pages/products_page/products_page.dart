@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
-import 'package:flutter_project/src/application/product_watch_bloc/product_watch_bloc.dart';
+import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/products_page_body.dart';
 

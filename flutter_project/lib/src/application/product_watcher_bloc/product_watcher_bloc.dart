@@ -7,9 +7,9 @@ import 'package:flutter_project/src/domain/entities/product_failures.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'product_watch_event.dart';
-part 'product_watch_state.dart';
-part 'product_watch_bloc.freezed.dart';
+part 'product_watcher_event.dart';
+part 'product_watcher_state.dart';
+part 'product_watcher_bloc.freezed.dart';
 
 class ProductWatcherBloc
     extends Bloc<ProductWatcherEvent, ProductWatcherState> {
