@@ -65,6 +65,7 @@ class _EditProductPageState extends State<EditProductPage> {
                       padding: const EdgeInsets.all(8),
                       children: [
                         TextFormField(
+                          decoration: const InputDecoration(hintText: 'Título'),
                           initialValue: state.product!.title.getOrElse(''),
                           onChanged: (title) =>
                               bloc.add(ProductFormEvent.titleChanged(title)),
@@ -77,7 +78,12 @@ class _EditProductPageState extends State<EditProductPage> {
                             (_) => null,
                           ),
                         ),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         TextFormField(
+                          decoration:
+                              const InputDecoration(hintText: 'Descrição'),
                           minLines: 1,
                           maxLines: 5,
                           initialValue: state.product!.description,
@@ -85,7 +91,11 @@ class _EditProductPageState extends State<EditProductPage> {
                             ProductFormEvent.descriptionChanged(description),
                           ),
                         ),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         TextFormField(
+                          decoration: const InputDecoration(hintText: 'Tipo'),
                           initialValue: state.product!.type.getOrElse(''),
                           onChanged: (type) => bloc.add(
                             ProductFormEvent.typeChanged(type),
@@ -98,7 +108,11 @@ class _EditProductPageState extends State<EditProductPage> {
                             (r) => null,
                           ),
                         ),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         TextFormField(
+                          decoration: const InputDecoration(hintText: 'Preço'),
                           keyboardType: TextInputType.number,
                           inputFormatters: [_formatter],
                           initialValue: _formatter.format(
@@ -126,7 +140,12 @@ class _EditProductPageState extends State<EditProductPage> {
                             (_) => null,
                           ),
                         ),
+                        const SizedBox(
+                          height: 8,
+                        ),
                         TextFormField(
+                          decoration:
+                              const InputDecoration(hintText: 'Classificação'),
                           keyboardType: TextInputType.number,
                           initialValue: state.product!.rating.toString(),
                           inputFormatters: [
