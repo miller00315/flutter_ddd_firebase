@@ -7,7 +7,7 @@ part 'product_dto.freezed.dart';
 part 'product_dto.g.dart';
 
 @freezed
-abstract class ProductDto with _$ProductDto {
+class ProductDto with _$ProductDto {
   factory ProductDto({
     @JsonKey(ignore: true) String? id,
     required String title,
@@ -38,7 +38,8 @@ abstract class ProductDto with _$ProductDto {
       _$ProductDtoFromJson(json);
 
   factory ProductDto.fromFirestore(QueryDocumentSnapshot doc) {
-    return ProductDto.fromJson(doc.data() as Map<String, dynamic>).copyWith(id: doc.id);
+    return ProductDto.fromJson(doc.data() as Map<String, dynamic>)
+        .copyWith(id: doc.id);
   }
 }
 

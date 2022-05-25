@@ -11,4 +11,5 @@ void configureInjection(String env) {
   dataSourcesInjector(injector);
   repositoriesInjector(injector);
   blocInjector(injector);
+  //routerInjector(injector);
 }
