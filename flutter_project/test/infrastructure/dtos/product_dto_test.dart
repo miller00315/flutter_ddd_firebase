@@ -1,8 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
-import 'package:flutter_project/src/infrastructure/dtos/product_dto.dart';
+import 'package:flutter_project/src/infrastructure/dtos/product/product_dto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:uuid/uuid.dart';
 
@@ -22,6 +23,8 @@ main() {
     created: DateTime.now(),
   );
 
+  final date = DateTime.now();
+
   Map<String, dynamic> json = {
     'title': 'test',
     'type': 'test',
@@ -31,22 +34,22 @@ main() {
     'width': 2,
     'price': 2,
     'rating': 2,
+    'created': Timestamp.fromDate(date)
   };
 
-  test('should return a ProductDto from a json', () {
-    final productDto = ProductDto.fromJson(json);
-
-    expect(productDto.id, null);
-    expect(productDto.title, json['title']);
-    expect(productDto.type, json['type']);
-    expect(productDto.description, json['description']);
-    expect(productDto.filename, json['filename']);
-    expect(productDto.height, json['height']);
-    expect(productDto.price, json['price']);
-    expect(productDto.rating, json['rating']);
-  });
-
   group('ProductDto group =>', () {
+    test('should return a ProductDto from a json', () {
+      final productDto = ProductDto.fromJson(json);
+
+      expect(productDto.id, null);
+      expect(productDto.title, json['title']);
+      expect(productDto.type, json['type']);
+      expect(productDto.description, json['description']);
+      expect(productDto.filename, json['filename']);
+      expect(productDto.height, json['height']);
+      expect(productDto.price, json['price']);
+      expect(productDto.rating, json['rating']);
+    });
     test('should generate a ProductDto from a productEntity', () {
       final productDto = ProductDto.fromDomain(product);
 
@@ -89,23 +92,24 @@ main() {
         id: const Uuid().v1().toString(),
         title: 'test',
         type: 'test',
-        description: 'teste',
+        description: 'test',
         filename: '0',
         height: 2,
         width: 2,
         price: 2,
         rating: 2,
+        created: DateTime.now(),
       );
 
       final productEntity = productDto.toDomain();
 
       expect(productDto.id, productEntity.id.getOrCrash());
-      expect(productDto.title, productEntity.title);
-      expect(productDto.type, productEntity.type);
+      expect(productDto.title, productEntity.title.getOrCrash());
+      expect(productDto.type, productEntity.type.getOrCrash());
       expect(productDto.description, productEntity.description);
       expect(productDto.filename, productEntity.filename);
       expect(productDto.height, productEntity.height);
-      expect(productDto.price, productEntity.price);
+      expect(productDto.price, productEntity.price.getOrCrash());
       expect(productDto.rating, productEntity.rating);
     });
 
@@ -126,6 +130,7 @@ main() {
       expect(productDto.height, productSnapshot['height']);
       expect(productDto.price, productSnapshot['price']);
       expect(productDto.rating, productSnapshot['rating']);
+      expect(productDto.created, date);
     });
   });
 }

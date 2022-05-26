@@ -1,18 +1,18 @@
-/* import 'dart:async';
+import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/src/application/produt_watch_bloc/product_bloc.dart';
+import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
-import 'package:flutter_project/src/domain/entities/product_entity.dart';
+import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
-import 'package:flutter_project/src/domain/entities/value_objects.dart';
+import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:uuid/uuid.dart';
 
-import 'produt_watch_bloc_test.mocks.dart';
+import 'products_watcher_bloc_test.mocks.dart';
 
 @GenerateMocks([IProductRepository])
 main() {
@@ -42,23 +42,26 @@ main() {
         (_) => controller.stream,
       );
 
-      final ProductWatcherBloc = ProductWatcherBloc(productRepositoryMock);
+      final productWatcherBloc = ProductWatcherBloc(productRepositoryMock);
 
-      ProductWatcherBloc.add(const ProductEvent.startedWatchProducts());
+      productWatcherBloc.add(const ProductWatcherEvent.startedWatchProducts());
 
       await expectLater(
-        ProductWatcherBloc.stream,
+        productWatcherBloc.stream,
         emitsInOrder(
-          <ProductState>[
-            const ProductState.loadInProgress(),
-            ProductState.loadSuccess([product]),
+          <ProductWatcherState>[
+            const ProductWatcherState.loadInProgress(),
+            ProductWatcherState.loadSuccess([product]),
           ],
         ),
       );
 
-      expect(ProductWatcherBloc.state, ProductState.loadSuccess([product]));
+      expect(
+        productWatcherBloc.state,
+        ProductWatcherState.loadSuccess([product]),
+      );
 
-      ProductWatcherBloc.close();
+      productWatcherBloc.close();
 
       controller.close();
     });
@@ -73,16 +76,16 @@ main() {
         (_) => controller.stream,
       );
 
-      final ProductWatcherBloc = ProductWatcherBloc(productRepositoryMock);
+      final productWatcherBloc = ProductWatcherBloc(productRepositoryMock);
 
-      ProductWatcherBloc.add(const ProductEvent.startedWatchProducts());
+      productWatcherBloc.add(const ProductWatcherEvent.startedWatchProducts());
 
       await expectLater(
-        ProductWatcherBloc.stream,
+        productWatcherBloc.stream,
         emitsInOrder(
-          <ProductState>[
-            const ProductState.loadInProgress(),
-            const ProductState.loadFailure(
+          <ProductWatcherState>[
+            const ProductWatcherState.loadInProgress(),
+            const ProductWatcherState.loadFailure(
               ProductFailure.insufficientPermissions(),
             ),
           ],
@@ -90,16 +93,15 @@ main() {
       );
 
       expect(
-        ProductWatcherBloc.state,
-        const ProductState.loadFailure(
+        productWatcherBloc.state,
+        const ProductWatcherState.loadFailure(
           ProductFailure.insufficientPermissions(),
         ),
       );
 
-      ProductWatcherBloc.close();
+      productWatcherBloc.close();
 
       controller.close();
     });
   });
 }
- */

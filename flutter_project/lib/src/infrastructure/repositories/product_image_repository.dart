@@ -5,11 +5,11 @@ import 'package:flutter_project/src/domain/entities/product_image/product_image.
 import 'package:flutter_project/src/domain/entities/product_image/product_image_failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_image_repository.dart';
-import 'package:flutter_project/src/infrastructure/data_sources/network/i_products_data_source.dart';
-import 'package:flutter_project/src/infrastructure/dtos/product_image_dto.dart';
+import 'package:flutter_project/src/infrastructure/data_sources/network/prodct_image/i_prodcut_image_datasource.dart';
+import 'package:flutter_project/src/infrastructure/dtos/prodcut_image/product_image_dto.dart';
 
 class ProductImageRepository implements IProductImageRepository {
-  final IProductDataSource _productDataSource;
+  final IProductImageDataSource _productDataSource;
 
   ProductImageRepository(
     this._productDataSource,

@@ -1,4 +1,4 @@
-/* import 'dart:async';
+import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
@@ -7,7 +7,7 @@ import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
 import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
 import 'package:flutter_project/src/infrastructure/data_sources/network/i_products_data_source.dart';
-import 'package:flutter_project/src/infrastructure/dtos/product_dto.dart';
+import 'package:flutter_project/src/infrastructure/dtos/product/product_dto.dart';
 import 'package:flutter_project/src/infrastructure/repositories/product_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
@@ -19,8 +19,6 @@ import 'product_repository_test.mocks.dart';
 @GenerateMocks([IProductDataSource])
 main() {
   final productDataSourceMock = MockIProductDataSource();
-
-  final productRepository = ProductRepository(productDataSourceMock);
 
   final Product product = Product(
     id: UniqueId.fromUniqueString(const Uuid().v1().toString()),
@@ -37,11 +35,13 @@ main() {
 
   final productDto = ProductDto.fromDomain(product);
 
-  tearDown(() {
-    reset(productDataSourceMock);
-  });
+  final productRepository = ProductRepository(productDataSourceMock);
 
   group('ProductRepository group =>', () {
+    tearDown(() {
+      reset(productDataSourceMock);
+    });
+
     test(
         'should call [productDataSource.delete] and when delete Product success return a right with a unit',
         () async {
@@ -74,26 +74,6 @@ main() {
 
       res.fold(
         (l) => expect(l, const ProductFailure.insufficientPermissions()),
-        (r) => expect(r, null),
-      );
-    });
-
-    test(
-        'should call [productDataSource.delete] and when delete fail with PERMISSIONS_DENIED return on the left a [ProductFailure.unableToDelete]',
-        () async {
-      when(productDataSourceMock.delete(product.id.getOrCrash())).thenThrow(
-        PlatformException(
-          code: '404',
-          message: 'NOT_FOUND',
-        ),
-      );
-
-      final res = await productRepository.delete(product);
-
-      verify(productDataSourceMock.delete(product.id.getOrCrash())).called(1);
-
-      res.fold(
-        (l) => expect(l, const ProductFailure.unableToDelete()),
         (r) => expect(r, null),
       );
     });
@@ -275,4 +255,3 @@ main() {
     });
   });
 }
- */

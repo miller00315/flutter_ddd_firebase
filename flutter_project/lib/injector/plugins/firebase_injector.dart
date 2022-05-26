@@ -1,5 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter_project/src/infrastructure/data_sources/network/products_data_source.dart';
 import 'package:get_it/get_it.dart';
 
 void firebaseInjector(GetIt injector) {
