@@ -9,9 +9,9 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   }
 }
 
-Either<ValueFailure<double>, double> validateNumberNotEmpty(double input) {
+Either<ValueFailure<double>, double> validateValidNumber(double input) {
   if (input == 0) {
-    return left(ValueFailure.empty(failedValue: input));
+    return left(ValueFailure.invalidValue(failedValue: input));
   } else {
     return right(input);
   }

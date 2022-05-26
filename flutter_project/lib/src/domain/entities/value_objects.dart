@@ -30,7 +30,7 @@ class ProductPrice extends ValueObject<double> {
   final Either<ValueFailure<double>, double> value;
 
   factory ProductPrice(double input) {
-    return ProductPrice._(validateNumberNotEmpty(input));
+    return ProductPrice._(validateValidNumber(input));
   }
 
   const ProductPrice._(this.value);

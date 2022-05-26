@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/config/colors/default_colors.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
+import 'package:flutter_project/config/text_styles/app_text_styles.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_form_bloc/product_form_bloc.dart';
@@ -48,7 +49,6 @@ class _EditProductPageState extends State<EditProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.whiteBackground,
       appBar: AppBar(
         backgroundColor: AppColors.whiteBackground,
@@ -56,7 +56,7 @@ class _EditProductPageState extends State<EditProductPage> {
         centerTitle: true,
         title: Text(
           AppTexts.edit,
-          style: Theme.of(context).textTheme.caption,
+          style: AppTextStyles.h1(context),
         ),
       ),
       body: BlocConsumer<ProductFormBloc, ProductFormState>(
@@ -174,7 +174,7 @@ class _EditProductPageState extends State<EditProductPage> {
                           validator: (_) =>
                               bloc.state.product!.price.value.fold(
                             (failure) => failure.maybeMap(
-                              empty: (value) => AppTexts.requiredField,
+                              invalidValue: (value) => AppTexts.requiredField,
                               orElse: () => null,
                             ),
                             (_) => null,
@@ -215,10 +215,7 @@ class _EditProductPageState extends State<EditProductPage> {
                                 bloc.add(const ProductFormEvent.saved()),
                             child: Text(
                               AppTexts.saveChanges,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .caption!
-                                  .copyWith(color: AppColors.whiteBackground),
+                              style: AppTextStyles.buttonTextWhite(context),
                             ),
                           ),
                   )

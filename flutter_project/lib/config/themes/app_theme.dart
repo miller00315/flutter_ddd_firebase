@@ -43,9 +43,7 @@ TextTheme _bulAppTextTheme(TextTheme base) {
           fontSize: AppFontSize.small,
         ),
         caption: base.caption!.copyWith(
-          fontWeight: FontWeight.bold,
-          fontSize: AppFontSize.big,
-        ),
+            fontWeight: FontWeight.w500, fontSize: AppFontSize.medium),
         bodyText1: base.bodyText1!.copyWith(
           fontWeight: FontWeight.normal,
           fontSize: AppFontSize.medium,

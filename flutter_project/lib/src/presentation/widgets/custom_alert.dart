@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/config/colors/default_colors.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
+import 'package:flutter_project/config/text_styles/app_text_styles.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 
 class CustomAlert extends StatelessWidget {
@@ -32,10 +33,7 @@ class CustomAlert extends StatelessWidget {
             onPressed: handleConfirmationButtonPress,
             child: Text(
               AppTexts.confirm,
-              style: Theme.of(context)
-                  .textTheme
-                  .caption!
-                  .copyWith(color: AppColors.whiteBackground),
+              style: AppTextStyles.buttonTextWhite(context),
             ),
           ),
           const SizedBox(
@@ -45,10 +43,7 @@ class CustomAlert extends StatelessWidget {
             onPressed: handleRejectionButtonPress,
             child: Text(
               AppTexts.cancel,
-              style: Theme.of(context)
-                  .textTheme
-                  .caption!
-                  .copyWith(color: AppColors.whiteBackground),
+              style: AppTextStyles.buttonTextWhite(context),
             ),
           ),
         ],

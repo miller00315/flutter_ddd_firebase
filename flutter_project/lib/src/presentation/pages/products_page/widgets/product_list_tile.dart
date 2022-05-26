@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/config/colors/default_colors.dart';
 import 'package:flutter_project/config/design_metrics/icons_size.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
+import 'package:flutter_project/config/text_styles/app_text_styles.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/presentation/widgets/rating_widget.dart';
 import 'package:intl/intl.dart';
@@ -24,7 +25,7 @@ class ProductListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8),
-      height: 100,
+      height: 110,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.grey,
@@ -57,28 +58,27 @@ class ProductListTile extends StatelessWidget {
                       maxWidth: 80,
                       child: Text(
                         product.title.getOrCrash(),
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText1!
-                            .copyWith(overflow: TextOverflow.ellipsis),
-                        maxLines: 1,
+                        style: AppTextStyles.normalText(context),
+                        maxLines: 2,
                       ),
                     ),
                     const SizedBox(
                       width: AppSpacing.small,
                     ),
                     LimitedBox(
-                      maxWidth: 100,
+                      maxWidth: 80,
                       child: Container(
                         color: Colors.grey,
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 4,
+                          vertical: 2,
+                        ),
                         child: Text(
                           product.type.getOrCrash(),
-                          style:
-                              Theme.of(context).textTheme.bodyText1!.copyWith(
-                                    color: AppColors.whiteBackground,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
+                          style: AppTextStyles.normalText(context)!.copyWith(
+                            color: AppColors.whiteBackground,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ),
                     ),
@@ -111,7 +111,7 @@ class ProductListTile extends StatelessWidget {
                 ),
                 Text(
                   DateFormat('dd/MM/yyyy').format(product.created),
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: AppTextStyles.normalText(context),
                 ),
                 Row(
                   children: [
@@ -120,8 +120,8 @@ class ProductListTile extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      'R\$${product.price.getOrCrash()}',
-                      style: Theme.of(context).textTheme.bodyText1,
+                      'R\$${product.price.getOrCrash()}'.replaceAll('.0', ''),
+                      style: AppTextStyles.normalText(context),
                     ),
                     const SizedBox(
                       width: AppSpacing.small,
