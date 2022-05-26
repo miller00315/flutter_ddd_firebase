@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_project/config/colors/default_colors.dart';
+import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
@@ -15,9 +17,15 @@ class ProductsPage extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteBackground,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.whiteBackground,
         elevation: 0,
+        centerTitle: true,
+        title: Text(
+          AppTexts.appTitle,
+          style: Theme.of(context).textTheme.caption,
+        ),
       ),
       body: MultiBlocProvider(
         providers: [
@@ -40,7 +48,7 @@ class ProductsPage extends HookWidget {
                   loadFailure: (_) =>
                       ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Item excluido'),
+                      content: Text(AppTexts.itemDeleted),
                       backgroundColor: Colors.red,
                     ),
                   ),
@@ -55,13 +63,13 @@ class ProductsPage extends HookWidget {
                   deleteSuccess: (_) =>
                       ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Item excluido'),
+                      content: Text(AppTexts.itemDeleted),
                     ),
                   ),
                   deleteFailure: (_) =>
                       ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Falha ao excluir item'),
+                      content: Text(AppTexts.deleteItemFailed),
                       backgroundColor: Colors.red,
                     ),
                   ),

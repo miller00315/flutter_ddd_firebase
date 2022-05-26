@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_project/config/design_metrics/spacing.dart';
+import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
@@ -8,6 +10,7 @@ import 'package:flutter_project/src/domain/entities/product.dart';
 import 'package:flutter_project/src/presentation/pages/edit_product_page/edit_product_page.dart';
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile.dart';
 import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
+import 'package:flutter_project/src/presentation/widgets/error_layout.dart';
 
 class ProductPageBody extends StatelessWidget {
   const ProductPageBody({Key? key}) : super(key: key);
@@ -41,9 +44,9 @@ class ProductPageBody extends StatelessWidget {
           loadInProgress: (_) => const Text('loading'),
           loadSuccess: (state) => ListView.separated(
             separatorBuilder: (context, _) => const SizedBox(
-              height: 8,
+              height: AppSpacing.small,
             ),
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(AppSpacing.small),
             itemCount: state.products.length,
             itemBuilder: (context, index) => ProductListTile(
               product: state.products[index],
@@ -53,7 +56,9 @@ class ProductPageBody extends StatelessWidget {
                   _handleDeleteProduct(product, context),
             ),
           ),
-          loadFailure: (state) => const Text('falha'),
+          loadFailure: (state) => const ErrorLayout(
+            message: AppTexts.errorLoadData,
+          ),
         );
       },
     );

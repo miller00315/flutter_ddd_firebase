@@ -1,5 +1,10 @@
 import 'package:firebase_image/firebase_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/config/colors/default_colors.dart';
+import 'package:flutter_project/config/design_metrics/icons_size.dart';
+import 'package:flutter_project/config/design_metrics/spacing.dart';
+import 'package:flutter_project/config/texts/app_texts.dart';
+import 'package:flutter_project/src/presentation/widgets/rating_widget.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_project/src/domain/entities/product.dart';
 
@@ -30,7 +35,7 @@ class ProductListTile extends StatelessWidget {
         children: [
           Image(
             image: FirebaseImage(
-              'gs://flutter-project-80ed5.appspot.com/images/${product.filename}',
+              '${AppTexts.bucketUrl}${product.filename}',
               shouldCache: true,
               cacheRefreshStrategy: CacheRefreshStrategy.BY_METADATA_DATE,
             ),
@@ -39,7 +44,7 @@ class ProductListTile extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           const SizedBox(
-            width: 8,
+            width: AppSpacing.small,
           ),
           Expanded(
             child: Column(
@@ -49,39 +54,47 @@ class ProductListTile extends StatelessWidget {
                 Row(
                   children: [
                     LimitedBox(
-                      maxWidth: 100,
+                      maxWidth: 80,
                       child: Text(
                         product.title.getOrCrash(),
-                        style: const TextStyle(
-                          fontSize: 16,
-                          overflow: TextOverflow.visible,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText1!
+                            .copyWith(overflow: TextOverflow.ellipsis),
                         maxLines: 1,
                       ),
                     ),
                     const SizedBox(
-                      width: 8,
+                      width: AppSpacing.small,
                     ),
-                    Text(
-                      product.type.getOrCrash(),
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                    LimitedBox(
+                      maxWidth: 100,
+                      child: Container(
+                        color: Colors.grey,
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Text(
+                          product.type.getOrCrash(),
+                          style:
+                              Theme.of(context).textTheme.bodyText1!.copyWith(
+                                    color: AppColors.whiteBackground,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                        ),
                       ),
                     ),
                     const Spacer(),
                     PopupMenuButton(
                       child: const Icon(
                         Icons.more_horiz,
-                        size: 28,
+                        size: IconSize.small,
                       ),
                       itemBuilder: (_) => [
                         const PopupMenuItem(
-                          child: Text('Editar'),
+                          child: Text(AppTexts.edit),
                           value: 0,
                         ),
                         const PopupMenuItem(
-                          child: Text('Excluir'),
+                          child: Text(AppTexts.delete),
                           value: 1,
                         ),
                       ],
@@ -98,21 +111,20 @@ class ProductListTile extends StatelessWidget {
                 ),
                 Text(
                   DateFormat('dd/MM/yyyy').format(product.created),
-                  style: const TextStyle(
-                    fontSize: 16,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 Row(
                   children: [
+                    RatingWidget(
+                      rating: product.rating,
+                    ),
                     const Spacer(),
                     Text(
                       'R\$${product.price.getOrCrash()}',
-                      style: const TextStyle(
-                        fontSize: 16,
-                      ),
+                      style: Theme.of(context).textTheme.bodyText1,
                     ),
                     const SizedBox(
-                      width: 8,
+                      width: AppSpacing.small,
                     ),
                   ],
                 ),

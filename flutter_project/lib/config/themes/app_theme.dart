@@ -9,22 +9,25 @@ ThemeData _buildAppTheme() {
 
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
-      primary: kShrinePink100,
-      onPrimary: kShrineBrown900,
-      secondary: kShrineBrown900,
-      error: kShrineErrorRed,
+      primary: Colors.blueAccent,
+      onPrimary: AppColors.appBrown900,
+      secondary: AppColors.appBrown900,
+      error: AppColors.appErrorRed,
     ),
     textTheme: _bulAppTextTheme(base.textTheme),
     inputDecorationTheme: const InputDecorationTheme(
       floatingLabelStyle: TextStyle(
-        color: kShrineBrown900,
+        color: AppColors.appBrown900,
       ),
       border: OutlineInputBorder(
         borderSide: BorderSide(
-          color: kShrinePink400,
+          color: AppColors.appPink400,
           width: 1,
         ),
       ),
+    ),
+    buttonTheme: const ButtonThemeData(
+      buttonColor: Colors.blueAccent,
     ),
   );
 }
@@ -40,16 +43,16 @@ TextTheme _bulAppTextTheme(TextTheme base) {
           fontSize: AppFontSize.small,
         ),
         caption: base.caption!.copyWith(
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.bold,
           fontSize: AppFontSize.big,
         ),
         bodyText1: base.bodyText1!.copyWith(
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.normal,
           fontSize: AppFontSize.medium,
         ),
       )
       .apply(
-        displayColor: kShrineBrown900,
-        bodyColor: kShrineBrown900,
+        displayColor: AppColors.appBrown900,
+        bodyColor: AppColors.appBrown900,
       );
 }

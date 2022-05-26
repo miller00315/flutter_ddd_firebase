@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
-const kShrinePink50 = Color(0xFFFEEAE6);
-const kShrinePink100 = Color(0xFFFEDBD0);
-const kShrinePink300 = Color(0xFFFBB8AC);
-const kShrinePink400 = Color(0xFFEAA4A4);
+mixin AppColors {
+  static const appPink50 = Color(0xFFFEEAE6);
+  static const appPink100 = Color(0xFFFEDBD0);
+  static const appPink300 = Color(0xFFFBB8AC);
+  static const appPink400 = Color(0xFFEAA4A4);
 
-const kShrineBrown900 = Color(0xFF442B2D);
+  static const appBrown900 = Color(0xFF442B2D);
 
-const kShrineErrorRed = Color(0xFFC5032B);
+  static const appErrorRed = Color(0xFFC5032B);
 
-const kShrineSurfaceWhite = Color(0xFFFFFBFA);
-const kShrineBackgroundWhite = Colors.white;
+  static const appSurfaceWhite = Color(0xFFFFFBFA);
+  static const whiteBackground = Colors.white;
 
-const kShrinePurple = Color(0xFF5D1049);
+  static const appPurple = Color(0xFF5D1049);
+}

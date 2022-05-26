@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/config/colors/default_colors.dart';
+import 'package:flutter_project/config/design_metrics/spacing.dart';
+import 'package:flutter_project/config/texts/app_texts.dart';
 
 class CustomAlert extends StatelessWidget {
   /// O que fazer quando o botão de confirmar do alerta for pressionado?
@@ -21,20 +24,32 @@ class CustomAlert extends StatelessWidget {
       contentPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
       content: Column(
         children: [
-          const Text('Vocè deseja continuar esta ação'),
+          const Text(AppTexts.alertContinueAction),
           const SizedBox(
-            height: 16,
+            height: AppSpacing.medium,
           ),
           ElevatedButton(
             onPressed: handleConfirmationButtonPress,
-            child: const Text('Confirmar'),
+            child: Text(
+              AppTexts.confirm,
+              style: Theme.of(context)
+                  .textTheme
+                  .caption!
+                  .copyWith(color: AppColors.whiteBackground),
+            ),
           ),
           const SizedBox(
-            height: 16,
+            height: AppSpacing.medium,
           ),
           ElevatedButton(
             onPressed: handleRejectionButtonPress,
-            child: const Text('Cancelar'),
+            child: Text(
+              AppTexts.cancel,
+              style: Theme.of(context)
+                  .textTheme
+                  .caption!
+                  .copyWith(color: AppColors.whiteBackground),
+            ),
           ),
         ],
       ),

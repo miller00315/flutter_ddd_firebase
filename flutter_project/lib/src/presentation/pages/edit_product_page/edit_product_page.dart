@@ -2,6 +2,9 @@ import 'package:currency_text_input_formatter/currency_text_input_formatter.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_project/config/colors/default_colors.dart';
+import 'package:flutter_project/config/design_metrics/spacing.dart';
+import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_form_bloc/product_form_bloc.dart';
 import 'package:flutter_project/src/domain/entities/product.dart';
@@ -45,13 +48,36 @@ class _EditProductPageState extends State<EditProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: AppColors.whiteBackground,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.whiteBackground,
         elevation: 0,
+        centerTitle: true,
+        title: Text(
+          AppTexts.edit,
+          style: Theme.of(context).textTheme.caption,
+        ),
       ),
       body: BlocConsumer<ProductFormBloc, ProductFormState>(
         bloc: bloc,
-        listener: (BuildContext context, state) {},
+        listenWhen: (p, c) =>
+            p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
+        listener: (BuildContext context, state) {
+          state.saveFailureOrSuccessOption.fold(
+            () => ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(AppTexts.updateItemFailed),
+                backgroundColor: Colors.red,
+              ),
+            ),
+            (a) => ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text(AppTexts.updateItemSuccess),
+              ),
+            ),
+          );
+        },
         builder: (BuildContext context, ProductFormState state) {
           if (state.product != null) {
             return Form(
@@ -65,25 +91,32 @@ class _EditProductPageState extends State<EditProductPage> {
                       padding: const EdgeInsets.all(8),
                       children: [
                         TextFormField(
-                          decoration: const InputDecoration(hintText: 'Título'),
+                          enabled: !state.isSaving,
+                          decoration: const InputDecoration(
+                            hintText: AppTexts.title,
+                            labelText: AppTexts.title,
+                          ),
                           initialValue: state.product!.title.getOrElse(''),
                           onChanged: (title) =>
                               bloc.add(ProductFormEvent.titleChanged(title)),
                           validator: (_) =>
                               bloc.state.product!.title.value.fold(
                             (failure) => failure.maybeMap(
-                              empty: (f) => 'Este campo não pode ser vazio',
+                              empty: (f) => AppTexts.requiredField,
                               orElse: () => null,
                             ),
                             (_) => null,
                           ),
                         ),
                         const SizedBox(
-                          height: 8,
+                          height: AppSpacing.medium,
                         ),
                         TextFormField(
-                          decoration:
-                              const InputDecoration(hintText: 'Descrição'),
+                          enabled: !state.isSaving,
+                          decoration: const InputDecoration(
+                            hintText: AppTexts.description,
+                            labelText: AppTexts.description,
+                          ),
                           minLines: 1,
                           maxLines: 5,
                           initialValue: state.product!.description,
@@ -92,27 +125,35 @@ class _EditProductPageState extends State<EditProductPage> {
                           ),
                         ),
                         const SizedBox(
-                          height: 8,
+                          height: AppSpacing.medium,
                         ),
                         TextFormField(
-                          decoration: const InputDecoration(hintText: 'Tipo'),
+                          enabled: !state.isSaving,
+                          decoration: const InputDecoration(
+                            hintText: AppTexts.type,
+                            labelText: AppTexts.type,
+                          ),
                           initialValue: state.product!.type.getOrElse(''),
                           onChanged: (type) => bloc.add(
                             ProductFormEvent.typeChanged(type),
                           ),
                           validator: (_) => bloc.state.product!.type.value.fold(
                             (failure) => failure.maybeMap(
-                              empty: (f) => 'Este campo não pode ser vazio',
+                              empty: (f) => AppTexts.requiredField,
                               orElse: () => null,
                             ),
                             (r) => null,
                           ),
                         ),
                         const SizedBox(
-                          height: 8,
+                          height: AppSpacing.medium,
                         ),
                         TextFormField(
-                          decoration: const InputDecoration(hintText: 'Preço'),
+                          enabled: !state.isSaving,
+                          decoration: const InputDecoration(
+                            labelText: AppTexts.price,
+                            hintText: AppTexts.price,
+                          ),
                           keyboardType: TextInputType.number,
                           inputFormatters: [_formatter],
                           initialValue: _formatter.format(
@@ -133,19 +174,21 @@ class _EditProductPageState extends State<EditProductPage> {
                           validator: (_) =>
                               bloc.state.product!.price.value.fold(
                             (failure) => failure.maybeMap(
-                              empty: (value) =>
-                                  'Este campo não pode ser vazio ou $value',
+                              empty: (value) => AppTexts.requiredField,
                               orElse: () => null,
                             ),
                             (_) => null,
                           ),
                         ),
                         const SizedBox(
-                          height: 8,
+                          height: AppSpacing.medium,
                         ),
                         TextFormField(
-                          decoration:
-                              const InputDecoration(hintText: 'Classificação'),
+                          enabled: !state.isSaving,
+                          decoration: const InputDecoration(
+                            hintText: AppTexts.classification,
+                            labelText: AppTexts.classification,
+                          ),
                           keyboardType: TextInputType.number,
                           initialValue: state.product!.rating.toString(),
                           inputFormatters: [
@@ -170,7 +213,13 @@ class _EditProductPageState extends State<EditProductPage> {
                         : ElevatedButton(
                             onPressed: () =>
                                 bloc.add(const ProductFormEvent.saved()),
-                            child: const Text('Salvar mudanças'),
+                            child: Text(
+                              AppTexts.saveChanges,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .caption!
+                                  .copyWith(color: AppColors.whiteBackground),
+                            ),
                           ),
                   )
                 ],
