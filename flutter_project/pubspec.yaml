@@ -35,7 +35,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
-  # auto_route: ^4.0.1
+  auto_size_text: ^3.0.0
+
+  cached_network_image: ^3.2.0
 
   cloud_firestore: ^3.1.16
 
@@ -47,13 +49,13 @@ dependencies:
   # Being able to compare objects in Dart often involves having to override the == operator as well as hashCode.
   equatable: ^2.0.0
 
-  firebase_image: ^1.1.1
-
   flutter_bloc: ^8.0.1
 
   flutter_hooks: ^0.18.3
 
   firebase_core: ^1.17.0
+
+  firebase_storage: ^10.2.16
 
   # code generator for data-classes/unions/pattern-matching/cloning.
   freezed_annotation: ^2.0.3

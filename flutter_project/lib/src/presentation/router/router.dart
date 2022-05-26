@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/src/domain/entities/product.dart';
-import 'package:flutter_project/src/presentation/pages/edit_product_page/edit_product_page.dart';
+import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/presentation/pages/products_page/products_page.dart';
+import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
 
 Route<dynamic>? generateRoutes(RouteSettings settings) {
-  if (settings.name == EditProductPage.routeName) {
+  if (settings.name == UpdateProductPage.routeName) {
     final product = settings.arguments as Product;
     return MaterialPageRoute(
-      builder: (context) => EditProductPage(
+      builder: (context) => UpdateProductPage(
         product: product,
       ),
     );

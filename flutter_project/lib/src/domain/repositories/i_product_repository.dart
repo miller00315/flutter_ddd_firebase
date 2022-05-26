@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/src/domain/entities/product.dart';
-import 'package:flutter_project/src/domain/entities/product_failures.dart';
+import 'package:flutter_project/src/domain/entities/product/product.dart';
+import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
 
 abstract class IProductRepository {
   Stream<Either<ProductFailure, List<Product>>> watchAll();

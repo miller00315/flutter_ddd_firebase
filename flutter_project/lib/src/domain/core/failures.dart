@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'failures.freezed.dart';
 
+///Esta class mapeia os tipos de falhas que
+///posteriormente serão retornadas pelo modelo
 @freezed
 class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.empty({

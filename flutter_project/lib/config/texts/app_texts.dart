@@ -5,12 +5,11 @@ mixin AppTexts {
   static const cancel = 'Cancelar';
   static const delete = 'Excluir';
   static const edit = 'Editar';
-  static const bucketUrl = 'gs://flutter-project-80ed5.appspot.com/images/';
   static const itemDeleted = 'Item excluído';
   static const deleteItemFailed = 'Falha ao excluir item';
   static const requiredField = 'Este campo não pode ser vazio';
   static const updateItemSuccess = 'Produto atualizado com suceso';
-  static const updateItemFailed = 'Falah ao atualizar o produto';
+  static const updateItemFailed = 'Falha ao atualizar o produto';
   static const title = 'Título';
   static const description = 'Descrição';
   static const type = 'Tipo';

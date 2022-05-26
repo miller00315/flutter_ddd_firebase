@@ -1,12 +1,12 @@
-import 'dart:async';
+/* import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
-import 'package:flutter_project/src/domain/entities/product.dart';
-import 'package:flutter_project/src/domain/entities/product_failures.dart';
-import 'package:flutter_project/src/domain/entities/value_objects.dart';
-import 'package:flutter_project/src/infrastructure/data_sources/i_products_data_source.dart';
+import 'package:flutter_project/src/domain/entities/product/product.dart';
+import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
+import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
+import 'package:flutter_project/src/infrastructure/data_sources/network/i_products_data_source.dart';
 import 'package:flutter_project/src/infrastructure/dtos/product_dto.dart';
 import 'package:flutter_project/src/infrastructure/repositories/product_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -275,3 +275,4 @@ main() {
     });
   });
 }
+ */

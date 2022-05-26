@@ -115,9 +115,10 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_NoteCopyWith<$Res> implements $ProductCopyWith<$Res> {
-  factory _$$_NoteCopyWith(_$_Note value, $Res Function(_$_Note) then) =
-      __$$_NoteCopyWithImpl<$Res>;
+abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
+  factory _$$_ProductCopyWith(
+          _$_Product value, $Res Function(_$_Product) then) =
+      __$$_ProductCopyWithImpl<$Res>;
   @override
   $Res call(
       {UniqueId id,
@@ -133,13 +134,13 @@ abstract class _$$_NoteCopyWith<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_NoteCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
-    implements _$$_NoteCopyWith<$Res> {
-  __$$_NoteCopyWithImpl(_$_Note _value, $Res Function(_$_Note) _then)
-      : super(_value, (v) => _then(v as _$_Note));
+class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
+    implements _$$_ProductCopyWith<$Res> {
+  __$$_ProductCopyWithImpl(_$_Product _value, $Res Function(_$_Product) _then)
+      : super(_value, (v) => _then(v as _$_Product));
 
   @override
-  _$_Note get _value => super._value as _$_Note;
+  _$_Product get _value => super._value as _$_Product;
 
   @override
   $Res call({
@@ -154,7 +155,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     Object? rating = freezed,
     Object? created = freezed,
   }) {
-    return _then(_$_Note(
+    return _then(_$_Product(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -201,8 +202,8 @@ class __$$_NoteCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Note implements _Note {
-  const _$_Note(
+class _$_Product implements _Product {
+  const _$_Product(
       {required this.id,
       required this.title,
       required this.type,
@@ -244,7 +245,7 @@ class _$_Note implements _Note {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Note &&
+            other is _$_Product &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.type, type) &&
@@ -274,12 +275,12 @@ class _$_Note implements _Note {
 
   @JsonKey(ignore: true)
   @override
-  _$$_NoteCopyWith<_$_Note> get copyWith =>
-      __$$_NoteCopyWithImpl<_$_Note>(this, _$identity);
+  _$$_ProductCopyWith<_$_Product> get copyWith =>
+      __$$_ProductCopyWithImpl<_$_Product>(this, _$identity);
 }
 
-abstract class _Note implements Product {
-  const factory _Note(
+abstract class _Product implements Product {
+  const factory _Product(
       {required final UniqueId id,
       required final ProductTitle title,
       required final ProductType type,
@@ -289,7 +290,7 @@ abstract class _Note implements Product {
       required final int width,
       required final ProductPrice price,
       required final int rating,
-      required final DateTime created}) = _$_Note;
+      required final DateTime created}) = _$_Product;
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
@@ -313,5 +314,6 @@ abstract class _Note implements Product {
   DateTime get created => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
+  _$$_ProductCopyWith<_$_Product> get copyWith =>
+      throw _privateConstructorUsedError;
 }

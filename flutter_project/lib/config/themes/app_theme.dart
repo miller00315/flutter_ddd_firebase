@@ -9,7 +9,7 @@ ThemeData _buildAppTheme() {
 
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
-      primary: Colors.blueAccent,
+      primary: AppColors.appPurple,
       onPrimary: AppColors.appBrown900,
       secondary: AppColors.appBrown900,
       error: AppColors.appErrorRed,

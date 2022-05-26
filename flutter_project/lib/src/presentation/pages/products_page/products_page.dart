@@ -10,7 +10,7 @@ import 'package:flutter_project/src/application/product_watcher_bloc/product_wat
 
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/products_page_body.dart';
 
-class ProductsPage extends HookWidget {
+class ProductsPage extends StatelessWidget {
   static const routeName = '/';
 
   const ProductsPage({Key? key}) : super(key: key);
@@ -49,7 +49,7 @@ class ProductsPage extends HookWidget {
                   loadFailure: (_) =>
                       ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text(AppTexts.itemDeleted),
+                      content: Text(AppTexts.errorLoadData),
                       backgroundColor: Colors.red,
                     ),
                   ),

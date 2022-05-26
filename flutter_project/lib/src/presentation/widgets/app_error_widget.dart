@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/config/design_metrics/icons_size.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 
-class ErrorLayout extends StatelessWidget {
+class AppErrorWidget extends StatelessWidget {
   final String message;
 
-  const ErrorLayout({
+  const AppErrorWidget({
     Key? key,
     required this.message,
   }) : super(key: key);

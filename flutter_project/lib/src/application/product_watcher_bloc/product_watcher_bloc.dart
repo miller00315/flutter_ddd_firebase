@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/src/domain/entities/product.dart';
-import 'package:flutter_project/src/domain/entities/product_failures.dart';
+import 'package:flutter_project/src/domain/entities/product/product.dart';
+import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -28,6 +28,8 @@ class ProductWatcherBloc
     on<ProductWatcherEvent>((event, emit) {
       event.map(
         startedWatchProducts: (e) async {
+          emit(const ProductWatcherState.loadInProgress());
+
           await _productsStreamSubscription?.cancel();
 
           _productsStreamSubscription = _productRepository.watchAll().listen(
@@ -37,8 +39,6 @@ class ProductWatcherBloc
               );
         },
         productsReceived: (e) async {
-          emit(const ProductWatcherState.loadInProgress());
-
           e.failureOrProducts.fold(
             (failure) => emit(ProductWatcherState.loadFailure(failure)),
             (products) => emit(ProductWatcherState.loadSuccess(products)),

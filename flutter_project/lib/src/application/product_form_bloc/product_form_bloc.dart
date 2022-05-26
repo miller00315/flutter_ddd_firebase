@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/src/domain/entities/product.dart';
-import 'package:flutter_project/src/domain/entities/product_failures.dart';
-import 'package:flutter_project/src/domain/entities/value_objects.dart';
+import 'package:flutter_project/src/domain/entities/product/product.dart';
+import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
+import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

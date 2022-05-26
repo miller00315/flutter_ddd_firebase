@@ -3,6 +3,10 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/core/value_validators.dart';
 
+///Estas são classes que verificam os valores de entrada
+///quando são inválidos os erros são registrado
+///para que classe que os utilizem possa verificar quando necessário
+
 class ProductTitle extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
@@ -30,7 +34,7 @@ class ProductPrice extends ValueObject<double> {
   final Either<ValueFailure<double>, double> value;
 
   factory ProductPrice(double input) {
-    return ProductPrice._(validateValidNumber(input));
+    return ProductPrice._(validateNumber(input));
   }
 
   const ProductPrice._(this.value);
