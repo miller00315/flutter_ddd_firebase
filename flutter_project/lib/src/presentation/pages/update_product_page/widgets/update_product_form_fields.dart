@@ -1,5 +1,4 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,8 +6,6 @@ import 'package:flutter_project/config/design_metrics/padding.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/application/product_form_bloc/product_form_bloc.dart';
-import 'package:flutter_project/src/domain/entities/product_image/product_image.dart';
-import 'package:flutter_project/src/domain/entities/product_image/product_image_failures.dart';
 import 'package:intl/intl.dart';
 
 class UpdateProductFormFields extends StatelessWidget {

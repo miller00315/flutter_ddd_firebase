@@ -131,6 +131,8 @@ class _ProductListTileState extends State<ProductListTile>
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
+
     return Container(
       padding: AppPadding.mediumPadding,
       height: Insets.listTileHeight,

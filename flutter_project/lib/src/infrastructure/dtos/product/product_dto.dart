@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
-import 'package:flutter_project/src/infrastructure/data_sources/network/products_data_source.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'product_dto.freezed.dart';

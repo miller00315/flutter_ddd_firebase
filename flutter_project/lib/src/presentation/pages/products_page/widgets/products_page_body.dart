@@ -7,7 +7,6 @@ import 'package:flutter_project/src/application/product_watcher_bloc/product_wat
 
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_lis_tile/product_list_tile.dart';
-import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_lis_tile/produt_list_tile_thumbnail.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
 import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 import 'package:flutter_project/src/presentation/widgets/app_error_widget.dart';
