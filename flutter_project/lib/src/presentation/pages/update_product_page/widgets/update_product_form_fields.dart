@@ -2,11 +2,15 @@ import 'package:currency_text_input_formatter/currency_text_input_formatter.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_project/config/colors/default_colors.dart';
 import 'package:flutter_project/config/design_metrics/padding.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/application/product_form_bloc/product_form_bloc.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
+
+import '../../../../../config/text_styles/app_text_styles.dart';
 
 class UpdateProductFormFields extends StatelessWidget {
   UpdateProductFormFields({Key? key}) : super(key: key);
@@ -111,22 +115,30 @@ class UpdateProductFormFields extends StatelessWidget {
               const SizedBox(
                 height: AppSpacing.medium,
               ),
-              TextFormField(
-                enabled: !state.isSaving,
-                decoration: const InputDecoration(
-                  hintText: AppTexts.classification,
-                  labelText: AppTexts.classification,
+              Center(
+                child: Column(
+                  children: [
+                    Text(
+                      AppTexts.classification,
+                      style: AppTextStyles.normalText(context),
+                    ),
+                    RatingBar.builder(
+                      allowHalfRating: false,
+                      initialRating: state.product?.rating?.toDouble() ?? 0.0,
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: AppColors.appPurple,
+                      ),
+                      itemCount: 5,
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      onRatingUpdate: (rating) => bloc.add(
+                        ProductFormEvent.ratingChanged(
+                          rating.toInt(),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                keyboardType: TextInputType.number,
-                initialValue: state.product!.rating.toString(),
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp("[0-9]")),
-                  FilteringTextInputFormatter.deny(RegExp(r'^0+'))
-                ],
-                onChanged: (value) {
-                  final rating = value.isEmpty ? 0 : int.parse(value);
-                  bloc.add(ProductFormEvent.ratingChanged(rating));
-                },
               ),
             ],
           ),
