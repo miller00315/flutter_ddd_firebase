@@ -6,7 +6,7 @@ import 'package:get_it/get_it.dart';
 
 final GetIt injector = GetIt.instance;
 
-void configureInjection(String env) {
+void configureInjection() {
   firebaseInjector(injector);
   dataSourcesInjector(injector);
   repositoriesInjector(injector);
