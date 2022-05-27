@@ -1,12 +1,5 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_project/config/colors/default_colors.dart';
-import 'package:flutter_project/config/design_metrics/app_font_size.dart';
-import 'package:flutter_project/config/design_metrics/icons_size.dart';
-import 'package:flutter_project/config/design_metrics/insets.dart';
-import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:flutter_project/config/text_styles/app_text_styles.dart';
-import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile/widgets/product_list_tile_header.dart';
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile/widgets/product_list_tile_pop_up_menu.dart';

@@ -1,50 +1,39 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_project/config/colors/default_colors.dart';
+import 'package:flutter_project/injector/main.dart';
+import 'package:flutter_project/src/application/product_image_actor_bloc/product_image_actor_bloc.dart';
+import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile/widgets/product_list_tile_fade_image.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
-class ProductListTileThumbnail extends StatefulWidget {
-  final File file;
-  const ProductListTileThumbnail({
-    Key? key,
-    required this.file,
-  }) : super(key: key);
+class ProductListTileThumbnail extends StatelessWidget {
+  final String filename;
 
-  @override
-  State<ProductListTileThumbnail> createState() =>
-      _ProductListTileThumbnailState();
-}
-
-class _ProductListTileThumbnailState extends State<ProductListTileThumbnail>
-    with TickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController(
-    duration: const Duration(milliseconds: 1500),
-    vsync: this,
-  );
-
-  late final Animation<double> _animation = CurvedAnimation(
-    parent: _controller,
-    curve: Curves.easeIn,
-  );
-
-  @override
-  void initState() {
-    super.initState();
-    _controller.forward();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  const ProductListTileThumbnail({Key? key, required this.filename})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: _animation,
-      child: Image.file(
-        widget.file,
-        fit: BoxFit.cover,
+    return BlocProvider(
+      create: (context) => injector<ProductImageActorBloc>()
+        ..add(
+          ProductImageActorEvent.fetch(filename),
+        ),
+      child: BlocBuilder<ProductImageActorBloc, ProductImageActorState>(
+        builder: (context, state) => state.map(
+          initial: (value) => Container(),
+          fetchFailure: (_) => const Icon(Icons.error),
+          fetchInProgress: (_) => Shimmer(
+            child: Container(
+              color: AppColors.appGrey,
+              child: const Icon(Icons.image),
+            ),
+            colorOpacity: 0.3,
+          ),
+          fetchSuccess: (value) => ProductListTileFadeImage(
+            file: value.image.file,
+          ),
+        ),
       ),
     );
   }

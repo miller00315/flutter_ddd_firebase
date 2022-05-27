@@ -4,7 +4,6 @@ import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
-
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile/product_list_tile.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
