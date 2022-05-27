@@ -36,8 +36,19 @@ class ProductsDataSource implements IProductDataSource {
 
     yield* collection.snapshots().map((snapshot) {
       final data = snapshot.docs;
+      List<ProductDto> products = [];
 
-      return data.map((doc) => ProductDto.fromFirestore(doc)).toList();
+      //tenta fazer o parse e retorna apenas itens válidos
+      for (var element in data) {
+        try {
+          products.add(ProductDto.fromFirestore(element));
+          // ignore: empty_catches
+        } catch (e) {
+          /// O erro deve ser tratado 
+        }
+      }
+
+      return products;
     });
   }
 }
