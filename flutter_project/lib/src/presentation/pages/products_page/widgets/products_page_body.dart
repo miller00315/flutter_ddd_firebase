@@ -18,6 +18,7 @@ class ProductPageBody extends StatelessWidget {
   void _handleDeleteProduct(Product product, context) async => await showDialog(
         context: context,
         builder: (alertContext) => CustomAlert(
+          message: AppTexts.alertContinueAction,
           handleConfirmationButtonPress: () {
             BlocProvider.of<ProductActorBloc>(context)
                 .add(ProductActorEvent.delete(product));
@@ -49,17 +50,13 @@ class ProductPageBody extends StatelessWidget {
             ),
             padding: const EdgeInsets.all(AppSpacing.small),
             itemCount: state.products.length,
-            itemBuilder: (context, index) {
-              final product = state.products[index];
-
-              return ProductListTile(
-                product: product,
-                handleEditButtonTap: (product) =>
-                    _handleEditProduct(product, context),
-                handleDeleteButtonTap: (product) =>
-                    _handleDeleteProduct(product, context),
-              );
-            },
+            itemBuilder: (context, index) => ProductListTile(
+              product: state.products[index],
+              handleEditButtonTap: (product) =>
+                  _handleEditProduct(product, context),
+              handleDeleteButtonTap: (product) =>
+                  _handleDeleteProduct(product, context),
+            ),
           ),
           loadFailure: (state) => const AppErrorWidget(
             message: AppTexts.errorLoadData,

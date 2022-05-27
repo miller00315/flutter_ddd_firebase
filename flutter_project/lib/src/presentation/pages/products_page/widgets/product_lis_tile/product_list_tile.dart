@@ -28,13 +28,11 @@ class ProductListTile extends StatefulWidget {
 class _ProductListTileState extends State<ProductListTile>
     with AutomaticKeepAliveClientMixin {
   @override
-  bool get wantKeepAlive => true;
-
-  @override
   Widget build(BuildContext context) {
     super.build(context);
 
     return Container(
+      key: Key(widget.product.id.getOrCrash()),
       padding: AppPadding.mediumPadding,
       height: Insets.listTileHeight,
       decoration: BoxDecoration(
@@ -78,4 +76,7 @@ class _ProductListTileState extends State<ProductListTile>
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

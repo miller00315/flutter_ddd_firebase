@@ -8,12 +8,18 @@ class CustomAlert extends StatelessWidget {
   final void Function() handleConfirmationButtonPress;
 
   /// O que fazer quando o botão de rejeitar do alerta for pressionado?
-  final void Function() handleRejectionButtonPress;
+  final void Function()? handleRejectionButtonPress;
+
+  final String message;
+
+  final String? confirmButtonText;
 
   const CustomAlert({
     Key? key,
     required this.handleConfirmationButtonPress,
-    required this.handleRejectionButtonPress,
+    this.handleRejectionButtonPress,
+    required this.message,
+    this.confirmButtonText,
   }) : super(key: key);
 
   @override
@@ -24,27 +30,28 @@ class CustomAlert extends StatelessWidget {
       contentPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
       content: Column(
         children: [
-          const Text(AppTexts.alertContinueAction),
+          Text(message),
           const SizedBox(
             height: AppSpacing.medium,
           ),
           ElevatedButton(
             onPressed: handleConfirmationButtonPress,
             child: Text(
-              AppTexts.confirm,
+              confirmButtonText ?? AppTexts.confirm,
               style: AppTextStyles.buttonTextWhite(context),
             ),
           ),
           const SizedBox(
             height: AppSpacing.medium,
           ),
-          ElevatedButton(
-            onPressed: handleRejectionButtonPress,
-            child: Text(
-              AppTexts.cancel,
-              style: AppTextStyles.buttonTextWhite(context),
+          if (handleRejectionButtonPress != null)
+            ElevatedButton(
+              onPressed: handleRejectionButtonPress,
+              child: Text(
+                AppTexts.cancel,
+                style: AppTextStyles.buttonTextWhite(context),
+              ),
             ),
-          ),
         ],
       ),
     );

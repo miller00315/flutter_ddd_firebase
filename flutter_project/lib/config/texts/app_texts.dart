@@ -17,4 +17,5 @@ mixin AppTexts {
   static const classification = 'Classificação';
   static const saveChanges = 'Salvar mudanças';
   static const errorLoadData = 'Algo ocorreu ao tentar carregar os produtos';
+  static const close = 'Fechar';
 }

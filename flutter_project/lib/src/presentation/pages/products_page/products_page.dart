@@ -8,6 +8,7 @@ import 'package:flutter_project/src/application/product_actor_bloc/product_actor
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 
 import 'package:flutter_project/src/presentation/pages/products_page/widgets/products_page_body.dart';
+import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 
 class ProductsPage extends StatelessWidget {
   static const routeName = '/';
@@ -60,12 +61,17 @@ class ProductsPage extends StatelessWidget {
                 state.map(
                   initial: (_) => {},
                   deleteInProgress: (_) => {},
-                  deleteSuccess: (_) =>
-                      ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text(AppTexts.itemDeleted),
-                    ),
-                  ),
+                  deleteSuccess: (_) {
+                    showDialog(
+                      context: context,
+                      builder: (context) => CustomAlert(
+                        message: AppTexts.itemDeleted,
+                        confirmButtonText: AppTexts.close,
+                        handleConfirmationButtonPress: () =>
+                            Navigator.of(context).pop(false),
+                      ),
+                    );
+                  },
                   deleteFailure: (_) =>
                       ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
