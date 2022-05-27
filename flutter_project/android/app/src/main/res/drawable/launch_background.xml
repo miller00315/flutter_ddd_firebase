@@ -4,7 +4,8 @@
     <item android:drawable="@android:color/white" />
 
     <item
-
+        android:right="30dp"
+        android:left="30dp"
         android:gravity="center"
         android:drawable="@drawable/splash_icon"
         >
