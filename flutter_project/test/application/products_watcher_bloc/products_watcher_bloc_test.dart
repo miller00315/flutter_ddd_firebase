@@ -1,16 +1,15 @@
 import 'dart:async';
 
+import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter_project/mocks/fake_data.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
-import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
-import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
-import 'package:uuid/uuid.dart';
 
 import 'products_watcher_bloc_test.mocks.dart';
 
@@ -18,90 +17,87 @@ import 'products_watcher_bloc_test.mocks.dart';
 main() {
   final productRepositoryMock = MockIProductRepository();
 
-  final Product product = Product(
-    id: UniqueId.fromUniqueString(const Uuid().v1().toString()),
-    title: ProductTitle('test'),
-    type: ProductType('test'),
-    description: 'teste',
-    filename: '0',
-    height: 2,
-    width: 2,
-    price: ProductPrice(2),
-    rating: 2,
-    created: DateTime.now(),
-  );
+  StreamController<Either<ProductFailure, List<Product>>>? controller;
 
   group('ProductsBloc group =>', () {
-    test('should start listen and receive the firsts data', () async {
-      final controller =
-          StreamController<Either<ProductFailure, List<Product>>>();
-
-      controller.add(right([product]));
-
-      when(productRepositoryMock.watchAll()).thenAnswer(
-        (_) => controller.stream,
-      );
-
-      final productWatcherBloc = ProductWatcherBloc(productRepositoryMock);
-
-      productWatcherBloc.add(const ProductWatcherEvent.startedWatchProducts());
-
-      await expectLater(
-        productWatcherBloc.stream,
-        emitsInOrder(
-          <ProductWatcherState>[
-            const ProductWatcherState.loadInProgress(),
-            ProductWatcherState.loadSuccess([product]),
-          ],
-        ),
-      );
-
-      expect(
-        productWatcherBloc.state,
-        ProductWatcherState.loadSuccess([product]),
-      );
-
-      productWatcherBloc.close();
-
-      controller.close();
+    setUp(() {
+      controller = StreamController<Either<ProductFailure, List<Product>>>();
     });
 
-    test('should start listen and when receive error should ', () async {
-      final controller =
-          StreamController<Either<ProductFailure, List<Product>>>();
+    tearDown(() {
+      controller?.close();
 
-      controller.add(left(const ProductFailure.insufficientPermissions()));
+      reset(productRepositoryMock);
+    });
 
-      when(productRepositoryMock.watchAll()).thenAnswer(
-        (_) => controller.stream,
-      );
+    blocTest<ProductWatcherBloc, ProductWatcherState>(
+      'should request and emit state with products',
+      build: () => ProductWatcherBloc(productRepositoryMock),
+      setUp: () {
+        controller!.add(right([fakeProduct]));
 
-      final productWatcherBloc = ProductWatcherBloc(productRepositoryMock);
+        when(productRepositoryMock.watchAll()).thenAnswer(
+          (_) => controller!.stream,
+        );
+      },
+      act: (bloc) => bloc.add(
+        const ProductWatcherEvent.startedWatchProducts(),
+      ),
+      verify: (_) {
+        verify(productRepositoryMock.watchAll()).called(1);
+      },
+      expect: () => [
+        const ProductWatcherState.loadInProgress(),
+        ProductWatcherState.loadSuccess([fakeProduct]),
+      ],
+    );
 
-      productWatcherBloc.add(const ProductWatcherEvent.startedWatchProducts());
+    blocTest<ProductWatcherBloc, ProductWatcherState>(
+      'should request and emit state error with [ProductFailure.insufficientPermissions]',
+      build: () => ProductWatcherBloc(productRepositoryMock),
+      setUp: () {
+        controller!.add(left(const ProductFailure.insufficientPermissions()));
 
-      await expectLater(
-        productWatcherBloc.stream,
-        emitsInOrder(
-          <ProductWatcherState>[
-            const ProductWatcherState.loadInProgress(),
-            const ProductWatcherState.loadFailure(
-              ProductFailure.insufficientPermissions(),
-            ),
-          ],
-        ),
-      );
-
-      expect(
-        productWatcherBloc.state,
+        when(productRepositoryMock.watchAll()).thenAnswer(
+          (_) => controller!.stream,
+        );
+      },
+      act: (bloc) => bloc.add(
+        const ProductWatcherEvent.startedWatchProducts(),
+      ),
+      verify: (_) {
+        verify(productRepositoryMock.watchAll()).called(1);
+      },
+      expect: () => [
+        const ProductWatcherState.loadInProgress(),
         const ProductWatcherState.loadFailure(
           ProductFailure.insufficientPermissions(),
         ),
-      );
+      ],
+    );
 
-      productWatcherBloc.close();
+    blocTest<ProductWatcherBloc, ProductWatcherState>(
+      'should request and emit state error with [ProductFailure.unexpected]',
+      build: () => ProductWatcherBloc(productRepositoryMock),
+      setUp: () {
+        controller!.add(left(const ProductFailure.unexpected()));
 
-      controller.close();
-    });
+        when(productRepositoryMock.watchAll()).thenAnswer(
+          (_) => controller!.stream,
+        );
+      },
+      act: (bloc) => bloc.add(
+        const ProductWatcherEvent.startedWatchProducts(),
+      ),
+      verify: (_) {
+        verify(productRepositoryMock.watchAll()).called(1);
+      },
+      expect: () => [
+        const ProductWatcherState.loadInProgress(),
+        const ProductWatcherState.loadFailure(
+          ProductFailure.unexpected(),
+        ),
+      ],
+    );
   });
 }

@@ -5,6 +5,7 @@ import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/product_list_empty.dart';
 import 'package:flutter_project/src/presentation/pages/home_page/widgets/product_list_tile/product_list_tile.dart';
 import 'package:flutter_project/src/presentation/pages/home_page/widgets/products_list_loading.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
@@ -44,6 +45,10 @@ class HomePageBody extends StatelessWidget {
           initial: (_) => Container(),
           loadInProgress: (_) => const ProductListLoading(),
           loadSuccess: (state) {
+            final products = state.products;
+
+            if (products.isEmpty) return const ProductListEmpty();
+
             return ListView.separated(
               separatorBuilder: (context, _) => const SizedBox(
                 height: AppSpacing.small,

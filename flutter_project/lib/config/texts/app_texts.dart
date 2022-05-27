@@ -18,4 +18,5 @@ mixin AppTexts {
   static const saveChanges = 'Salvar mudanças';
   static const errorLoadData = 'Algo ocorreu ao tentar carregar os produtos';
   static const close = 'Fechar';
+  static const emptyList = 'Não existem productos a serem apresentados';
 }
