@@ -6,7 +6,7 @@ import 'package:flutter_project/src/application/product_actor_bloc/product_actor
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 
 import 'package:flutter_project/src/domain/entities/product/product.dart';
-import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_lis_tile/product_list_tile.dart';
+import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile/product_list_tile.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
 import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 import 'package:flutter_project/src/presentation/widgets/app_error_widget.dart';
@@ -44,20 +44,22 @@ class ProductPageBody extends StatelessWidget {
         return state.map(
           initial: (_) => Container(),
           loadInProgress: (_) => const LoadingWidget(),
-          loadSuccess: (state) => ListView.separated(
-            separatorBuilder: (context, _) => const SizedBox(
-              height: AppSpacing.small,
-            ),
-            padding: const EdgeInsets.all(AppSpacing.small),
-            itemCount: state.products.length,
-            itemBuilder: (context, index) => ProductListTile(
-              product: state.products[index],
-              handleEditButtonTap: (product) =>
-                  _handleEditProduct(product, context),
-              handleDeleteButtonTap: (product) =>
-                  _handleDeleteProduct(product, context),
-            ),
-          ),
+          loadSuccess: (state) {
+            return ListView.separated(
+              separatorBuilder: (context, _) => const SizedBox(
+                height: AppSpacing.small,
+              ),
+              padding: const EdgeInsets.all(AppSpacing.small),
+              itemCount: state.products.length,
+              itemBuilder: (context, index) => ProductListTile(
+                product: state.products[index],
+                handleEditButtonTap: (product) =>
+                    _handleEditProduct(product, context),
+                handleDeleteButtonTap: (product) =>
+                    _handleDeleteProduct(product, context),
+              ),
+            );
+          },
           loadFailure: (state) => const AppErrorWidget(
             message: AppTexts.errorLoadData,
           ),

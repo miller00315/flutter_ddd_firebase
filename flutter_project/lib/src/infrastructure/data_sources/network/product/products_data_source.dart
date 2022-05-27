@@ -1,16 +1,25 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_project/src/infrastructure/data_sources/network/product/i_products_data_source.dart';
 import 'package:flutter_project/src/infrastructure/dtos/product/product_dto.dart';
 
 class ProductsDataSource implements IProductDataSource {
   final FirebaseFirestore _firestore;
+  final FirebaseStorage _firebaseStorage;
 
-  ProductsDataSource(this._firestore);
+  ProductsDataSource(
+    this._firestore,
+    this._firebaseStorage,
+  );
 
   @override
-  Future delete(String id) async {
-    await _firestore.collection('products').doc(id).delete();
+  Future delete(ProductDto productDto) async {
+    await _firestore.collection('products').doc(productDto.id).delete();
+
+    if (productDto.filename != null) {
+      await _firebaseStorage.ref('images').child(productDto.filename!).delete();
+    }
   }
 
   @override

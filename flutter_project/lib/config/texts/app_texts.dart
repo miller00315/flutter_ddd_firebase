@@ -1,5 +1,5 @@
 mixin AppTexts {
-  static const appTitle = 'Supermarket';
+  static const homeTitle = 'Produtos';
   static const alertContinueAction = 'Você deseja continuar esta ação';
   static const confirm = 'Confirmar';
   static const cancel = 'Cancelar';

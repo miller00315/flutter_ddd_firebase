@@ -15,7 +15,7 @@ class ProductRepository implements IProductRepository {
   @override
   Future<Either<ProductFailure, Unit>> delete(Product product) async {
     try {
-      await productDataSource.delete(product.id.getOrCrash());
+      await productDataSource.delete(ProductDto.fromDomain(product));
 
       return right(unit);
     } on PlatformException catch (e) {

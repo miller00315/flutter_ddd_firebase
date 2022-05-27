@@ -8,6 +8,7 @@ void dataSourcesInjector(GetIt injector) {
   injector.registerLazySingleton<IProductDataSource>(
     () => ProductsDataSource(
       injector(),
+      injector(),
     ),
   );
 

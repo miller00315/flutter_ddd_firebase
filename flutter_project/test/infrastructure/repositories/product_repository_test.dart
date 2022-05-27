@@ -45,12 +45,12 @@ main() {
     test(
         'should call [productDataSource.delete] and when delete Product success return a right with a unit',
         () async {
-      when(productDataSourceMock.delete(product.id.getOrCrash()))
+      when(productDataSourceMock.delete(productDto))
           .thenAnswer((_) => Future.value());
 
       final res = await productRepository.delete(product);
 
-      verify(productDataSourceMock.delete(product.id.getOrCrash())).called(1);
+      verify(productDataSourceMock.delete(productDto)).called(1);
 
       res.fold(
         (l) => expect(l, null),
@@ -61,7 +61,7 @@ main() {
     test(
         'should call [productDataSource.delete] and when delete fail with PERMISSIONS_DENIED return on the left a [ProductFailure.insufficientPermissions]',
         () async {
-      when(productDataSourceMock.delete(product.id.getOrCrash())).thenThrow(
+      when(productDataSourceMock.delete(productDto)).thenThrow(
         PlatformException(
           code: '13',
           message: 'PERMISSION_DENIED',
@@ -70,7 +70,7 @@ main() {
 
       final res = await productRepository.delete(product);
 
-      verify(productDataSourceMock.delete(product.id.getOrCrash())).called(1);
+      verify(productDataSourceMock.delete(productDto)).called(1);
 
       res.fold(
         (l) => expect(l, const ProductFailure.insufficientPermissions()),
@@ -81,7 +81,7 @@ main() {
     test(
         'should call [productDataSource.delete] and when delete fail with unknown error return on the left a [ProductFailure.unexpected]',
         () async {
-      when(productDataSourceMock.delete(product.id.getOrCrash())).thenThrow(
+      when(productDataSourceMock.delete(productDto)).thenThrow(
         PlatformException(
           code: '500',
           message: 'UNKNOWN',
@@ -90,7 +90,7 @@ main() {
 
       final res = await productRepository.delete(product);
 
-      verify(productDataSourceMock.delete(product.id.getOrCrash())).called(1);
+      verify(productDataSourceMock.delete(productDto)).called(1);
 
       res.fold(
         (l) => expect(l, const ProductFailure.unexpected()),

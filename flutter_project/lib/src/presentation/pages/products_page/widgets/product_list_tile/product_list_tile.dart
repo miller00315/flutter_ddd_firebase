@@ -5,9 +5,10 @@ import 'package:flutter_project/config/design_metrics/padding.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_image_actor_bloc/product_image_actor_bloc.dart';
-import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_lis_tile/product_list_tile_content.dart';
-import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_lis_tile/produt_list_tile_thumbnail.dart';
+import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile/product_list_tile_content.dart';
+import 'package:flutter_project/src/presentation/pages/products_page/widgets/product_list_tile/produt_list_tile_thumbnail.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
+import 'package:shimmer_animation/shimmer_animation.dart';
 
 class ProductListTile extends StatefulWidget {
   final Product product;
@@ -55,9 +56,12 @@ class _ProductListTileState extends State<ProductListTile>
                       builder: (context, state) => state.map(
                         initial: (value) => Container(),
                         fetchFailure: (_) => const Icon(Icons.error),
-                        fetchInProgress: (_) => const Padding(
-                          padding: AppPadding.largePadding,
-                          child: CircularProgressIndicator(),
+                        fetchInProgress: (_) => Shimmer(
+                          child: Container(
+                            color: Colors.grey,
+                            child: const Icon(Icons.image),
+                          ),
+                          colorOpacity: 0.3,
                         ),
                         fetchSuccess: (value) =>
                             ProductListTileThumbnail(file: value.image.file),

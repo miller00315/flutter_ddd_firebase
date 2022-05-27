@@ -39,7 +39,7 @@ class MockIProductDataSource extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#update, [product]),
           returnValue: Future<dynamic>.value()) as _i3.Future<dynamic>);
   @override
-  _i3.Future<dynamic> delete(String? id) =>
-      (super.noSuchMethod(Invocation.method(#delete, [id]),
+  _i3.Future<dynamic> delete(_i4.ProductDto? productDto) =>
+      (super.noSuchMethod(Invocation.method(#delete, [productDto]),
           returnValue: Future<dynamic>.value()) as _i3.Future<dynamic>);
 }

@@ -28,30 +28,37 @@ class CustomAlert extends StatelessWidget {
       scrollable: true,
       actionsOverflowDirection: VerticalDirection.down,
       contentPadding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
+      actions: [
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton(
+                onPressed: handleConfirmationButtonPress,
+                child: Text(
+                  confirmButtonText ?? AppTexts.confirm,
+                  style: AppTextStyles.buttonTextWhite(context),
+                ),
+              ),
+              if (handleRejectionButtonPress != null)
+                ElevatedButton(
+                  onPressed: handleRejectionButtonPress,
+                  child: Text(
+                    AppTexts.cancel,
+                    style: AppTextStyles.buttonTextWhite(context),
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ],
       content: Column(
         children: [
           Text(message),
           const SizedBox(
             height: AppSpacing.medium,
           ),
-          ElevatedButton(
-            onPressed: handleConfirmationButtonPress,
-            child: Text(
-              confirmButtonText ?? AppTexts.confirm,
-              style: AppTextStyles.buttonTextWhite(context),
-            ),
-          ),
-          const SizedBox(
-            height: AppSpacing.medium,
-          ),
-          if (handleRejectionButtonPress != null)
-            ElevatedButton(
-              onPressed: handleRejectionButtonPress,
-              child: Text(
-                AppTexts.cancel,
-                style: AppTextStyles.buttonTextWhite(context),
-              ),
-            ),
         ],
       ),
     );

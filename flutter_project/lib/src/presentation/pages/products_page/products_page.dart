@@ -24,7 +24,7 @@ class ProductsPage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          AppTexts.appTitle,
+          AppTexts.homeTitle,
           style: AppTextStyles.h1(context),
         ),
       ),

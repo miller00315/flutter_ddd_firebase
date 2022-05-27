@@ -5,25 +5,25 @@ import 'package:flutter_project/src/application/product_watcher_bloc/product_wat
 import 'package:get_it/get_it.dart';
 
 void blocInjector(GetIt injector) {
-  injector.registerFactory<ProductWatcherBloc>(
+  injector.registerFactory(
     () => ProductWatcherBloc(
       injector(),
     ),
   );
 
-  injector.registerFactory<ProductFormBloc>(
+  injector.registerFactory(
     () => ProductFormBloc(
       injector(),
     ),
   );
 
-  injector.registerFactory<ProductActorBloc>(
+  injector.registerFactory(
     () => ProductActorBloc(
       injector(),
     ),
   );
 
-  injector.registerFactory<ProductImageActorBloc>(
+  injector.registerFactory(
     () => ProductImageActorBloc(
       injector(),
     ),
