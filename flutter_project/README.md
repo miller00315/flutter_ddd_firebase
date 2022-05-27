@@ -1,4 +1,3 @@
-# [![Flutter logo][]][flutter.dev]
 # Flutter project
 
 ## Descrição do projeto
