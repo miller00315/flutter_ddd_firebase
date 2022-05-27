@@ -17,7 +17,7 @@ class ProductDto with _$ProductDto {
     String? filename,
     int? height,
     int? width,
-    required double price,
+    required num price,
     int? rating,
     @JsonKey(ignore: true) DateTime? created,
   }) = _ProductDto;

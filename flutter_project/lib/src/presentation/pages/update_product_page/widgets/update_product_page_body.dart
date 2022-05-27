@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/application/product_form_bloc/product_form_bloc.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/widgets/update_product_footer_button.dart';
-import 'package:flutter_project/src/presentation/pages/update_product_page/widgets/update_product_form_fields.dart';
+import 'package:flutter_project/src/presentation/pages/update_product_page/widgets/update_product_form.dart';
 
-class UpdateProductPageBody extends StatelessWidget {
-  const UpdateProductPageBody({Key? key}) : super(key: key);
+class UpdateListProductsPageBody extends StatelessWidget {
+  const UpdateListProductsPageBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class UpdateProductPageBody extends StatelessWidget {
                 autovalidateMode: state.showErrorMessages
                     ? AutovalidateMode.always
                     : AutovalidateMode.disabled,
-                child: UpdateProductFormFields(),
+                child: UpdateProductForm(),
               ),
               UpdateProductFooterButton(
                 isSaving: state.isSaving,

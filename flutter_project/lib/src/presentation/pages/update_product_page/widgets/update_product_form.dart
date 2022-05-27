@@ -1,19 +1,19 @@
 import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_project/config/colors/default_colors.dart';
 import 'package:flutter_project/config/design_metrics/padding.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/application/product_form_bloc/product_form_bloc.dart';
+import 'package:flutter_project/src/domain/entities/product/value_objects.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../../config/text_styles/app_text_styles.dart';
 
-class UpdateProductFormFields extends StatelessWidget {
-  UpdateProductFormFields({Key? key}) : super(key: key);
+class UpdateProductForm extends StatelessWidget {
+  UpdateProductForm({Key? key}) : super(key: key);
 
   final CurrencyTextInputFormatter _formatter = CurrencyTextInputFormatter(
     locale: 'pt_Br',
@@ -95,13 +95,10 @@ class UpdateProductFormFields extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.number,
                 inputFormatters: [_formatter],
-                initialValue:
-                    NumberFormat.simpleCurrency(locale: 'pt_BR').format(
-                  state.product!.price.getOrElse(0),
-                ),
+                initialValue: state.product!.price.getCurrencyString(),
                 onChanged: (value) => bloc.add(
                   ProductFormEvent.priceChanged(
-                    _formatter.getUnformattedValue() as double,
+                    _formatter.getUnformattedValue(),
                   ),
                 ),
                 validator: (_) => state.product!.price.value.fold(

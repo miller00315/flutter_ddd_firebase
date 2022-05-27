@@ -4,8 +4,8 @@ import 'package:flutter_project/config/design_metrics/insets.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
-class ProductsPageLoading extends StatelessWidget {
-  const ProductsPageLoading({Key? key}) : super(key: key);
+class ListProductsPageLoading extends StatelessWidget {
+  const ListProductsPageLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

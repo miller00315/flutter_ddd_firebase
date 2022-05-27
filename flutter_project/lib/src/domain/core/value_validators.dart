@@ -12,7 +12,7 @@ Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   }
 }
 
-Either<ValueFailure<double>, double> validateNumber(double input) {
+Either<ValueFailure<num>, num> validateNumber(num input) {
   if (input == 0) {
     return left(ValueFailure.invalidValue(failedValue: input));
   } else {

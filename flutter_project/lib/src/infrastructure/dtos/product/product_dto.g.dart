@@ -14,7 +14,7 @@ _$_ProductDto _$$_ProductDtoFromJson(Map<String, dynamic> json) =>
       filename: json['filename'] as String?,
       height: json['height'] as int?,
       width: json['width'] as int?,
-      price: (json['price'] as num).toDouble(),
+      price: json['price'] as num,
       rating: json['rating'] as int?,
     );
 

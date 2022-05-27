@@ -8,7 +8,7 @@ class ProductFormEvent with _$ProductFormEvent {
   const factory ProductFormEvent.descriptionChanged(String description) =
       _DescriptionChanged;
   const factory ProductFormEvent.typeChanged(String type) = _TypeChanged;
-  const factory ProductFormEvent.priceChanged(double price) = _PriceChanged;
+  const factory ProductFormEvent.priceChanged(num price) = _PriceChanged;
   const factory ProductFormEvent.ratingChanged(int rating) = _RatingChanged;
   const factory ProductFormEvent.saved() = _Saved;
 }

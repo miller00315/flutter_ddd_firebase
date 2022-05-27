@@ -22,7 +22,7 @@ mixin _$ProductFormEvent {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) =>
@@ -33,7 +33,7 @@ mixin _$ProductFormEvent {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) =>
@@ -44,7 +44,7 @@ mixin _$ProductFormEvent {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),
@@ -173,7 +173,7 @@ class _$_Initialize implements _Initialize {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) {
@@ -187,7 +187,7 @@ class _$_Initialize implements _Initialize {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) {
@@ -201,7 +201,7 @@ class _$_Initialize implements _Initialize {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),
@@ -338,7 +338,7 @@ class _$_TitleChanged implements _TitleChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) {
@@ -352,7 +352,7 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) {
@@ -366,7 +366,7 @@ class _$_TitleChanged implements _TitleChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),
@@ -504,7 +504,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) {
@@ -518,7 +518,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) {
@@ -532,7 +532,7 @@ class _$_DescriptionChanged implements _DescriptionChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),
@@ -669,7 +669,7 @@ class _$_TypeChanged implements _TypeChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) {
@@ -683,7 +683,7 @@ class _$_TypeChanged implements _TypeChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) {
@@ -697,7 +697,7 @@ class _$_TypeChanged implements _TypeChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),
@@ -769,7 +769,7 @@ abstract class _$$_PriceChangedCopyWith<$Res> {
   factory _$$_PriceChangedCopyWith(
           _$_PriceChanged value, $Res Function(_$_PriceChanged) then) =
       __$$_PriceChangedCopyWithImpl<$Res>;
-  $Res call({double price});
+  $Res call({num price});
 }
 
 /// @nodoc
@@ -791,7 +791,7 @@ class __$$_PriceChangedCopyWithImpl<$Res>
       price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num,
     ));
   }
 }
@@ -802,7 +802,7 @@ class _$_PriceChanged implements _PriceChanged {
   const _$_PriceChanged(this.price);
 
   @override
-  final double price;
+  final num price;
 
   @override
   String toString() {
@@ -833,7 +833,7 @@ class _$_PriceChanged implements _PriceChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) {
@@ -847,7 +847,7 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) {
@@ -861,7 +861,7 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),
@@ -920,9 +920,9 @@ class _$_PriceChanged implements _PriceChanged {
 }
 
 abstract class _PriceChanged implements ProductFormEvent {
-  const factory _PriceChanged(final double price) = _$_PriceChanged;
+  const factory _PriceChanged(final num price) = _$_PriceChanged;
 
-  double get price => throw _privateConstructorUsedError;
+  num get price => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_PriceChangedCopyWith<_$_PriceChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -997,7 +997,7 @@ class _$_RatingChanged implements _RatingChanged {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) {
@@ -1011,7 +1011,7 @@ class _$_RatingChanged implements _RatingChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) {
@@ -1025,7 +1025,7 @@ class _$_RatingChanged implements _RatingChanged {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),
@@ -1134,7 +1134,7 @@ class _$_Saved implements _Saved {
     required TResult Function(String title) titleChanged,
     required TResult Function(String description) descriptionChanged,
     required TResult Function(String type) typeChanged,
-    required TResult Function(double price) priceChanged,
+    required TResult Function(num price) priceChanged,
     required TResult Function(int rating) ratingChanged,
     required TResult Function() saved,
   }) {
@@ -1148,7 +1148,7 @@ class _$_Saved implements _Saved {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
   }) {
@@ -1162,7 +1162,7 @@ class _$_Saved implements _Saved {
     TResult Function(String title)? titleChanged,
     TResult Function(String description)? descriptionChanged,
     TResult Function(String type)? typeChanged,
-    TResult Function(double price)? priceChanged,
+    TResult Function(num price)? priceChanged,
     TResult Function(int rating)? ratingChanged,
     TResult Function()? saved,
     required TResult orElse(),

@@ -28,7 +28,7 @@ mixin _$ProductDto {
   String? get filename => throw _privateConstructorUsedError;
   int? get height => throw _privateConstructorUsedError;
   int? get width => throw _privateConstructorUsedError;
-  double get price => throw _privateConstructorUsedError;
+  num get price => throw _privateConstructorUsedError;
   int? get rating => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   DateTime? get created => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $ProductDtoCopyWith<$Res> {
       String? filename,
       int? height,
       int? width,
-      double price,
+      num price,
       int? rating,
       @JsonKey(ignore: true) DateTime? created});
 }
@@ -110,7 +110,7 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ abstract class _$$_ProductDtoCopyWith<$Res>
       String? filename,
       int? height,
       int? width,
-      double price,
+      num price,
       int? rating,
       @JsonKey(ignore: true) DateTime? created});
 }
@@ -198,7 +198,7 @@ class __$$_ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num,
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
@@ -245,7 +245,7 @@ class _$_ProductDto implements _ProductDto {
   @override
   final int? width;
   @override
-  final double price;
+  final num price;
   @override
   final int? rating;
   @override
@@ -310,7 +310,7 @@ abstract class _ProductDto implements ProductDto {
       final String? filename,
       final int? height,
       final int? width,
-      required final double price,
+      required final num price,
       final int? rating,
       @JsonKey(ignore: true) final DateTime? created}) = _$_ProductDto;
 
@@ -333,7 +333,7 @@ abstract class _ProductDto implements ProductDto {
   @override
   int? get width => throw _privateConstructorUsedError;
   @override
-  double get price => throw _privateConstructorUsedError;
+  num get price => throw _privateConstructorUsedError;
   @override
   int? get rating => throw _privateConstructorUsedError;
   @override
