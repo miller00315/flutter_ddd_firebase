@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ProductImageDto {
-  String get url => throw _privateConstructorUsedError;
+  File get file => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductImageDtoCopyWith<ProductImageDto> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $ProductImageDtoCopyWith<$Res> {
   factory $ProductImageDtoCopyWith(
           ProductImageDto value, $Res Function(ProductImageDto) then) =
       _$ProductImageDtoCopyWithImpl<$Res>;
-  $Res call({String url});
+  $Res call({File file});
 }
 
 /// @nodoc
@@ -42,13 +42,13 @@ class _$ProductImageDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? url = freezed,
+    Object? file = freezed,
   }) {
     return _then(_value.copyWith(
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
@@ -60,7 +60,7 @@ abstract class _$$_ProductImageDtoCopyWith<$Res>
           _$_ProductImageDto value, $Res Function(_$_ProductImageDto) then) =
       __$$_ProductImageDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String url});
+  $Res call({File file});
 }
 
 /// @nodoc
@@ -76,13 +76,13 @@ class __$$_ProductImageDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? url = freezed,
+    Object? file = freezed,
   }) {
     return _then(_$_ProductImageDto(
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
@@ -92,14 +92,14 @@ class __$$_ProductImageDtoCopyWithImpl<$Res>
 class _$_ProductImageDto
     with DiagnosticableTreeMixin
     implements _ProductImageDto {
-  _$_ProductImageDto({required this.url});
+  _$_ProductImageDto({required this.file});
 
   @override
-  final String url;
+  final File file;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ProductImageDto(url: $url)';
+    return 'ProductImageDto(file: $file)';
   }
 
   @override
@@ -107,7 +107,7 @@ class _$_ProductImageDto
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ProductImageDto'))
-      ..add(DiagnosticsProperty('url', url));
+      ..add(DiagnosticsProperty('file', file));
   }
 
   @override
@@ -115,12 +115,12 @@ class _$_ProductImageDto
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProductImageDto &&
-            const DeepCollectionEquality().equals(other.url, url));
+            const DeepCollectionEquality().equals(other.file, file));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(file));
 
   @JsonKey(ignore: true)
   @override
@@ -129,10 +129,10 @@ class _$_ProductImageDto
 }
 
 abstract class _ProductImageDto implements ProductImageDto {
-  factory _ProductImageDto({required final String url}) = _$_ProductImageDto;
+  factory _ProductImageDto({required final File file}) = _$_ProductImageDto;
 
   @override
-  String get url => throw _privateConstructorUsedError;
+  File get file => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductImageDtoCopyWith<_$_ProductImageDto> get copyWith =>

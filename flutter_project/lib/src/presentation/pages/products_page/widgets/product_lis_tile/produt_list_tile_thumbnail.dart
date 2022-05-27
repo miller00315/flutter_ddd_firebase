@@ -1,24 +1,19 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 class ProductListTileThumbnail extends StatelessWidget {
-  final String url;
+  final File file;
   const ProductListTileThumbnail({
     Key? key,
-    required this.url,
+    required this.file,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: url,
+    return Image.file(
+      file,
       fit: BoxFit.cover,
-      progressIndicatorBuilder: (context, url, progress) => Center(
-        child: CircularProgressIndicator(
-          value: progress.progress,
-        ),
-      ),
-      errorWidget: (context, url, error) => const Icon(Icons.error),
     );
   }
 }

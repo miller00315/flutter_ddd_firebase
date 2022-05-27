@@ -99,14 +99,16 @@ class ProductListTileContent extends StatelessWidget {
           ],
         ),
         Text(
-          DateFormat('dd/MM/yyyy').format(product.created),
+          product.created != null
+              ? DateFormat('dd/MM/yyyy').format(product.created!)
+              : '',
           style: AppTextStyles.normalText(context),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             RatingWidget(
-              rating: product.rating,
+              rating: product.rating ?? 0,
             ),
             Text(
               'R\$${product.price.getOrCrash()}'.replaceAll('.0', ''),

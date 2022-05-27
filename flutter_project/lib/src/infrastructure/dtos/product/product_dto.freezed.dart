@@ -24,12 +24,12 @@ mixin _$ProductDto {
   String? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get filename => throw _privateConstructorUsedError;
-  int get height => throw _privateConstructorUsedError;
-  int get width => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get filename => throw _privateConstructorUsedError;
+  int? get height => throw _privateConstructorUsedError;
+  int? get width => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
-  int get rating => throw _privateConstructorUsedError;
+  int? get rating => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   DateTime? get created => throw _privateConstructorUsedError;
 
@@ -48,12 +48,12 @@ abstract class $ProductDtoCopyWith<$Res> {
       {@JsonKey(ignore: true) String? id,
       String title,
       String type,
-      String description,
-      String filename,
-      int height,
-      int width,
+      String? description,
+      String? filename,
+      int? height,
+      int? width,
       double price,
-      int rating,
+      int? rating,
       @JsonKey(ignore: true) DateTime? created});
 }
 
@@ -94,19 +94,19 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       filename: filename == freezed
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       height: height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       width: width == freezed
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -114,7 +114,7 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -134,12 +134,12 @@ abstract class _$$_ProductDtoCopyWith<$Res>
       {@JsonKey(ignore: true) String? id,
       String title,
       String type,
-      String description,
-      String filename,
-      int height,
-      int width,
+      String? description,
+      String? filename,
+      int? height,
+      int? width,
       double price,
-      int rating,
+      int? rating,
       @JsonKey(ignore: true) DateTime? created});
 }
 
@@ -182,19 +182,19 @@ class __$$_ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       filename: filename == freezed
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       height: height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       width: width == freezed
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -202,7 +202,7 @@ class __$$_ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -218,12 +218,12 @@ class _$_ProductDto implements _ProductDto {
       {@JsonKey(ignore: true) this.id,
       required this.title,
       required this.type,
-      required this.description,
-      required this.filename,
-      required this.height,
-      required this.width,
+      this.description,
+      this.filename,
+      this.height,
+      this.width,
       required this.price,
-      required this.rating,
+      this.rating,
       @JsonKey(ignore: true) this.created});
 
   factory _$_ProductDto.fromJson(Map<String, dynamic> json) =>
@@ -237,17 +237,17 @@ class _$_ProductDto implements _ProductDto {
   @override
   final String type;
   @override
-  final String description;
+  final String? description;
   @override
-  final String filename;
+  final String? filename;
   @override
-  final int height;
+  final int? height;
   @override
-  final int width;
+  final int? width;
   @override
   final double price;
   @override
-  final int rating;
+  final int? rating;
   @override
   @JsonKey(ignore: true)
   final DateTime? created;
@@ -306,12 +306,12 @@ abstract class _ProductDto implements ProductDto {
       {@JsonKey(ignore: true) final String? id,
       required final String title,
       required final String type,
-      required final String description,
-      required final String filename,
-      required final int height,
-      required final int width,
+      final String? description,
+      final String? filename,
+      final int? height,
+      final int? width,
       required final double price,
-      required final int rating,
+      final int? rating,
       @JsonKey(ignore: true) final DateTime? created}) = _$_ProductDto;
 
   factory _ProductDto.fromJson(Map<String, dynamic> json) =
@@ -325,17 +325,17 @@ abstract class _ProductDto implements ProductDto {
   @override
   String get type => throw _privateConstructorUsedError;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @override
-  String get filename => throw _privateConstructorUsedError;
+  String? get filename => throw _privateConstructorUsedError;
   @override
-  int get height => throw _privateConstructorUsedError;
+  int? get height => throw _privateConstructorUsedError;
   @override
-  int get width => throw _privateConstructorUsedError;
+  int? get width => throw _privateConstructorUsedError;
   @override
   double get price => throw _privateConstructorUsedError;
   @override
-  int get rating => throw _privateConstructorUsedError;
+  int? get rating => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   DateTime? get created => throw _privateConstructorUsedError;

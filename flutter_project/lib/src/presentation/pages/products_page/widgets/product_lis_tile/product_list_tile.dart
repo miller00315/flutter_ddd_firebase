@@ -45,22 +45,26 @@ class _ProductListTileState extends State<ProductListTile>
         children: [
           AspectRatio(
             aspectRatio: 1.0,
-            child: BlocProvider(
-              create: (context) => injector<ProductImageActorBloc>()
-                ..add(ProductImageActorEvent.fetch(widget.product.filename)),
-              child: BlocBuilder<ProductImageActorBloc, ProductImageActorState>(
-                builder: (context, state) => state.map(
-                  initial: (value) => Container(),
-                  fetchFailure: (_) => const Icon(Icons.error),
-                  fetchInProgress: (_) => const Padding(
-                    padding: AppPadding.largePadding,
-                    child: CircularProgressIndicator(),
-                  ),
-                  fetchSuccess: (value) =>
-                      ProductListTileThumbnail(url: value.image.url),
-                ),
-              ),
-            ),
+            child: widget.product.filename != null
+                ? BlocProvider(
+                    create: (context) => injector<ProductImageActorBloc>()
+                      ..add(ProductImageActorEvent.fetch(
+                          widget.product.filename!)),
+                    child: BlocBuilder<ProductImageActorBloc,
+                        ProductImageActorState>(
+                      builder: (context, state) => state.map(
+                        initial: (value) => Container(),
+                        fetchFailure: (_) => const Icon(Icons.error),
+                        fetchInProgress: (_) => const Padding(
+                          padding: AppPadding.largePadding,
+                          child: CircularProgressIndicator(),
+                        ),
+                        fetchSuccess: (value) =>
+                            ProductListTileThumbnail(file: value.image.file),
+                      ),
+                    ),
+                  )
+                : const Icon(Icons.image),
           ),
           const SizedBox(
             width: AppSpacing.small,

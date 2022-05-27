@@ -13,12 +13,12 @@ class ProductDto with _$ProductDto {
     @JsonKey(ignore: true) String? id,
     required String title,
     required String type,
-    required String description,
-    required String filename,
-    required int height,
-    required int width,
+    String? description,
+    String? filename,
+    int? height,
+    int? width,
     required double price,
-    required int rating,
+    int? rating,
     @JsonKey(ignore: true) DateTime? created,
   }) = _ProductDto;
 

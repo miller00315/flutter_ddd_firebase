@@ -37,8 +37,6 @@ dependencies:
 
   auto_size_text: ^3.0.0
 
-  cached_network_image: ^3.2.0
-
   cloud_firestore: ^3.1.16
 
   currency_text_input_formatter: ^2.1.5
@@ -51,11 +49,7 @@ dependencies:
 
   flutter_bloc: ^8.0.1
 
-  flutter_hooks: ^0.18.3
-
   firebase_core: ^1.17.0
-
-  firebase_storage: ^10.2.16
 
   # code generator for data-classes/unions/pattern-matching/cloning.
   freezed_annotation: ^2.0.3
@@ -81,8 +75,6 @@ dev_dependencies:
 
   fake_cloud_firestore: ^1.2.2
 
-  firebase_storage_mocks: ^0.5.0
-
   freezed: ^2.0.3+1
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -92,12 +84,12 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+  flutter_cache_manager_firebase: ^2.0.1
+
   json_serializable: ^6.2.0
 
   # Mock library for Dart inspired by Mockito.
   mockito: ^5.1.0
-
-  #test: ^1.21.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

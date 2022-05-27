@@ -19,13 +19,13 @@ mixin _$Product {
   UniqueId get id => throw _privateConstructorUsedError;
   ProductTitle get title => throw _privateConstructorUsedError;
   ProductType get type => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get filename => throw _privateConstructorUsedError;
-  int get height => throw _privateConstructorUsedError;
-  int get width => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get filename => throw _privateConstructorUsedError;
+  int? get height => throw _privateConstructorUsedError;
+  int? get width => throw _privateConstructorUsedError;
   ProductPrice get price => throw _privateConstructorUsedError;
-  int get rating => throw _privateConstructorUsedError;
-  DateTime get created => throw _privateConstructorUsedError;
+  int? get rating => throw _privateConstructorUsedError;
+  DateTime? get created => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
@@ -39,13 +39,13 @@ abstract class $ProductCopyWith<$Res> {
       {UniqueId id,
       ProductTitle title,
       ProductType type,
-      String description,
-      String filename,
-      int height,
-      int width,
+      String? description,
+      String? filename,
+      int? height,
+      int? width,
       ProductPrice price,
-      int rating,
-      DateTime created});
+      int? rating,
+      DateTime? created});
 }
 
 /// @nodoc
@@ -85,19 +85,19 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       filename: filename == freezed
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       height: height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       width: width == freezed
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -105,11 +105,11 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -124,13 +124,13 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       {UniqueId id,
       ProductTitle title,
       ProductType type,
-      String description,
-      String filename,
-      int height,
-      int width,
+      String? description,
+      String? filename,
+      int? height,
+      int? width,
       ProductPrice price,
-      int rating,
-      DateTime created});
+      int? rating,
+      DateTime? created});
 }
 
 /// @nodoc
@@ -171,19 +171,19 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       filename: filename == freezed
           ? _value.filename
           : filename // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       height: height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       width: width == freezed
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -191,11 +191,11 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -207,13 +207,13 @@ class _$_Product implements _Product {
       {required this.id,
       required this.title,
       required this.type,
-      required this.description,
-      required this.filename,
-      required this.height,
-      required this.width,
+      this.description,
+      this.filename,
+      this.height,
+      this.width,
       required this.price,
-      required this.rating,
-      required this.created});
+      this.rating,
+      this.created});
 
   @override
   final UniqueId id;
@@ -222,19 +222,19 @@ class _$_Product implements _Product {
   @override
   final ProductType type;
   @override
-  final String description;
+  final String? description;
   @override
-  final String filename;
+  final String? filename;
   @override
-  final int height;
+  final int? height;
   @override
-  final int width;
+  final int? width;
   @override
   final ProductPrice price;
   @override
-  final int rating;
+  final int? rating;
   @override
-  final DateTime created;
+  final DateTime? created;
 
   @override
   String toString() {
@@ -284,13 +284,13 @@ abstract class _Product implements Product {
       {required final UniqueId id,
       required final ProductTitle title,
       required final ProductType type,
-      required final String description,
-      required final String filename,
-      required final int height,
-      required final int width,
+      final String? description,
+      final String? filename,
+      final int? height,
+      final int? width,
       required final ProductPrice price,
-      required final int rating,
-      required final DateTime created}) = _$_Product;
+      final int? rating,
+      final DateTime? created}) = _$_Product;
 
   @override
   UniqueId get id => throw _privateConstructorUsedError;
@@ -299,19 +299,19 @@ abstract class _Product implements Product {
   @override
   ProductType get type => throw _privateConstructorUsedError;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @override
-  String get filename => throw _privateConstructorUsedError;
+  String? get filename => throw _privateConstructorUsedError;
   @override
-  int get height => throw _privateConstructorUsedError;
+  int? get height => throw _privateConstructorUsedError;
   @override
-  int get width => throw _privateConstructorUsedError;
+  int? get width => throw _privateConstructorUsedError;
   @override
   ProductPrice get price => throw _privateConstructorUsedError;
   @override
-  int get rating => throw _privateConstructorUsedError;
+  int? get rating => throw _privateConstructorUsedError;
   @override
-  DateTime get created => throw _privateConstructorUsedError;
+  DateTime? get created => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>

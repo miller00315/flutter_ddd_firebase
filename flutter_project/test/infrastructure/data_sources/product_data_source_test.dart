@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:flutter_project/src/infrastructure/data_sources/network/products_data_source.dart';
+import 'package:flutter_project/src/infrastructure/data_sources/network/product/products_data_source.dart';
 import 'package:flutter_project/src/infrastructure/dtos/product/product_dto.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:uuid/uuid.dart';

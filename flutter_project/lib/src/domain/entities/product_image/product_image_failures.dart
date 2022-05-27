@@ -8,6 +8,5 @@ class ProductImageFailure {
   const factory ProductImageFailure.unexpected() = Unexpected;
   const factory ProductImageFailure.insufficientPermissions() =
       InsufficientPermissions;
-  const factory ProductImageFailure.unableToFetch() = UnableToGet;
-  const factory ProductImageFailure.unableToUpload() = UnableToUpload;
+  const factory ProductImageFailure.unableToFetch() = UnableToFetch;
 }

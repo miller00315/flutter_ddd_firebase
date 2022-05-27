@@ -10,12 +10,12 @@ _$_ProductDto _$$_ProductDtoFromJson(Map<String, dynamic> json) =>
     _$_ProductDto(
       title: json['title'] as String,
       type: json['type'] as String,
-      description: json['description'] as String,
-      filename: json['filename'] as String,
-      height: json['height'] as int,
-      width: json['width'] as int,
+      description: json['description'] as String?,
+      filename: json['filename'] as String?,
+      height: json['height'] as int?,
+      width: json['width'] as int?,
       price: (json['price'] as num).toDouble(),
-      rating: json['rating'] as int,
+      rating: json['rating'] as int?,
     );
 
 Map<String, dynamic> _$$_ProductDtoToJson(_$_ProductDto instance) =>

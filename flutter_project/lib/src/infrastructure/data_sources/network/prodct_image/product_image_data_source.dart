@@ -1,18 +1,18 @@
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter_cache_manager_firebase/flutter_cache_manager_firebase.dart';
 import 'package:flutter_project/src/infrastructure/data_sources/network/prodct_image/i_prodcut_image_datasource.dart';
 import 'package:flutter_project/src/infrastructure/dtos/prodcut_image/product_image_dto.dart';
 
 class ProductImageDatSource implements IProductImageDataSource {
-  final FirebaseStorage _firebaseStore;
+  final FirebaseCacheManager _firebaseCacheManager;
 
-  ProductImageDatSource(this._firebaseStore);
+  ProductImageDatSource(this._firebaseCacheManager);
 
   @override
-  Future<ProductImageDto> getDownloadUrl(String filename) async {
-    return ProductImageDto(
-        url: await _firebaseStore
-            .ref('images')
-            .child(filename)
-            .getDownloadURL());
+  Future<ProductImageDto> getProductImage(String filename) async {
+    final image = await _firebaseCacheManager.getSingleFile(
+      '/images/$filename',
+    );
+
+    return ProductImageDto(file: image);
   }
 }

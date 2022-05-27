@@ -3,7 +3,7 @@ import 'package:flutter_project/src/domain/entities/product/product_failures.dar
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_project/src/domain/repositories/i_product_repository.dart';
-import 'package:flutter_project/src/infrastructure/data_sources/network/i_products_data_source.dart';
+import 'package:flutter_project/src/infrastructure/data_sources/network/product/i_products_data_source.dart';
 import 'package:flutter_project/src/infrastructure/dtos/product/product_dto.dart';
 import 'package:rxdart/rxdart.dart';
 

@@ -19,7 +19,7 @@ class ProductImageRepository implements IProductImageRepository {
   Future<Either<ProductImageFailure, ProductImage>> fetch(
       String filename) async {
     try {
-      final result = await _productDataSource.getDownloadUrl(filename);
+      final result = await _productDataSource.getProductImage(filename);
 
       return right(result.toDomain());
     } on PlatformException catch (e) {

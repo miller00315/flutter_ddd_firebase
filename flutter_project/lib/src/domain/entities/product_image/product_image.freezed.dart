@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ProductImage {
-  String get url => throw _privateConstructorUsedError;
+  File get file => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductImageCopyWith<ProductImage> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $ProductImageCopyWith<$Res> {
   factory $ProductImageCopyWith(
           ProductImage value, $Res Function(ProductImage) then) =
       _$ProductImageCopyWithImpl<$Res>;
-  $Res call({String url});
+  $Res call({File file});
 }
 
 /// @nodoc
@@ -41,13 +41,13 @@ class _$ProductImageCopyWithImpl<$Res> implements $ProductImageCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? url = freezed,
+    Object? file = freezed,
   }) {
     return _then(_value.copyWith(
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
@@ -59,7 +59,7 @@ abstract class _$$_ProductImageCopyWith<$Res>
           _$_ProductImage value, $Res Function(_$_ProductImage) then) =
       __$$_ProductImageCopyWithImpl<$Res>;
   @override
-  $Res call({String url});
+  $Res call({File file});
 }
 
 /// @nodoc
@@ -75,13 +75,13 @@ class __$$_ProductImageCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? url = freezed,
+    Object? file = freezed,
   }) {
     return _then(_$_ProductImage(
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
+      file: file == freezed
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
     ));
   }
 }
@@ -89,14 +89,14 @@ class __$$_ProductImageCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ProductImage implements _ProductImage {
-  const _$_ProductImage({required this.url});
+  const _$_ProductImage({required this.file});
 
   @override
-  final String url;
+  final File file;
 
   @override
   String toString() {
-    return 'ProductImage(url: $url)';
+    return 'ProductImage(file: $file)';
   }
 
   @override
@@ -104,12 +104,12 @@ class _$_ProductImage implements _ProductImage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProductImage &&
-            const DeepCollectionEquality().equals(other.url, url));
+            const DeepCollectionEquality().equals(other.file, file));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(file));
 
   @JsonKey(ignore: true)
   @override
@@ -118,10 +118,10 @@ class _$_ProductImage implements _ProductImage {
 }
 
 abstract class _ProductImage implements ProductImage {
-  const factory _ProductImage({required final String url}) = _$_ProductImage;
+  const factory _ProductImage({required final File file}) = _$_ProductImage;
 
   @override
-  String get url => throw _privateConstructorUsedError;
+  File get file => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductImageCopyWith<_$_ProductImage> get copyWith =>

@@ -2,14 +2,12 @@
 // in flutter_project/test/infrastructure/repositories/product_repository_test.dart.
 // Do not manually edit this file.
 
-import 'dart:async' as _i4;
+import 'dart:async' as _i3;
 
-import 'package:flutter_project/src/infrastructure/data_sources/network/i_products_data_source.dart'
-    as _i3;
-import 'package:flutter_project/src/infrastructure/dtos/prodcut_image/product_image_dto.dart'
+import 'package:flutter_project/src/infrastructure/data_sources/network/product/i_products_data_source.dart'
     as _i2;
 import 'package:flutter_project/src/infrastructure/dtos/product/product_dto.dart'
-    as _i5;
+    as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -22,34 +20,26 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 
-class _FakeProductImageDto_0 extends _i1.Fake implements _i2.ProductImageDto {}
-
 /// A class which mocks [IProductDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockIProductDataSource extends _i1.Mock
-    implements _i3.IProductDataSource {
+    implements _i2.IProductDataSource {
   MockIProductDataSource() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i4.Stream<List<_i5.ProductDto>> watchAll() =>
+  _i3.Stream<List<_i4.ProductDto>> watchAll() =>
       (super.noSuchMethod(Invocation.method(#watchAll, []),
-              returnValue: Stream<List<_i5.ProductDto>>.empty())
-          as _i4.Stream<List<_i5.ProductDto>>);
+              returnValue: Stream<List<_i4.ProductDto>>.empty())
+          as _i3.Stream<List<_i4.ProductDto>>);
   @override
-  _i4.Future<dynamic> update(_i5.ProductDto? product) =>
+  _i3.Future<dynamic> update(_i4.ProductDto? product) =>
       (super.noSuchMethod(Invocation.method(#update, [product]),
-          returnValue: Future<dynamic>.value()) as _i4.Future<dynamic>);
+          returnValue: Future<dynamic>.value()) as _i3.Future<dynamic>);
   @override
-  _i4.Future<dynamic> delete(String? id) =>
+  _i3.Future<dynamic> delete(String? id) =>
       (super.noSuchMethod(Invocation.method(#delete, [id]),
-          returnValue: Future<dynamic>.value()) as _i4.Future<dynamic>);
-  @override
-  _i4.Future<_i2.ProductImageDto> getDownloadUrl(String? filename) =>
-      (super.noSuchMethod(Invocation.method(#getDownloadUrl, [filename]),
-              returnValue:
-                  Future<_i2.ProductImageDto>.value(_FakeProductImageDto_0()))
-          as _i4.Future<_i2.ProductImageDto>);
+          returnValue: Future<dynamic>.value()) as _i3.Future<dynamic>);
 }

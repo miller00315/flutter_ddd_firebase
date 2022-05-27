@@ -13,13 +13,13 @@ class Product with _$Product implements IEntity {
     required UniqueId id,
     required ProductTitle title,
     required ProductType type,
-    required String description,
-    required String filename,
-    required int height,
-    required int width,
+    String? description,
+    String? filename,
+    int? height,
+    int? width,
     required ProductPrice price,
-    required int rating,
-    required DateTime created,
+    int? rating,
+    DateTime? created,
   }) = _Product;
 }
 

@@ -21,7 +21,6 @@ mixin _$ProductImageFailure {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToFetch,
-    required TResult Function() unableToUpload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +28,6 @@ mixin _$ProductImageFailure {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +35,6 @@ mixin _$ProductImageFailure {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,24 +43,21 @@ mixin _$ProductImageFailure {
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(UnableToGet value) unableToFetch,
-    required TResult Function(UnableToUpload value) unableToUpload,
+    required TResult Function(UnableToFetch value) unableToFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,7 +124,6 @@ class _$Unexpected implements Unexpected {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToFetch,
-    required TResult Function() unableToUpload,
   }) {
     return unexpected();
   }
@@ -141,7 +134,6 @@ class _$Unexpected implements Unexpected {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
   }) {
     return unexpected?.call();
   }
@@ -152,7 +144,6 @@ class _$Unexpected implements Unexpected {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -167,8 +158,7 @@ class _$Unexpected implements Unexpected {
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(UnableToGet value) unableToFetch,
-    required TResult Function(UnableToUpload value) unableToUpload,
+    required TResult Function(UnableToFetch value) unableToFetch,
   }) {
     return unexpected(this);
   }
@@ -178,8 +168,7 @@ class _$Unexpected implements Unexpected {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
   }) {
     return unexpected?.call(this);
   }
@@ -189,8 +178,7 @@ class _$Unexpected implements Unexpected {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -250,7 +238,6 @@ class _$InsufficientPermissions implements InsufficientPermissions {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToFetch,
-    required TResult Function() unableToUpload,
   }) {
     return insufficientPermissions();
   }
@@ -261,7 +248,6 @@ class _$InsufficientPermissions implements InsufficientPermissions {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
   }) {
     return insufficientPermissions?.call();
   }
@@ -272,7 +258,6 @@ class _$InsufficientPermissions implements InsufficientPermissions {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -287,8 +272,7 @@ class _$InsufficientPermissions implements InsufficientPermissions {
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(UnableToGet value) unableToFetch,
-    required TResult Function(UnableToUpload value) unableToUpload,
+    required TResult Function(UnableToFetch value) unableToFetch,
   }) {
     return insufficientPermissions(this);
   }
@@ -298,8 +282,7 @@ class _$InsufficientPermissions implements InsufficientPermissions {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
   }) {
     return insufficientPermissions?.call(this);
   }
@@ -309,8 +292,7 @@ class _$InsufficientPermissions implements InsufficientPermissions {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
     required TResult orElse(),
   }) {
     if (insufficientPermissions != null) {
@@ -325,28 +307,28 @@ abstract class InsufficientPermissions implements ProductImageFailure {
 }
 
 /// @nodoc
-abstract class _$$UnableToGetCopyWith<$Res> {
-  factory _$$UnableToGetCopyWith(
-          _$UnableToGet value, $Res Function(_$UnableToGet) then) =
-      __$$UnableToGetCopyWithImpl<$Res>;
+abstract class _$$UnableToFetchCopyWith<$Res> {
+  factory _$$UnableToFetchCopyWith(
+          _$UnableToFetch value, $Res Function(_$UnableToFetch) then) =
+      __$$UnableToFetchCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UnableToGetCopyWithImpl<$Res>
+class __$$UnableToFetchCopyWithImpl<$Res>
     extends _$ProductImageFailureCopyWithImpl<$Res>
-    implements _$$UnableToGetCopyWith<$Res> {
-  __$$UnableToGetCopyWithImpl(
-      _$UnableToGet _value, $Res Function(_$UnableToGet) _then)
-      : super(_value, (v) => _then(v as _$UnableToGet));
+    implements _$$UnableToFetchCopyWith<$Res> {
+  __$$UnableToFetchCopyWithImpl(
+      _$UnableToFetch _value, $Res Function(_$UnableToFetch) _then)
+      : super(_value, (v) => _then(v as _$UnableToFetch));
 
   @override
-  _$UnableToGet get _value => super._value as _$UnableToGet;
+  _$UnableToFetch get _value => super._value as _$UnableToFetch;
 }
 
 /// @nodoc
 
-class _$UnableToGet implements UnableToGet {
-  const _$UnableToGet();
+class _$UnableToFetch implements UnableToFetch {
+  const _$UnableToFetch();
 
   @override
   String toString() {
@@ -356,7 +338,7 @@ class _$UnableToGet implements UnableToGet {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UnableToGet);
+        (other.runtimeType == runtimeType && other is _$UnableToFetch);
   }
 
   @override
@@ -368,7 +350,6 @@ class _$UnableToGet implements UnableToGet {
     required TResult Function() unexpected,
     required TResult Function() insufficientPermissions,
     required TResult Function() unableToFetch,
-    required TResult Function() unableToUpload,
   }) {
     return unableToFetch();
   }
@@ -379,7 +360,6 @@ class _$UnableToGet implements UnableToGet {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
   }) {
     return unableToFetch?.call();
   }
@@ -390,7 +370,6 @@ class _$UnableToGet implements UnableToGet {
     TResult Function()? unexpected,
     TResult Function()? insufficientPermissions,
     TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
     required TResult orElse(),
   }) {
     if (unableToFetch != null) {
@@ -405,8 +384,7 @@ class _$UnableToGet implements UnableToGet {
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(InsufficientPermissions value)
         insufficientPermissions,
-    required TResult Function(UnableToGet value) unableToFetch,
-    required TResult Function(UnableToUpload value) unableToUpload,
+    required TResult Function(UnableToFetch value) unableToFetch,
   }) {
     return unableToFetch(this);
   }
@@ -416,8 +394,7 @@ class _$UnableToGet implements UnableToGet {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
   }) {
     return unableToFetch?.call(this);
   }
@@ -427,8 +404,7 @@ class _$UnableToGet implements UnableToGet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Unexpected value)? unexpected,
     TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
+    TResult Function(UnableToFetch value)? unableToFetch,
     required TResult orElse(),
   }) {
     if (unableToFetch != null) {
@@ -438,124 +414,6 @@ class _$UnableToGet implements UnableToGet {
   }
 }
 
-abstract class UnableToGet implements ProductImageFailure {
-  const factory UnableToGet() = _$UnableToGet;
-}
-
-/// @nodoc
-abstract class _$$UnableToUploadCopyWith<$Res> {
-  factory _$$UnableToUploadCopyWith(
-          _$UnableToUpload value, $Res Function(_$UnableToUpload) then) =
-      __$$UnableToUploadCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UnableToUploadCopyWithImpl<$Res>
-    extends _$ProductImageFailureCopyWithImpl<$Res>
-    implements _$$UnableToUploadCopyWith<$Res> {
-  __$$UnableToUploadCopyWithImpl(
-      _$UnableToUpload _value, $Res Function(_$UnableToUpload) _then)
-      : super(_value, (v) => _then(v as _$UnableToUpload));
-
-  @override
-  _$UnableToUpload get _value => super._value as _$UnableToUpload;
-}
-
-/// @nodoc
-
-class _$UnableToUpload implements UnableToUpload {
-  const _$UnableToUpload();
-
-  @override
-  String toString() {
-    return 'ProductImageFailure.unableToUpload()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UnableToUpload);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() unexpected,
-    required TResult Function() insufficientPermissions,
-    required TResult Function() unableToFetch,
-    required TResult Function() unableToUpload,
-  }) {
-    return unableToUpload();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? insufficientPermissions,
-    TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
-  }) {
-    return unableToUpload?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? unexpected,
-    TResult Function()? insufficientPermissions,
-    TResult Function()? unableToFetch,
-    TResult Function()? unableToUpload,
-    required TResult orElse(),
-  }) {
-    if (unableToUpload != null) {
-      return unableToUpload();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Unexpected value) unexpected,
-    required TResult Function(InsufficientPermissions value)
-        insufficientPermissions,
-    required TResult Function(UnableToGet value) unableToFetch,
-    required TResult Function(UnableToUpload value) unableToUpload,
-  }) {
-    return unableToUpload(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
-  }) {
-    return unableToUpload?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Unexpected value)? unexpected,
-    TResult Function(InsufficientPermissions value)? insufficientPermissions,
-    TResult Function(UnableToGet value)? unableToFetch,
-    TResult Function(UnableToUpload value)? unableToUpload,
-    required TResult orElse(),
-  }) {
-    if (unableToUpload != null) {
-      return unableToUpload(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UnableToUpload implements ProductImageFailure {
-  const factory UnableToUpload() = _$UnableToUpload;
+abstract class UnableToFetch implements ProductImageFailure {
+  const factory UnableToFetch() = _$UnableToFetch;
 }
