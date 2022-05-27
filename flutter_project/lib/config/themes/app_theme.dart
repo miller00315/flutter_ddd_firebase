@@ -14,7 +14,7 @@ ThemeData _buildAppTheme() {
       secondary: AppColors.appBrown900,
       error: AppColors.appErrorRed,
     ),
-    textTheme: _bulAppTextTheme(base.textTheme),
+    textTheme: _buildAppTextTheme(base.textTheme),
     inputDecorationTheme: const InputDecorationTheme(
       floatingLabelStyle: TextStyle(
         color: AppColors.appBrown900,
@@ -32,7 +32,7 @@ ThemeData _buildAppTheme() {
   );
 }
 
-TextTheme _bulAppTextTheme(TextTheme base) {
+TextTheme _buildAppTextTheme(TextTheme base) {
   return base
       .copyWith(
         headline5: base.headline5!.copyWith(

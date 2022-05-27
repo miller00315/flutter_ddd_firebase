@@ -15,11 +15,11 @@ class ProductsDataSource implements IProductDataSource {
 
   @override
   Future delete(ProductDto productDto) async {
-    await _firestore.collection('products').doc(productDto.id).delete();
-
     if (productDto.filename != null) {
       await _firebaseStorage.ref('images').child(productDto.filename!).delete();
     }
+
+    await _firestore.collection('products').doc(productDto.id).delete();
   }
 
   @override
@@ -34,10 +34,10 @@ class ProductsDataSource implements IProductDataSource {
   Stream<List<ProductDto>> watchAll() async* {
     final collection = _firestore.collection('products');
 
-    yield* collection.snapshots().map(
-          (snapshot) => snapshot.docs
-              .map((doc) => ProductDto.fromFirestore(doc))
-              .toList(),
-        );
+    yield* collection.snapshots().map((snapshot) {
+      final data = snapshot.docs;
+
+      return data.map((doc) => ProductDto.fromFirestore(doc)).toList();
+    });
   }
 }

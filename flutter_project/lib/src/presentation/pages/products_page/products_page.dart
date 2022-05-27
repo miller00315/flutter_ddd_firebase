@@ -50,7 +50,7 @@ class ProductsPage extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text(AppTexts.errorLoadData),
-                      backgroundColor: Colors.red,
+                      backgroundColor: AppColors.appErrorRed,
                     ),
                   ),
                 );
@@ -76,7 +76,7 @@ class ProductsPage extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text(AppTexts.deleteItemFailed),
-                      backgroundColor: Colors.red,
+                      backgroundColor: AppColors.appErrorRed,
                     ),
                   ),
                 );

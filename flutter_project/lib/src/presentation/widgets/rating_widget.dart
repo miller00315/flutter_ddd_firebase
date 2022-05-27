@@ -13,7 +13,9 @@ class RatingWidget extends StatelessWidget {
         5,
         (index) => Icon(
           Icons.star,
-          color: rating >= index + 1 ? AppColors.appPurple : Colors.grey,
+          color: rating >= index + 1
+              ? AppColors.appPurple
+              : AppColors.appGrey,
           size: IconSize.ultraSmall,
         ),
       ),

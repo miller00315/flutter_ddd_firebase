@@ -10,7 +10,7 @@ import 'package:flutter_project/src/presentation/pages/products_page/widgets/pro
 import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
 import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 import 'package:flutter_project/src/presentation/widgets/app_error_widget.dart';
-import 'package:flutter_project/src/presentation/widgets/load_widget.dart';
+import 'package:flutter_project/src/presentation/pages/products_page/widgets/products_page_load_widget.dart';
 
 class ProductPageBody extends StatelessWidget {
   const ProductPageBody({Key? key}) : super(key: key);
@@ -43,7 +43,7 @@ class ProductPageBody extends StatelessWidget {
       builder: (context, state) {
         return state.map(
           initial: (_) => Container(),
-          loadInProgress: (_) => const LoadingWidget(),
+          loadInProgress: (_) => const ProductsPageLoading(),
           loadSuccess: (state) {
             return ListView.separated(
               separatorBuilder: (context, _) => const SizedBox(

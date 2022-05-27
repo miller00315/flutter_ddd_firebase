@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/config/colors/default_colors.dart';
+import 'package:flutter_project/config/design_metrics/insets.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
 
-class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({Key? key}) : super(key: key);
+class ProductsPageLoading extends StatelessWidget {
+  const ProductsPageLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +17,8 @@ class LoadingWidget extends StatelessWidget {
         ),
         itemCount: 10,
         itemBuilder: (context, index) => Container(
-          color: Colors.grey,
-          height: 100,
+          color: AppColors.appGrey,
+          height: Insets.listTileHeight,
           width: double.maxFinite,
         ),
       ),
