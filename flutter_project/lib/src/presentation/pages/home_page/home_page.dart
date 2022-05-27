@@ -6,13 +6,13 @@ import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/injector/main.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/widgets/list_products_page_body.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/home_page_body.dart';
 import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 
-class ListProductsPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   static const routeName = '/';
 
-  const ListProductsPage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class ListProductsPage extends StatelessWidget {
               },
             )
           ],
-          child: const ListProductsPageBody(),
+          child: const HomePageBody(),
         ),
       ),
     );

@@ -36,7 +36,7 @@ class UpdateProductPage extends StatelessWidget {
             style: AppTextStyles.h1(context),
           ),
         ),
-        body: const UpdateListProductsPageBody(),
+        body: const UpdateHomePageBody(),
       ),
     );
   }

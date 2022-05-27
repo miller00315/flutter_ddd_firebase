@@ -5,8 +5,8 @@ import 'package:flutter_project/src/application/product_form_bloc/product_form_b
 import 'package:flutter_project/src/presentation/pages/update_product_page/widgets/update_product_footer_button.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/widgets/update_product_form.dart';
 
-class UpdateListProductsPageBody extends StatelessWidget {
-  const UpdateListProductsPageBody({Key? key}) : super(key: key);
+class UpdateHomePageBody extends StatelessWidget {
+  const UpdateHomePageBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

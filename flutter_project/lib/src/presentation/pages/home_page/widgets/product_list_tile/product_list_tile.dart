@@ -4,8 +4,8 @@ import 'package:flutter_project/config/design_metrics/insets.dart';
 import 'package:flutter_project/config/design_metrics/padding.dart';
 import 'package:flutter_project/config/design_metrics/spacing.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/widgets/product_list_tile/widgets/product_list_tile_content.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/widgets/product_list_tile/widgets/produt_list_tile_thumbnail.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/product_list_tile/widgets/product_list_tile_content.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/product_list_tile/widgets/produt_list_tile_thumbnail.dart';
 
 class ProductListTile extends StatefulWidget {
   final Product product;

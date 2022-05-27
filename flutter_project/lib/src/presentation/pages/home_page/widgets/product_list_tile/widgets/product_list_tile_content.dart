@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/config/text_styles/app_text_styles.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/widgets/product_list_tile/widgets/product_list_tile_header.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/widgets/product_list_tile/widgets/product_list_tile_pop_up_menu.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/product_list_tile/widgets/product_list_tile_header.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/product_list_tile/widgets/product_list_tile_pop_up_menu.dart';
 import 'package:flutter_project/src/presentation/widgets/rating_widget.dart';
 import 'package:intl/intl.dart';
 

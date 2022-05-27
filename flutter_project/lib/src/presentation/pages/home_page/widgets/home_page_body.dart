@@ -5,14 +5,14 @@ import 'package:flutter_project/config/texts/app_texts.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/widgets/product_list_tile/product_list_tile.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/widgets/list_products_page_load_widget.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/product_list_tile/product_list_tile.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/widgets/products_list_loading.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
 import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 import 'package:flutter_project/src/presentation/widgets/app_error_widget.dart';
 
-class ListProductsPageBody extends StatelessWidget {
-  const ListProductsPageBody({Key? key}) : super(key: key);
+class HomePageBody extends StatelessWidget {
+  const HomePageBody({Key? key}) : super(key: key);
 
   void _handleDeleteProduct(Product product, context) async => await showDialog(
         context: context,
@@ -42,7 +42,7 @@ class ListProductsPageBody extends StatelessWidget {
       builder: (context, state) {
         return state.map(
           initial: (_) => Container(),
-          loadInProgress: (_) => const ListProductsPageLoading(),
+          loadInProgress: (_) => const ProductListLoading(),
           loadSuccess: (state) {
             return ListView.separated(
               separatorBuilder: (context, _) => const SizedBox(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
-import 'package:flutter_project/src/presentation/pages/list_products_page/list_products_page.dart';
+import 'package:flutter_project/src/presentation/pages/home_page/home_page.dart';
 import 'package:flutter_project/src/presentation/pages/update_product_page/update_product_page.dart';
 
 Route<dynamic>? generateRoutes(RouteSettings settings) {
@@ -13,9 +13,9 @@ Route<dynamic>? generateRoutes(RouteSettings settings) {
     );
   }
 
-  if (settings.name == ListProductsPage.routeName) {
+  if (settings.name == HomePage.routeName) {
     return MaterialPageRoute(
-      builder: (context) => const ListProductsPage(),
+      builder: (context) => const HomePage(),
     );
   }
 
