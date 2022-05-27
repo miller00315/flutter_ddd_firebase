@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_project/mocks/fake_data.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
@@ -11,6 +10,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+import '../../mocks/fake_data.dart';
 import 'products_watcher_bloc_test.mocks.dart';
 
 @GenerateMocks([IProductRepository])

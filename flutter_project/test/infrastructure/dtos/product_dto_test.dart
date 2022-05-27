@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:flutter_project/mocks/fake_data.dart';
 import 'package:flutter_project/src/infrastructure/dtos/product/product_dto.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:uuid/uuid.dart';
+
+import '../../mocks/fake_data.dart';
 
 main() {
   final instance = FakeFirebaseFirestore();
 
   group('ProductDto group =>', () {
-    test('should return a ProductDto from a fakeJson', () {
+    test('should return a ProductDto from a json', () {
       final productDto = ProductDto.fromJson(fakeJson);
 
       expect(productDto.id, null);
@@ -34,28 +34,16 @@ main() {
       expect(productDto.rating, fakeProduct.rating);
     });
 
-    test('should generate a fakeJson from a ProductDto', () {
-      final productDto = ProductDto(
-        id: const Uuid().v1().toString(),
-        title: 'test',
-        type: 'test',
-        description: 'teste',
-        filename: '0',
-        height: 2,
-        width: 2,
-        price: 2,
-        rating: 2,
-      );
+    test('should generate a json from a ProductDto', () {
+      final productJson = fakeProductDto.toJson();
 
-      final productJson = productDto.toJson();
-
-      expect(productJson['title'], fakeJson['title']);
-      expect(productJson['type'], fakeJson['type']);
-      expect(productJson['description'], fakeJson['description']);
-      expect(productJson['filename'], fakeJson['filename']);
-      expect(productJson['height'], fakeJson['height']);
-      expect(productJson['price'], fakeJson['price']);
-      expect(productJson['rating'], fakeJson['rating']);
+      expect(productJson['title'], fakeProductDto.title);
+      expect(productJson['type'], fakeProductDto.type);
+      expect(productJson['description'], fakeProductDto.description);
+      expect(productJson['filename'], fakeProductDto.filename);
+      expect(productJson['height'], fakeProductDto.height);
+      expect(productJson['price'], fakeProductDto.price);
+      expect(productJson['rating'], fakeProductDto.rating);
     });
 
     test('should return a fakeProduct from a productDto', () {

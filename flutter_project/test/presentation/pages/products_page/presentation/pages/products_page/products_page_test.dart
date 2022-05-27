@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/config/texts/app_texts.dart';
-import 'package:flutter_project/mocks/fake_data.dart';
 import 'package:flutter_project/src/application/product_actor_bloc/product_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_image_actor_bloc/product_image_actor_bloc.dart';
 import 'package:flutter_project/src/application/product_watcher_bloc/product_watcher_bloc.dart';
@@ -15,7 +14,8 @@ import 'package:flutter_project/src/presentation/pages/home_page/widgets/product
 import 'package:flutter_project/src/presentation/widgets/custom_alert.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
-import 'package:mockito/mockito.dart';
+
+import '../../../../../../mocks/fake_data.dart';
 
 class MockProductWatcherBloc
     extends MockBloc<ProductWatcherEvent, ProductWatcherState>

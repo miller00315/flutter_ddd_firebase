@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_project/mocks/fake_data.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
@@ -15,6 +14,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../mocks/fake_data.dart';
 import 'product_repository_test.mocks.dart';
 
 @GenerateMocks([IProductDataSource])
