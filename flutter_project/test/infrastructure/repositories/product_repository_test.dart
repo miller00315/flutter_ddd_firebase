@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_project/mocks/fake_data.dart';
 import 'package:flutter_project/src/domain/core/value_objects.dart';
 import 'package:flutter_project/src/domain/entities/product/product.dart';
 import 'package:flutter_project/src/domain/entities/product/product_failures.dart';
@@ -191,7 +192,7 @@ main() {
         );
       });
 
-      controller.sink.add([productDto]);
+      controller.sink.add([fakeProductDto]);
 
       listener.cancel();
 
@@ -207,21 +208,17 @@ main() {
         (_) => controller.stream,
       );
 
-      final listener = productRepository.watchAll().listen((event) {
-        expect(event.isLeft(), true);
-
-        event.fold(
-          (l) => expect(l, const ProductFailure.insufficientPermissions()),
-          (r) => expect(r, null),
-        );
-      });
+      expect(
+        productRepository.watchAll(),
+        emitsInOrder(
+          [const Left(ProductFailure.insufficientPermissions())],
+        ),
+      );
 
       controller.sink.addError(PlatformException(
         code: '13',
         message: 'PERMISSION_DENIED',
       ));
-
-      listener.cancel();
 
       controller.close();
     });
@@ -235,21 +232,17 @@ main() {
         (_) => controller.stream,
       );
 
-      final listener = productRepository.watchAll().listen((event) {
-        expect(event.isLeft(), true);
-
-        event.fold(
-          (l) => expect(l, const ProductFailure.unexpected()),
-          (r) => expect(r, null),
-        );
-      });
+      expect(
+        productRepository.watchAll(),
+        emitsInOrder(
+          [const Left(ProductFailure.unexpected())],
+        ),
+      );
 
       controller.sink.addError(PlatformException(
         code: '500',
         message: 'UNKNOWN',
       ));
-
-      listener.cancel();
 
       controller.close();
     });
