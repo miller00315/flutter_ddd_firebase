@@ -1,90 +1,19 @@
-# Flutter Challenge 20210610
+# Flutter project
 
-### Obrigatório
- 
-- Leia atentamente todo o descritivo desse documento antes de qualquer coisa;
-- Trabalhar em um FORK deste repositório em seu usuário;
-- O projeto deverá ser desenvolvido em Flutter/Dart;
-- Os produtos disponíveis no projeto da aplicação devem ser recuperados através do Firebase Realtime DB ou Firestore;
-- Utilize sempre boas práticas nas implementações. OOP, SOLID, DDD, Clean Code, Injeção de Dependência são sempre bem-vindos e fazem toda diferença!!!
+## Descrição do projeto
+<p align="center">O app consiste em uma lista de produtos editáveis recuperados através do Firebase</p>
 
+## Como utilizar
 
-## API / Firebase
- 
-###  Base de Dados
- 
-- Utilizar o Firestore ou Firebase Realtime DB
+- Entre na pasta flutter_project
+- Execute flutter pub get
+- Utilize um emulador ou um dispositivo físico (mínimo sdk 21)
+- Execute flutter run
 
-- Processar os produtos do arquivo [products.json](products.json) para termos dados para editar e excluir durante os testes 
+<a href="https://drive.google.com/file/d/12eV_KEiqmNe3JSAWLZORhRFmG0av4dBp/view?usp=sharing">🔗 Link para download do apk em Android</a>
 
-## Aplicação Flutter
- 
-![<img src="assets/images/home.png" height="500" alt="Home" title="Home"/>](assets/images/home.png)
+<a href="mailto:miller00315@gmail.com?"><img src="https://img.shields.io/badge/gmail-%23DD0031.svg?&style=for-the-badge&logo=gmail&logoColor=white"/></a>
 
-#### Listar produtos
- 
-Criar uma sessão na tela com uma lista de os produtos processados pela API. É importante ter os seguintes campos:
- 
-        - Foto
-        - Title
-        - Type
-        - Rating
-        - Price
-        - Created (Data do upload do produto a nova base de datos)
-        - Actions (Botões Editar e Excluir)
- 
-#### Editar produto
- 
-Na tabela com os produtos precisamos disponibilizar os formulários com todos os campos dos produtos para que a equipe possa editá-los. 
-Fazer validação de alguns campos obrigatórios:
+<a href="https://github.com/miller00315"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
 
-        - Title
-        - Type
-        - Price
- 
-#### Remover produto
- 
-Antes de completar a ação de remover produto, devemos perguntar ao usuário se ele realmente 
-quer realizar a ação. Para evitar a remoção de produtos de maneira indesejada. Após remover com êxito, notificar o usuário com um alerta de sucesso. 
-
-#### Extras
- 
-**Diferencial 1** - Utilizar Unit Test no front-end para a opção de `Remover produto`. 
-
-**Diferencial 2** - Utilizar Unit Test para revisar se está listando produtos 
-
-**Diferencial 3 -** Utilizar alguma ferramenta de Injeção de Dependência
-
-**Diferencial 4 -** Utilizar alguma ferramenta para download e cache de imagens
-
-#### Publicar
-
-Utilizar seu repositório para disponibilizar a aplicação as versões Android e/ou iOS.
-
-## Readme do Repositório
- 
-- Deve conter o título de cada projeto
-- Uma descrição de uma frase
-- Como instalar e usar o projeto (instruções)
-- Não esqueça o [.gitignore](https://www.toptal.com/developers/gitignore)
-- Link de downloads para iOS e/ou Android
- 
-## Finalização 
-
-Avisar sobre a finalização e enviar para correção em: [https://coodesh.com/review-challenge](https://coodesh.com/review-challenge) 
-
-Após essa etapa será marcado a apresentação/correção do projeto.
-
-## Instruções para a Apresentação: 
-
-1. Será necessário compartilhar a tela durante a vídeo chamada;
-2. Deixe todos os projetos de solução previamente abertos em seu computador antes de iniciar a chamada;
-3. Deixe os ambientes configurados e prontos para rodar; 
-4. Prepara-se pois você será questionado sobre cada etapa e decisão do Challenge;
-5. Prepare uma lista de perguntas, dúvidas, sugestões de melhorias e feedbacks (caso tenha).
-
-
-## Suporte
-
-Use o nosso canal no slack: http://bit.ly/32CuOMy para tirar dúvidas sobre o processo ou envie um e-mail para contato@coodesh.com. 
 
